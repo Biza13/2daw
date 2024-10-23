@@ -1,0 +1,18 @@
+body{
+    counter-reset: parte;   /*Contador para los h2*/
+}
+
+/*Se tiene que poner el contador en el padre más directo de l aetiqueta a la cual se lo vas a aplicar*/
+h2{
+    counter-reset: sub_parte;   /*Segundo contador*/
+}
+
+h2::before{
+  content: "parte " counter(parte) " ";  
+  counter-increment: parte;
+}
+
+h3::before{
+    content: counter(parte) "." counter(sub_parte) ") ";
+    counter-increment: sub_parte;
+}

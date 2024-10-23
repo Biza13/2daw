@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validación de formularios</title>
+  </head>
+  <body>
+    <form action="">
+      <p>
+        <input type="text" title="Solo tres letras" pattern="[A-Za-z]{3}" />
+      </p>
+      <p>
+        <input type="password" minlength="6">
+      </p>
+      <p>
+        <!--pattern="^([a-z]+[0-9]{0,2})$" el gorrioto para decir que tiene que empezar por letras minusculas
+        [a-z] mas para "concatenar" luego números del 0 al 9 [0-9] con un rando de entre 0 y 2
+        y el $ lara decir que quieres terminar con los números-->
+        <input type="text" minlength="5" maxlength="15" pattern="^([a-z]+[0-9]{0,2})$">
+      </p>
+      <p>
+        <input type="text" name="" id="" part="[A-Za-z0-9\!\?\-]">
+      </p>
+      <p>
+        <input type="submit" value="enviar" />
+    </p>
+    </form>
+  </body>
+</html>

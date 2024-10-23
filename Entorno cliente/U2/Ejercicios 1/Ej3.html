@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        document.write("<p> Forma 1A <br>");
+        let fecha = parseInt(new Date().getHours());
+        let fecha1 = parseInt(new Date().getMinutes());
+        let fecha2 = parseInt(new Date().getSeconds());
+        document.write(fecha + ":" + fecha1 + ":" + fecha2 + "<br>");
+        document.write("<p/>");
+
+        document.write("<p> Forma 1B <br>");
+        let hora1 = new Date().toLocaleTimeString();
+        document.write(hora1);
+        document.write("<p/>");
+
+        document.write("<p> Forma 2 <br>");
+        let fechaA = parseInt(new Date().getHours());
+        let fechaB = parseInt(new Date().getMinutes());
+        document.write(fechaA + "h y " + fechaB + "m");
+        document.write("<p/>");
+    </script>
+</body>
+</html>

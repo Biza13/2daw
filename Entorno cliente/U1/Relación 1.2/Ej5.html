@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numParaAdivinar = prompt("Escriba el número a adivinar.");
+      let numIntento = prompt("Escriba el número que cree que es.");
+
+      //do while para que haga el bucle hasta que acierte el número (numParaAdivinar)
+      do{
+        //if´s para saber si el numero introducido en mayor o menor al numero a adivinar
+        if (numIntento > numParaAdivinar) {
+            alert("El número a adivinar es menor");
+        } else if (numIntento < numParaAdivinar) {
+            alert("El número a adivinar es mayor");
+        }
+        //cada vez que falle saltara otra vez para introducir el numero de nuevo
+        numIntento = prompt("Escriba el número que cree que es.");
+      }while(numIntento != numParaAdivinar);
+
+
+      document.write("Acertaste");
+    </script>
+  </body>
+</html>

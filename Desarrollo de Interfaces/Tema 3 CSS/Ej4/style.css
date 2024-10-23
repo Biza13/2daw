@@ -1,0 +1,104 @@
+/*Ejercicio 1*/
+.p1{
+    border: 5px solid blue;
+}
+
+.p2{
+    border: 5px dotted green;
+}
+
+.p3{
+    border: 5px dashed purple;
+}
+
+.p4{
+    border: 5px double purple;
+    border-top-color: orange;
+}
+
+/*Ejercicio 2*/
+.b div{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+.b div:nth-child(2){
+    background-color: blue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.b div:nth-child(3){
+    background-color: rgb(2, 141, 44);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.b div:nth-child(4){
+    background-color: rgb(68, 1, 112);
+    border-radius: 50%;
+}
+
+/*Ejercicio 3*/
+.c div{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    background-color: grey;
+}
+
+.c div:nth-child(3){
+    border-bottom-right-radius: 40px;
+}
+
+.c div:nth-child(4){
+    border-radius: 0px 0px 40px/20px 0px;
+}
+
+.c div:nth-child(5){
+    border-radius: 0px 0px 20px/40px 0px;
+}
+
+.c div:nth-child(8){
+    border-radius: 10px 40px;
+}
+
+.c div:nth-child(9){
+    /*los cuatro valores de las esquinas del eje x / los cuatro valores de las esquinas del eje y*/
+    border-radius: 20px 10px 20px 10px / 10px 20px 10px 20px;
+}
+
+.c div:nth-child(10){
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+/*Ejercicio 4*/
+.e4-1{
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    background-color: lightblue;
+    margin: 1em;
+}
+
+.e4-2{
+    width: 300px;
+    height: 100px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    background-color: aquamarine;
+    margin: 1em;
+    white-space: nowrap; /*Evita que el texto se adapte al width de la caja contenedora*/
+}
+
+.e4-3{
+    width: 150px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background-color: antiquewhite;
+    margin: 1em;
+}

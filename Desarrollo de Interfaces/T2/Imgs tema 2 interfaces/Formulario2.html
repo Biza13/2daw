@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 2</title>
+    <style>
+        fieldset{
+            margin-bottom: 10px;
+        }
+        
+        .datosPersonales{
+            background-color: #69594D;
+            color: white;
+        }
+
+        legend{
+            color: black;
+            background-color: #EAE3D1;
+            border: 1px solid black;
+        }
+        .datosPersonales>div>p{
+            display: inline-block;
+            margin-right: 1em;
+        }
+        .radio2{
+            margin-left: 3em;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset class="datosPersonales">
+            <legend>Datos personales</legend>
+            <div>
+                <p>
+                    <label for="nombre">Nombre (*)</label><br>
+                    <input type="text" name="nombre" id="nombre" required>
+                </p>
+                <p>
+                    <label for="apellidos">Apellidos (*)</label><br>
+                    <input type="text" name="apellidos" id="apellidos" required>
+                </p>
+
+                <p>
+                    <label for="dni">DNI (*)</label><br>
+                    <input type="text" name="dni" id="dni" required>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <label for="contrasena">Contraseña (*)</label><br>
+                    <input type="password" name="contrasena" id="contrasena" minlength="8" pattern="[A-Z]+ [0-9]+">
+                </p>
+
+                <p>
+                    <label for="localidad">Localidad de nacimiento</label><br>
+                    <input type="text" name="localidad" id="localidad">
+                </p>
+
+                <p>
+                    <label for="provincia">Provincia</label><br>
+                    <input type="text" name="provincia" id="provincia">
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <label for="fecha_nacimiento">Fecha de nacimiento</label><br>
+                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                </p>
+
+                <p>
+                    <label for="direccion">Dirección (*)</label><br>
+                    <input type="text" name="direccion" id="direccion" required>
+                </p>
+
+                <p>
+                    <label for="direccion">Dirección (*)</label><br>
+                    <input type="text" name="direccion" id="direccion" required>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <label for="codigo_postal">Código postal</label><br>
+                    <input type="text" name="codigo_postal" id="codigo_postal" pattern="[0-9]{5}" minlength="5" maxlength="5">
+                </p>
+
+                <p>
+                    <label for="email">Email (*)</label><br>
+                    <input type="email" name="email" id="email" required>
+                </p>
+
+                <p>
+                    <label for="telefono">Teléfono (*)</label><br>
+                    <input type="text" name="telefono" id="telefono" pattern="[0-9]{9}" minlength="9" maxlength="9" required>
+                </p>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Forma de acceso</legend>
+
+            <input type="radio" name="acceso" id="directo" value="1">
+            <label for="acceso">Directo</label>
+            <br>
+                <div class="radio2">
+                    <input type="radio" name="directo" id="directo1" value="bachiller">
+                    <label for="directo1">Bachillerato Log Modalidad</label>
+                    <input type="text" name="bachillerato" id="directo1">
+                    <br>
+                    <input type="radio" name="directo" id="directo2" value="experimental">
+                    <label for="directo2">Experimental</label>
+                    <br>
+                    <input type="radio" name="directo" id="directo3" value="cou">
+                    <label for="directo3">COU Opcción</label>
+                    <input type="text" name="cou" id="directo3">
+                    <br>
+                    <input type="radio" name="directo" id="directo4" value="fp2">
+                    <label for="directo4">FP2</label>
+                    <br>
+                    <input type="radio" name="directo" id="directo5" value="otros">
+                    <label for="directo5">Otros (Especifique)</label>
+                    <input type="text" name="otros" id="directo5">
+                </div>
+            <br>
+            <input type="radio" name="acceso" id="pruebaLibre" value="2">
+            <label for="acceso">Prueba Libre</label>
+        </fieldset>
+        <fieldset>
+            <legend>Documentos adjuntados</legend>
+
+            <input type="checkbox">
+        </fieldset>
+        <fieldset>
+            <legend>Personaliza</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Otros datos</legend>
+        </fieldset>
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>

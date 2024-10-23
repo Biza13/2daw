@@ -1,0 +1,218 @@
+/* ESTILOS COMUNES */
+body {
+    text-align: justify;
+    font-family: 'Arial', sans-serif;
+}
+
+/*ESTILOS DEL ÍNDICE*/
+/* Título */
+.bindex{
+    background-image: url(./imgs/fondo.jpeg);
+}
+
+h1 {    /*tanto para el indice como para beneficios y desventajas*/
+    text-align: center;
+    font-size: 2.5em;
+    color: #9ba1a8;
+    letter-spacing: 2px;    /*separacion entre letras*/
+}
+
+/* Barra de navegación */
+.menu {
+    display: flex;
+    justify-content: center; /* Centra el contenido los li */
+    background-color: #34495e;
+    padding: 1em 0;
+    border-radius: 20px;
+}
+
+.menu ul {
+    list-style: none; /* Quita los puntos de cada li */
+    display: flex; /* Coloca los li en línea horizontal */
+    padding: 0; /*para que no  me ponga padding a la izquierda*/
+}
+
+.menu li {
+    margin: 0 2em; /* Espacio entre los li */
+}
+
+.menu a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s ease; /* Transición para mabiar de color con el hoover */
+    padding: 0.5em 1em;
+}
+
+.menu a:hover {
+    color: #49b5bd; /* cambio de color al pasar el raton */
+}
+
+/* Sección, el estilo de las secciones sera compartido, añadiendo ciertas propiedades y valores segun la pagina en la que esten*/
+section {
+    text-align: center;
+    padding: 3em 1em;
+    background-color: rgb(181, 181, 196);
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 2em auto;
+    max-width: 800px; /* Limita el ancho del contenido */
+}
+
+section h3 {
+    font-size: 2em;
+    color: #000749;
+    width: 500px;
+    margin: 0 auto; /*para centrar el h3*/
+    margin-bottom: 1em; /*para despegarlo del texto de abajo*/
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.8; /* Espacio entre líneas*/
+    color: #000000;
+    max-width: 600px; /* ancho del párrafo */
+    margin: 0 auto; /*para centrar el p*/
+}
+
+/*ESTILOS DE BENEFICIOS Y DESVENTAJAS*/
+/*Estilos del body de beneficios*/
+.bben, .bdes{
+    background-image: url(./imgs/ben.JPG);
+    background-size: 100vw 100vh;   /*Con estos tres backgroun la imagen no se repite*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bben div{
+    display: flex;
+    flex-wrap: wrap;    /*permite que los elementos hijos se puedan poner en varias filas y no una sola*/
+    padding: 20px;
+}
+
+.bdes div{
+    display: flex;
+    flex-wrap: wrap;    /*permite que los elementos hijos se puedan poner en varias silas y no una sola*/
+    gap: 30px;  /*Espacio entre las secciones*/
+    padding: 20px;
+}
+
+.bdes section{
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.bdes p, ul{
+    text-align: justify;
+}
+
+/*ESTILOS DE INSTALACION Y PREPARACION*/
+.binst{
+    background-image: url(./imgs/ins.jpg);
+    background-size: cover;
+}
+
+.h1inst{
+    text-align: center;
+    font-size: 2.5em;
+    color: #000000;
+    letter-spacing: 2px;    /*separacion entre letras*/
+}
+
+.binst section{
+    max-width: 900px;
+    display: flex;  /* Usar flexbox para organizar los elementos */
+    align-items: center;    /* Alinear verticalmente la imagen con el contenido */
+    gap: 20px;  /* Espacio entre la imagen y el texto */
+    margin-bottom: 40px; 
+}
+
+.binst img{
+    height: auto;   /* mantener proporciones */
+    border-radius: 20px;    /*bordes redondos*/
+}
+
+.binst div{
+    flex: 1;    /* Hacer que el contenido del div ocupe el resto del espacio de la seccion*/
+}
+
+/*esto es solo para los comentarios en la pagina de instalacion*/
+span{
+    font-weight: bold;
+    color: green;
+}
+
+/*Página de ejemplos*/
+.bejem{
+    background-image: url(./imgs/ejemp.jpg);
+    background-size: 100vw 100vh;   /*Con estos tres backgroun la imagen no se repite*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bejem section{
+    width: 90%;
+    background-color: rgb(154, 154, 167);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel{
+    width: 80%;
+    max-width: 120em;
+    background-color: rgb(181, 181, 196);
+    border-radius: 20px;
+    box-shadow: 10px 10px 40px black;
+    overflow: hidden;
+}
+
+.carrusel .grande{
+    width: 400%;
+    height: 300px;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.5s ease;
+    transform: translateX(0%);
+}
+
+.carrusel .img{
+    width: calc((100% / 4)-2em);
+    margin-right: 1em;
+    height: 100%; /* Asegúrate de que las imágenes ocupen todo el alto de su contenedor */
+    object-fit: cover; /* Ajusta el comportamiento de las imágenes para que llenen el contenedor */
+}
+
+.carrusel .puntos{
+    width: 100%;
+    padding: 0 2em;
+    margin-bottom: 1em;
+    margin-top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.carrusel .punto{
+    background-color: aqua;
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+    border-radius: 20px;
+    box-shadow: 10px 10px 40px black;
+}
+
+.carrusel .punto.activo{
+    background-color: orange;
+}

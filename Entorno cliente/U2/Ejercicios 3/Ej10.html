@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let a = "0000-0000-0000-0000";
+        let b = "0199-8756-2314-5981";
+        let c = "5423-9716";
+        let d = "0000-0000-0000-0006";
+        let e = "4523-16gh-7452-1638";
+        let f = "8546-3210-5978-5460";
+
+        let res = validateCreditCard2 (a);
+        document.write("Ejemplo con todos los numeros iguales <br> " + a + " resultado: " + res + "<br><br>");
+        
+        let res1 = validateCreditCard2 (b);
+        document.write("El Número final es impar <br>" + b + " resultado: " + res1 + "<br><br>");
+        
+        let res2 = validateCreditCard2 (c);
+        document.write("El número contiene menos de 16 digitos <br>" + c + " resultado: " + res2 + "<br><br>");
+        
+        let res3 = validateCreditCard2 (d);
+        document.write("La suma de los digitos es menos a 16 <br>" + d + " resultado: " + res3 + "<br><br>");
+        
+        let res4 = validateCreditCard2 (e);
+        document.write("La cadena no solo contiene números <br>" + e + " resultado: " + res4 + "<br><br>");
+        
+        document.write("<h3>Ejemplo de número que Si es valido</h3>");
+
+        let res5 = validateCreditCard2 (f);
+        document.write("Ejemplo de número válido " + f + " resultado: " + res5 + "<br><br>");
+    </script>
+</body>
+</html>

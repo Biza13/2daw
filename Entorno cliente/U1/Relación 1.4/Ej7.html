@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    <script>
+        let num = prompt("Escribe un número y te dire si es divisible por el siguiente número que introduzcas");
+        let num2 = prompt("escribe el número por el cual va a ser divisible el anterior");
+        let div = divisibleEntre(num, num2);
+        let siNo;
+        if (div == false){
+            siNo = " No es divisible"
+        }else{
+            siNo = " Si es divisible"
+        }
+        document.write("El número " + num + siNo + " por " + num2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación 1.1 Ejercicio 1</title>
+</head>
+<body>
+    <h3 id="oper1"></h3>
+    <h3 id="oper2"></h3>
+    <h3 id="oper3"></h3>
+    <h3 id="oper4"></h3>
+    <h3 id="oper5"></h3>
+    <h3 id="oper6"></h3>
+    <h3 id="oper7"></h3>
+    <h3 id="oper8"></h3>
+    <h3 id="oper9"></h3>
+    <script>
+
+        //Primer caso
+        /*El doble signo == se utiliza para representar una igualdad, la cual NO tiene en cuenta el tipo.
+        Es decir que 20 va a ser igual que 20 y tambien sera igual que "20" el cual es una string, ya que no tiene encuanta el tipo.*/
+        let op1;
+
+        if(20 == 20){
+            op1 = true;
+        }else{
+            op1 = false;
+        };
+
+        document.getElementById("oper1").innerHTML = "La operación 20 == 20 es " + op1;
+
+        //Segundo caso
+        /*El triple = se usa para dar una igualdad y SI tiene en cuenta el tipo de la variable es decir 20 NO sera igual a "20", ya que 
+        este es una String.*/
+        let op2;
+
+        if(20 === 20){
+            op2 = true;
+        }else{
+            op2 = false;
+        };
+
+        document.getElementById("oper2").innerHTML = "La operación 20 === 20 es " + op2;
+
+        //Tercer caso
+        /*Tambien nos va a devolver que es verdadero en este tercer caso porque javaScript no distingue entre números esteros y flotantes,
+        para JS todo son number*/
+        let op3;
+
+        if(20 === 20){
+            op3 = true;
+        }else{
+            op3 = false;
+        };
+
+        document.getElementById("oper3").innerHTML = "La operación 20 === 20.0 es " + op3;
+
+        //Cuarto caso
+        /*Nos arrojara falso ya que el primero tiene la J en mayusculas y el segundo en minusculas.*/
+        let op4;
+
+        if("Juan" == "juan"){
+            op4 = true;
+        }else{
+            op4 = false;
+        };
+
+        document.getElementById("oper4").innerHTML = "La operación Juan == juan es " + op4;
+
+        //Quinto caso
+        /*En este caso de mayor que, se comparan los valores que las letras tienen en el codigo ASCII y las mayusculas 
+        tienen un valor mas pequeño que las minusculas, por lo tanto la J mayuscula sera emnor que la j minuscula, por eso nos da falso.*/
+        let op5;
+
+        if("Juan" > "juan"){
+            op5 = true;
+        }else{
+            op5 = false;
+        };
+
+        //El poner \" es para que las comillas no se interpreten como un cierre o apertura de una string sino para que se muestren.
+        document.getElementById("oper5").innerHTML = "La operación \"Juan\" > \"juan\" es " + op5;
+
+        //Sexto caso
+        /*Misma explicaión que en el quinto caso*/
+        let op6;
+
+        if("Juan" < "juan"){
+            op6 = true;
+        }else{
+            op6 = false;
+        };
+
+        document.getElementById("oper6").innerHTML = "La operación \"Juan\" > \"juan\" es " + op6;
+
+        //Séptimo caso
+        /*Como el primer caso, con el doble == NO tiene en cuenta el tipo de dato, po lo tanto dara true*/
+        let op7;
+
+        if("123" == 123){
+            op7 = true;
+        }else{
+            op7 = false;
+        };
+
+        document.getElementById("oper7").innerHTML = "La operación \"123\" == 123 es " + op7;
+
+        //Octavo caso
+        /*como el segundo caso, El triple === SI tiene en cuenta el tipo de dato por lo tanto dara falase*/
+        let op8;
+
+        if("123" === 123){
+            op8 = true;
+        }else{
+            op8 = false;
+        };
+
+        document.getElementById("oper8").innerHTML = "La operación \"123\" === 123 es " + op8;
+
+        //Noveno caso
+        /*En este caso nos devolvera true ya que el parseInt nos convierte la cadena a entero y aun comparando con el triple === estricto
+        al haber cambiado el tipo de dato de String a number, SI son iguales.*/
+        let op9;
+
+        if(parseInt("123") === 123){
+            op9 = true;
+        }else{
+            op9 = false;
+        };
+
+        document.getElementById("oper9").innerHTML = "La operación parseInt(\"123\") === 123 es " + op9;
+    </script>
+</body>
+</html>

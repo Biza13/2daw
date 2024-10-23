@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <img src="" id="imagen">
+    <script>
+      let rand = Math.round(Math.random() * 2);
+      switch (rand) {
+        case 0:
+            document.getElementById("imagen").src = "./chrome.jpeg";
+          break;
+        case 1:
+            document.getElementById("imagen").src = "./css3.png";
+          break;
+        case 2:
+            document.getElementById("imagen").src = "./html5.png";
+          break;
+      }
+    </script>
+  </body>
+</html>

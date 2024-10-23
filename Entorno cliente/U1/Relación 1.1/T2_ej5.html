@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var countdown = prompt("Introduce un número para iniciar la cuenta atrás.");
+        while(countdown > 0){
+            alert(countdown + "... ");
+            countdown--;
+        }
+    </script>
+</body>
+</html>
+<!--De esta forma esta decrementando en número inicial dado por el usuario en 1 en cada vuelta hasta llegar a 0. Si cambiamos el 
+decremento (--) por un aumento (++) lo que hace es incrementar el número dado por el usuario y el bucle no termina nunca porque el 
+nuúmero va a ser siempre mayor que 0, por lo que siempre entra en el bucle-->

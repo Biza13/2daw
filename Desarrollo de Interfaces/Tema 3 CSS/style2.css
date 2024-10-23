@@ -1,0 +1,19 @@
+/*Hijos directos con >*/
+.hijos-directos>li{
+    background-color: thistle;
+}
+
+/*Hijos descendientes con  un espacio (" ")*/
+.hijos-descendientes b{
+    background-color: aquamarine;
+}
+
+/*para los hermanos en general a partir de el de la clase los de debajo de el*/
+.hermanos-general ~ li{
+    background-color: thistle;
+}
+
+/*solo pinta los adyacentes a partir de el de la clase es decir solo va a pintar el que le sigue*/
+.hermanos-adyacentes + li{
+    background-color: thistle;
+}

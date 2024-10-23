@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+        tr, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let cookies = window.navigator.cookieEnabled;
+        let ol = window.navigator.onLine;
+        let idioma = window.navigator.languages;
+        let nomNav = window.navigator.userAgent;
+        let portapapeles = window.navigator.clipboard;
+        let credenciales = window.navigator.credentials;
+        let noTraqueo = window.navigator.doNotTrack;
+        let geoloca = window.navigator.geolocation;
+        let version = window.navigator.appVersion;
+        let nombre = window.navigator.appName;
+    </script>
+    <table>
+        <tr>
+            <td>cookies habilitadas</td>
+            <td><script>document.write(cookies)</script></td>
+        </tr>
+        <tr>
+            <td>Navegador online</td>
+            <td><script>document.write(ol)</script></td>
+        </tr>
+        <tr>
+            <td>Idioma</td>
+            <td><script>document.write(idioma)</script></td>
+        </tr>
+        <tr>
+            <td>Nombre Navegador</td>
+            <td><script>document.write(nomNav)</script></td>
+        </tr>
+        <tr>
+            <td>Portapapeles</td>
+            <td><script>document.write(portapapeles)</script></td>
+        </tr>
+        <tr>
+            <td>Credenciales</td>
+            <td><script>document.write(credenciales)</script></td>
+        </tr>
+        <tr>
+            <td>Traqueo</td>
+            <td><script>document.write(noTraqueo)</script></td>
+        </tr>
+        <tr>
+            <td>Geolocalización</td>
+            <td><script>document.write(geoloca)</script></td>
+        </tr>
+        <tr>
+            <td>Versión</td>
+            <td><script>document.write(version)</script></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td><script>document.write(nombre)</script></td>
+        </tr>
+    </table>
+</body>
+</html>

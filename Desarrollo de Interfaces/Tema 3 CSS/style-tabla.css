@@ -1,0 +1,23 @@
+table{
+    color:white;
+}
+
+tr td:last-child{
+    font-weight: bold;
+}
+
+tbody tr:nth-child(odd){
+    background-color: blue;
+}
+
+thead, tfoot{
+    background-color: brown;
+}
+
+tr :last-child{
+
+}
+
+tbody tr:nth-child(even){
+    color:blue;
+}

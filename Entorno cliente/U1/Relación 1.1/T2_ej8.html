@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //cariable que contendra lo que el usuario introduzca por pantalla
+        let nomComp = prompt("¿Cuál fue el primer presidente de la democracia española?");
+        let cadena1, cadena2;
+        //Array para separar el contenido de lo que introduzca el usuario por pantalla por los espacios
+        let arrNomApe = nomComp.split(" ");
+        cadena1 = arrNomApe[0];
+        cadena2 = arrNomApe[1];
+        //Bucle para repetir las acciones hasta que el usuario introduzca correctamente el nombre y apellido
+        while (nomComp != "Adolfo Suárez"){
+            //Primer if al que entrara en caso de que la primera palabra sea Adolfo y la segunda cualquiera diferente a Suárez
+            if (cadena1 == "Adolfo" && cadena2 != "Suárez"){
+                nomComp = prompt("Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?");
+                //Actualizacion de las variables con lo que vuelva a introducir el usuario
+                arrNomApe = nomComp.split(" ");
+                cadena1 = arrNomApe[0];
+                cadena2 = arrNomApe[1];
+            //Segundo if para comprobar que lo que puso concuerda con el apellido
+            }else if(cadena1 == "Suárez"){
+                nomComp = prompt("Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?");
+                //Actualizacion de las variables
+                arrNomApe = nomComp.split(" ");
+                cadena1 = arrNomApe[0];
+                cadena2 = arrNomApe[1];
+            //Tercer if cuando ninguno de los datos introducidos por el usuario concuerda con el nombre y apellido pedido
+            }else if (cadena1 != "Adolfo" && cadena2 != "Suárez"){
+                nomComp = prompt("Error, intentelo de nuevo ¿Cuál fue el primer presidente de la democracia española?");
+                //Actualizacion de variables
+                arrNomApe = nomComp.split(" ");
+                cadena1 = arrNomApe[0];
+                cadena2 = arrNomApe[1];
+            }
+        }
+        document.write("Correcto");
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let fNac = prompt("Escriba tu fecha de nacimiento con este formato: YYYY-MM-DD");
+        let nacimiento = new Date(fNac);
+        document.write(nacimiento.toDateString());
+
+        let años = cumplEnDomingo(nacimiento);
+
+        document.write("<br> Mira la consola, esos son los años en que tu cumpleaños fue en Domingo")
+
+    </script>
+</body>
+</html>

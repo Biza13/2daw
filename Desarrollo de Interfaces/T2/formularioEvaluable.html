@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Evaluable | Adolfo Sánchez</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .datos {
+            background-color: #63594D;
+            color: white;
+        }
+
+        .forma {
+            background-color: #b18272;
+        }
+
+        .adjuntos {
+            background-color: #c2b291;
+        }
+
+        .personaliza {
+            background-color: #d6e4c3;
+        }
+
+        .other-data {
+            background-color: #eae3d1;
+        }
+
+        form legend {
+            border: 1px solid black;
+            background-color: #eae3d1;
+            color: black;
+        }
+
+        .datos p {
+            display: inline-block;
+        }
+
+        .directo {
+            padding-left: 2em;
+        }
+
+        .submit {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HOJA DE INSCRIPCIÓN <br> EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
+    <form action="#">
+        <fieldset class="datos">
+            <legend>Datos Personales</legend>
+            <section>
+                <p>
+                    <label for="nombre">Nombre (*):</label> <br>
+                    <input type="text" name="nombre" id="nombre" size="25" required>
+                </p>
+                <p>
+                    <label for="apellidos">Apellidos (*):</label> <br>
+                    <input type="text" name="apellidos" id="apellidos" required>
+                </p>
+                <p>
+                    <label for="dni">DNI (*):</label> <br>
+                    <input type="text" name="dni" id="dni" required>
+                </p>
+            </section>
+            <br>
+            <p>
+                <label for="localidad">Localidad de Nacimiento</label> <br>
+                <input type="text" name="localidad" id="localidad" size="25">
+            </p>
+            <p>
+                <label for="prov">Provincia:</label> <br>
+                <select name="prov" id="prov">
+                    <optgroup label="Andalucía">
+                        <option value="huelva">Huelva</option>
+                        <option value="sevilla">Sevilla</option>
+                        <option value="cadiz">Cádiz</option>
+                        <option value="cordoba">Córdoba</option>
+                        <option value="jaen">Jaén</option>
+                        <option value="granada">Granada</option>
+                        <option value="malaga">Málaga</option>
+                        <option value="almeria">Almería</option>
+                    </optgroup>
+                    <optgroup label="Castilla y León">
+                        <option value="avila">Ávila</option>
+                        <option value="burgos">Burgos</option>
+                        <option value="leon">León</option>
+                        <option value="palencia">Palencia</option>
+                        <option value="segovia">Segovia</option>
+                        <option value="soria">Soria</option>
+                        <option value="salamanca">Salamanca</option>
+                        <option value="valladolid">Valladolid</option>
+                        <option value="zamora">Zamora</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <label for="fnac">Fecha de Nacimiento</label> <br>
+                <input type="date" name="fnac" id="fnac">
+            </p>
+            <br>
+            <p>
+                <label for="direc">Dirección (*):</label> <br>
+                <input type="text" name="direc" id="direc" size="40" required>
+            </p>
+            <p>
+                <label for="cp">Código Postal:</label> <br>
+                <input type="text" name="cp" id="cp" pattern="[0-9]{5}" title="Sólo 5 dígitos" maxlength="5">
+            </p>
+            <br>
+            <p>
+                <label for="email">Email (*):</label> <br>
+                <input type="email" name="email" id="email" size="40" pattern=".+\.(com|es)$" title="user@gmail.com - user@hotmail.es" placeholder="usuario@gmail.com" required>
+            </p>
+            <p>
+                <label for="tlfno">Teléfono (*):</label> <br>
+                <input type="text" name="tlfno" id="tlfno" pattern="[0-9]{9}" title="Debe ser de 9 dígitos"
+                    maxlength="9" required>
+            </p>
+            <br>
+            <p>
+                <label for="pass">Password (*):</label> <br>
+                <input type="password" name="pass" id="pass" minlength="8" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" title="Debe ser mímino de 8 caracteres, una mayúscula y un número." required>
+            </p>
+        </fieldset>
+        <fieldset class="forma">
+            <legend>Forma de Acceso</legend>
+            <input type="radio" name="forma" id="directo" value="directo"> <label for="directo">Directo</label> <br>
+            <p class="directo">
+                <input type="radio" name="directo" id="bach" value="bach"> <label for="bach">Bachillerato</label> <label for="modalidad">Log Modalidad</label> <input type="text" name="modalidad" id="modalidad"> <br>
+                <input type="radio" name="directo" id="exper" value="experimental"> <label for="exper">Experimental</label> <br>
+                <input type="radio" name="directo" id="cou" value="cou"> <label for="cou">COU</label> <label for="cou-opt">Opción</label> <input type="text" name="cou-opt" id="cou-opt"> <br>
+                <input type="radio" name="directo" id="fp" value="fp"> <label for="fp">FP2</label> <br>
+                <input type="radio" name="directo" id="otro" value="otro"> <label for="otro">Otros</label> <label for="otro-espec">(especifique)</label> <input type="text" name="otro-espec" id="otro-espec">
+            </p>
+            <input type="radio" name="forma" id="libre" value="libre"> <label for="libre">Forma Libre</label> <br>
+
+        </fieldset>
+        <fieldset class="adjuntos">
+            <legend>Documentos Adjuntados</legend>
+            <input type="checkbox" name="foto-dni" id="foto-dni"><label for="foto-dni">Fotocopia DNI</label><br>
+            <input type="checkbox" name="certificado" id="certificado"><label for="certificado">Certificado Académico</label> <br>
+            <input type="checkbox" name="otros-doc" id="otros-docs"><label for="otros-docs">Otros documentos</label> <label for="espec">(especifique)</label> <input type="text" name="espec" id="espec"> <br>
+            <label for="adjunta">Adjuntar documentos(pueds subir más de un documento)</label> <input type="file" name="adjunta" id="adjunta" multiple>
+        </fieldset>
+        <fieldset class="personaliza">
+            <legend>Personaliza</legend>
+            <p>
+                <label for="codigo">Código Personalizado: </label> <input type="text" name="codigo" pattern="^[A-Z]{2}-\d{4}$" title="XX-9999. Dos letras,'-', cuatro números" id="codigo">
+            </p>
+            <p>
+                <label for="grupo">Grupo del curso: </label> <input type="text" name="grupo" pattern="^(A|B|AA|BB|ABA)$" title="A, B, AA, BB, ABA" id="grupo">
+            </p>
+            <p>
+                <label for="idioma">Idioma Certificado</label>
+                <select name="idioma" id="idioma">
+                    <option value="ing" selected>Inglés</option>
+                    <option value="fr">Francés</option>
+                    <option value="al">Alemán</option>
+                    <option value="pt">Portugués</option>
+                    <option value="it">Italiano</option>
+                    <option value="jp">Japonés</option>
+                </select>
+            </p>
+            <p>
+                <label for="cert-idioma">Certificación en idiomas: </label> <input type="text" name="cert-idioma" pattern="^(A1|A2|B1|B2|C1|C2)$" title="A1, A2, B1, B2, C1, C2." id="cert-idioma">
+            </p>
+        </fieldset>
+        <fieldset class="other-data">
+            <legend>Otros datos</legend>
+            <label for="comentario">Indique cualquier otra cosa a tener en cuenta:</label> <br>
+            <textarea cols="30" rows="5" name="comentario" id="comentario" placeholder="Déjanos tu comentario"></textarea>
+
+        </fieldset>
+        <p class="submit">
+            <input type="submit" value="Enviar Solicitud">
+            <input type="reset" value="Resetear">
+        </p>
+    </form>
+</body>
+
+</html>

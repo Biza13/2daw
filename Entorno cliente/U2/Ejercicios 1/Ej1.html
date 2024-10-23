@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        /*Coger fechas actual y navidad, pasar a milisegundos las dos fechas y restarlas
+        y a partir de ahi ir pasandola hasta llegar a los dias*/
+        let fecAct = new Date();
+        document.write("Día de hoy " + fecAct.toDateString() + "<br>");
+        let mSfA = fecAct.getTime();
+        let fecNav = new Date("2024-12-19");
+        document.write("Vacaciones de navidad " + fecNav.toDateString());
+        let mSfN = fecNav.getTime();
+        let restaMS = mSfN - mSfA;
+
+        let seg = restaMS / 1000;
+        let min = seg / 60;
+        let hor = min / 60;
+        let dias = hor / 24;
+
+        document.write("<br><br>" + "Faltan " + dias + " para navidad");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //pedir datos al usuario
+        let numCol = prompt("Escriba el número de columnas para la tabla.");
+        let numFil = prompt("Escriba el número de filas para la tabla");
+        let altura = prompt("Escriba la altura de las celdas en pixeles.");
+        let anchura = prompt("Escriba la anchura de las celdas en pixeles.");
+
+        //escribir la etiqueta de la tabla y sus atributos
+        document.write("<table border = '1' cellspacing = '2' style='background-color: black;'>");
+            //Primer for para poner el número de filas que haya escrito el usuario
+            for(i=1; i<=numFil; i++){
+                document.write("<tr style='background-color: white; height: " + altura + "px;'>");
+                //segundo for para poner tantas columnas segun haya indicado el usuario
+                for(x=1; x<=numCol; x++){
+                    document.write("<td width = " + anchura + "px> &nbsp; </td>");
+                }
+                document.write("</tr>");
+            }
+
+        document.write("</table>");
+    </script>
+</body>
+</html>

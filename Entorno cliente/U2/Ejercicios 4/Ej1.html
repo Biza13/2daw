@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>Random entre 0 y 1</h3>");
+        let num = Math.random();
+        document.write(num);
+
+        document.write("<h3>Random entre 100 y 200</h3>");
+        //El math round redondea el número
+        //y luego el math.random() * numero por el cual multiplica el numero random que es entre el 0 y el 1 +100 para que empieze desde el 100
+        let num2 = Math.round(Math.random() * 100 + 100);
+        document.write(num2);
+    </script>
+</body>
+</html>

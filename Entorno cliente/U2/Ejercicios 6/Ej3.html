@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <h2>La J y la K estan arriba para que se vea el scroll</h2>
+    <h4>J)</h4>
+    <a onclick="window.scroll(0,10)">Bajar 10px el scroll</a>
+
+    <h4>K)</h4>
+    <a onclick="window.scroll(0,prompt('Cuantos píxeles quieres baja?'))">Bajar en la página</a>
+
+    <h4>A)</h4>
+    <a onclick="confirmacion()">pinche aqui</a>
+
+    <h4>B)</h4>
+    <script>
+        let ventana;
+    </script>
+    <a onclick="abrirVentana()">Abrir Ventana</a><br><br>
+    <a onclick="estaLaVentanaAbierta()">Comprobar si la ventana esta abierta</a>
+
+    <h4>C)</h4>
+    <a onclick="abrirVentanaTitulo(prompt('Escriba el título para la ventana emergente'))">Escriba el título de la ventana emergente</a>
+
+    <h4>D)</h4>
+    <a onclick="cerrarVentanaActual()">Cerrar ventana actual</a><br>
+    <a onclick="abrirVentana()">Abrir una ventana vacía</a><br>
+    <a onclick="cerrarVentana()">Cerrar ventana emergente</a>
+
+    <h4>F)</h4>
+    <a onclick="abrirVentanaConTamaño()">Ventana con tamaño 300x100</a><br>
+    <a onclick="abrirVentanaConTamaño(prompt('Escriba el alto'), prompt('Escriba el ancho'))">Ventana con tamaño deseado</a>
+
+    <h4>G)</h4>
+    <a onclick="escribe(prompt('Escriba algo'))">Escriba algo en esta página</a><br>
+    <p id="parrafo"></p>
+
+    <h4>H)</h4>
+    <a onclick="abrirVentana()">Abre la ventana</a><br>
+    <a onclick="moverVentana()">Mueve la ventana</a>
+
+    <h4>I)</h4>
+    <a onclick="abrirVentana()">Abre la ventana</a><br>
+    <a onclick="moverVentana(prompt('Escriba cuantos píxeles hacia la derecha lo quiera mover'),prompt('Escriba cuantos píxeles hacia abajo que lo quiera mover'))">Mueve la ventana</a>
+</body>
+</html>

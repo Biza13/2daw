@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <p id="parrafo2"></p>
+    <script>
+        let segundos = 5;
+        for(let i = 0; i <= segundos; i++){
+            setTimeout (function(){
+                if (i<segundos){
+                    document.getElementById("parrafo").innerHTML = "Hemos cambiado de ubicaciónesta página. En breves momentos sera redireccionado...";
+                    document.getElementById("parrafo2").innerHTML = segundos -i;
+                }else{
+                    //window.location para que te mande a la pagina selecionada sin abri una ventana nueva
+                    window.location.href = "http://www.pccomponentes.com";
+                }
+            }, i * 1000);
+        }
+    </script>
+</body>
+</html>

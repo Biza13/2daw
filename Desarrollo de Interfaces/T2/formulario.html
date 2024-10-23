@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formularios en HTML5</h1>
+    <form action="">
+        <p>
+            <label for="nombre">Tu nombre:(*)</label><br>
+            <input type="text" name="nombre" id="nombre" required>
+        </p>
+        <p>
+            <label for="email">Correo electronico:(*)</label><br>
+            <input type="email" name="email" id="email" placeholder="usuario@dimninio.com" required>
+        </p>
+        <p>
+            <label for="contrasena">Contraseña:(*)</label><br>
+            <input type="password" name="contrasena" id="contrasena" required>
+        </p>
+        <p>
+            <label for="fecha">Fecha de nacimiento:</label><br>
+            <input type="date" name="fecha" id="fecha">
+        </p>
+        <p>
+            <label for="hora">¿Que hora es?</label><br>
+            <input type="time" name="hora" id="hora">
+        </p>
+        <p>
+            <label for="mes">¿En que mes estamos?</label><br>
+            <input type="month" name="mes" id="mes">
+        </p>
+        <p>
+            <label for="personaje">Selecciona tu personaje favorito:</label><br>
+            <input type="radio" name="personaje" id="Flash" value="0">
+            <label for="flash">Flash Gordon</label>
+            <br>
+            <input type="radio" name="personaje" id="Ming" value="1">
+            <label for="ming">Ming, El despiadado</label>
+            <br>
+            <input type="radio" name="personaje" id="aura" value="2">
+            <label for="aura">La princesa Aura</label>
+            <br>
+            <input type="radio" name="personaje" id="vultan" value="3">
+            <label for="vultan">Principe Vultan</label>
+            <br>
+            <input type="radio" name="personaje" id="arden" value="4">
+            <label for="arden">Dale Arden</label>
+            <br>
+        </p>
+        <p>
+            <label for="personaje2">Selecciona tu personaje favorito</label><br>
+            <select name="personaje2" id="personaje2">
+                <option value="0">Flash Gordon</option>
+                <option value="1">Ming, El despiadado</option>
+                <option value="2">La princesa Aura</option>
+                <option value="3">Principe Vultan</option>
+                <option value="4">Dale Arden</option>
+            </select>
+        </p>
+        <p>
+            <label for="comics">Cuantos comics de Flash Gordon lees a la semana</label><br>
+            <input type="range" name="comics" id="comics" min="0" max="5" step="1">
+        </p>
+        <p>
+            <label for="mallas">Color ideal de las mallas de Flash Gordon</label><br>
+            <input type="color" name="mallas" id="mallas">
+        </p>
+        <p>
+            <label for="paginas">Cuantas páginas de comics de FLash gordon te lees al día</label><br>
+            <input type="number" name="paginas" id="paginas">
+        </p>
+        <p>
+            <label for="descuentos">Descuentos:</label><br>
+            <label for="numerosa">Familia Numerosa</label>
+            <input type="checkbox" name="descuentos" id="numerosa" value="0">
+            <br>
+            <label for="pensionista">Pensionesta</label>
+            <input type="checkbox" name="descuentos" id="pensionista" value="1">
+            <br>
+            <label for="especiales">Necesidades Especiales</label>
+            <input type="checkbox" name="descuentos" id="especiales" value="2"
+            ><br>
+        </p>
+        <p>
+            <label for="">Elija el archivo</label><br>
+            <input type="file" name="archivo" id="archivo">
+        </p>
+        <p>
+            <input type="range" name="" id="">
+        </p>
+        <p>
+            <input type="submit" name="enviar" value="Enviar los Datos">
+            <input type="reset" name="reset" value="Resetear">
+        </p>
+    </form>
+</body>
+</html>

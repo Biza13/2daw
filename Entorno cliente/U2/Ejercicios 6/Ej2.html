@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+        tr, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let a = window.screen.availHeight;
+        let b = window.screen.availWidth;
+        let c = window.screen.colorDepth;
+        let d = window.screen.height;
+        let e = window.screen.orientation;
+        let f = window.screen.pixelDepth;
+        let g = window.screen.width;
+    </script>
+    <table>
+        <tr>
+            <td>Altura disponible en píxeles.</td>
+            <td><script>document.write(a)</script></td>
+        </tr>
+        <tr>
+            <td>Anchura disponible en píxeles.</td>
+            <td><script>document.write(b)</script></td>
+        </tr>
+        <tr>
+            <td>Cantidad de bits usados para representar el color de un solo péxel.</td>
+            <td><script>document.write(c)</script></td>
+        </tr>
+        <tr>
+            <td>Retorna la altura total de la pantalla en píxeles, incluyendo cosas como la barra de tareas.</td>
+            <td><script>document.write(d)</script></td>
+        </tr>
+        <tr>
+            <td>Devuelve un objeto que describe la orientación de la pantalla.</td>
+            <td><script>document.write(e)</script></td>
+        </tr>
+        <tr>
+            <td>Devuelve la cantidad de bits utilizados para representar un solo píxel en términos de profundidad de píxel.</td>
+            <td><script>document.write(f)</script></td>
+        </tr>
+        <tr>
+            <td>Ancho total de la pantalla en píxeles incluyendo barras.</td>
+            <td><script>document.write(g)</script></td>
+        </tr>
+    </table>
+</body>
+</html>

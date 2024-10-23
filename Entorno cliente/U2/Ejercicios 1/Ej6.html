@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        let nom = prompt("Introduzca su nombre");
+        let ape1 = prompt("Introduzca su primer apellido");
+        let ape2 = prompt("Introduzca su segundo apellido");
+        document.write("Abre la consola");
+
+        let arrNomComp = [nom, ape1, ape2];
+        console.log("Los caracteres totales de tu nombre completo son " + (arrNomComp[0].length + arrNomComp[1].length + arrNomComp[2].length));
+        console.log("Tu nombre en mayusculas " + arrNomComp[0].toUpperCase() + " " + arrNomComp[1].toUpperCase() +  " " + arrNomComp[2].toUpperCase());
+        console.log("Tu nombre en minusculas " + arrNomComp[0].toLowerCase() + " " + arrNomComp[1].toLowerCase() +  " " + arrNomComp[2].toLowerCase());
+        console.log("Nombre: " + arrNomComp[0]);
+        console.log("Apellido 1: " + arrNomComp[1]);
+        console.log("Apellido 2: " + arrNomComp[2]);
+    </script>
+</body>
+</html>

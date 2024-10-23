@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //introduccion de altura y anchura por el usuario que sera la misma
+        let altura = prompt("Escriba la altura que tambiés sera la anchura de las celdas en pixeles.");
+        let anchura = altura;
+
+        //Creamos la tabla
+        document.write("<table border = '1' cellspacing = '2' style='background-color: black;'>");
+            //Primer for para las filas
+            for(i=1; i<=8; i++){
+                document.write("<tr style='background-color: white; height: " + altura + "px;'>");
+                    //segundo for para las columnas
+                for(x=1; x<=8; x++){
+                    //if's elses para decir que si la fila es imp y la columna imp se pinten de negro
+                    if (i % 2 != 0 && x % 2 != 0){
+                        document.write("<td style='background-color: black;' width = " + anchura + "px;> &nbsp; </td>");
+                    //otro if para que se pinten de negro las filas pares columnas pares
+                    }else if(i % 2 == 0 && x % 2 == 0){
+                        document.write("<td style='background-color: black;' width = " + anchura + "px;> &nbsp; </td>");
+                    //lo mismo para las blancas fila imp columna par
+                    }else if(i % 2 != 0 && x % 2 == 0){
+                        document.write("<td style='background-color: white;' width = " + anchura + "px;> &nbsp; </td>");
+                    // y fila par columna impar
+                    }else if(i % 2 == 0 && x % 2 != 0){
+                        document.write("<td style='background-color: white;' width = " + anchura + "px;> &nbsp; </td>");
+                    }
+                }
+                document.write("</tr>");
+            }
+        document.write("</table>");
+    </script>
+</body>
+</html>

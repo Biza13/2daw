@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación y preparación de jsdoc</title>
+    <link href="estilos.css" rel="stylesheet">
+</head>
+<body class="binst">
+    <h1 class="h1inst">INSTALACIÓN Y PREPARACIÓN DE JSDOC</h1>
+    <section>
+        <img src="./imgs/Node.js1.jpg">
+        <div>
+            <h2>Node js</h2>
+            <p>
+               <a href="https://nodejs.org/en/download/package-manager/current">Descargar node js</a>
+            </p>
+            <ul>
+                <li>Entrar en nodejs y seguir los pasos citados en esta página</li>
+                <li>Si da algun error de enviroments variables, hay que cambiar las variables de entorno.
+                    <br>
+                    Esto lo hacemos abriendo las variables de entorno, creamos una nueva, la llamamos NODE.JS y le ponemos la ruta de donde se haya instalado node.js
+                </li>
+                <li>
+                    Instalar la ultima versión de npm que es el administrador de paquetes de node.js con el comando:
+                    <br>
+                    npm install -g npm@latest
+                </li>
+                <li>
+                    Par finalizar crearemos una carpeta y en ella crearemos un index.js
+                    <br>
+                    Abriremos con el visual studio code la carpeta y la terminal y pondremos el siguiente comando:
+                    <br>
+                    npm init -y
+                    <br>
+                    Y con esto se crea un nuevo proyecto de node y nos crea el archivo packaje.json
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <img src="./imgs/jsdoc1.png">
+        <div>
+            <h2>JSDoc</h2>
+            <p>
+                Para instalar JSDOC
+                <ul>
+                    <li>En la misma terminal del visual studio code pondremos el siguiente comando:
+                        <br>
+                        npm i jsdoc
+                        <br>
+                        Esto lo que hace es que descarga los módulos y los añade a una dependencia en el archivo package-lock.json
+                    </li>
+                    <li>
+                        Creamos un archivo en la carpeta que se llame jsdoc.json, el cual sera el archivo de configuración del jsdoc y en el cual copiaremos esto:
+                        <br>
+                        {<br>
+                            "plugins": [],<br>
+                            "source": {<br>
+                                "include": ["src"],     <span>//carpeta de la que va  a leer lor archivos</span> <br>
+                                "includePattern": ".+\\.js(doc|x)?$",    <span>//leera los archivos con extension .js</span> <br>
+                                "excludePattern": "(node_modules|docs)"	<span>//lo que no va a leer seran dos carpetas</span> <br>
+                            },  <br>
+                            "templates": {	    <span>//que va a generar la documentacion</span> <br>
+                                "cleverlinks": false, <br>
+                                "monospacelinks": false <br>
+                            }, <br>
+                            "opts": {	<br>
+                                "recurse": true,	 <span>//para que pueda leer los archivos recurrentemente</span> <br>
+                                "destination" : "./docs",	 <span>//carpeta de destino de los archivos</span> <br>
+                                "template": "" <br>
+                            } <br>
+                        } 
+                        <br><br>
+                        Los comentarios no los introduzcais!!!! Es solo información
+                    </li>
+                    <li>
+                        Crear una carpeta src que sera la carpeta desde la que va a leer los archivos este json
+                        y meter el archivo index.js dentro de esta carpeta que sera donde metamos el proyecto que queramos documentar.
+                    </li>
+                    <li>
+                        En la terminal voy a decirle que archivo de configuracion quiero que use, es el que hemos creado (jsdoc.json) con los comandos:
+                        <br>
+                        jsdoc -c jsdoc.json
+                        <br>
+                        npx jsdoc -c jsdoc.json
+                    </li>
+                    <li>
+                        En el archivo package.json en la parte de scripts, a parte de test añadimos otro mas <br>
+                        "docs": jsdoc -c jsdoc.json <br>
+                        Esto va aser el comando que usaremos para generar la documentación. El comando sera este: <br>
+                        npm run docs <br>
+                        Esto generara una carpeta docs.
+                    </li>
+                    <li>
+                        Finalmente en la carpeta de docs tendreis un index.html, si abris ese index os abrira una pagina con toda la documentación que habeis creado.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

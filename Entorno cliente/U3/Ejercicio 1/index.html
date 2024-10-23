@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación de ejercicios 1</title>
+    <script src="funciones.js"></script>
+    <style>
+        table, tr, th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1</h2>
+        <script>
+            let a = parseInt(prompt("escriba el primer número"));
+            let b = parseInt(prompt("escriba el segundo número"));
+            let c = parseInt(prompt("escriba el tercer número"));
+            let d = parseInt(prompt("escriba el cuarto número"));
+        
+            let arr = [a,b,c,d];
+            let max = maximo(arr);
+            document.write("El número mas grande es: " + max);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2</h2>
+        <script>
+            let rand = lanzamiento();
+            document.write(rand);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3</h2>
+        <script>
+            let resultados = simulacion();
+            document.write(resultados);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4</h2>
+        <script>
+            let rad = 20;
+            let vol = volumenEsfera(rad);
+            document.write("Teniendo en cuenta que el radio es " + rad + "<br>" + "El volumen de la esfera es " + vol);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 5</h2>
+        <script>
+            let area = areaCirculo(rad);
+            document.write("Teniendo en cuenta que el radio del circulo es " + rad + "<br> El área de este sera " + area);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 6</h2>
+        <script>
+            let base = parseInt(prompt("Escriba la base de la potencia"));
+            let exponente = parseInt(prompt("Escriba el exponente de la potencia"));
+            let pot = potRec(base, exponente);
+            document.write(base + " elevado a " + exponente + " es: " + pot);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 7</h2>
+        <script>
+             let num = parseInt(prompt("Escriba un número del 1 al 10 para calcular su factorial"));
+            let fac = factorial(num);
+            document.write("El factorial de " + num + " es " + fac + "<br>Puede comprobarlo en la siguiente tabla");
+        </script>
+        <br><br>
+        <div id="tabla"></div>
+        <script>
+            tablaFactorial();
+        </script>
+    </section>
+</body>
+</html>

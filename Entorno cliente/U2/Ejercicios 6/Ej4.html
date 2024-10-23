@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <h4>A)</h4>
+    <a onclick="irAlMarcador()">Ir al marcador</a>
+
+    <h4>B)</h4>
+    <p>Nombre del host</p>
+    <p id="parrafo"></p>
+    <script>
+        document.getElementById("parrafo").innerHTML = location.hostname;
+    </script>
+
+    <h4>C)</h4>
+    <p>URL completa</p>
+    <p id="parrafo2"></p>
+    <script>
+        document.getElementById("parrafo2").innerHTML = location.href;
+    </script>
+
+    <h4>D)</h4>
+    <p>A donde quieres ir</p>
+    <a onclick="irA(prompt('Escriba la direccion de lapágina web donde quiera ir'))">Clic para ir a donde quieras</a>
+
+    <h4>E)</h4>
+    <p>Protocolo de la página actual</p>
+    <p id="parrafo3"></p>
+    <script>
+        document.getElementById("parrafo3").innerHTML = location.protocol;
+    </script>
+
+    <h4>F)</h4>
+    <a onclick="window.location.reload()">Recargar al página</a>
+    <hr>
+
+    <p>Parrafos</p>
+    <p>de</p>
+    <p>relleno</p>
+    <p>para</p>
+    <p>ver</p>
+    <p>que</p>
+    <p>la</p>
+    <p>página</p>
+    <p>se</p>
+    <p>mueva</p>
+    <p>hacia</p>
+    <p>abajo</p>
+    <p>y</p>
+    <p>se</p>
+    <p>pueda</p>
+    <p>ver</p>
+    <p>mejor</p>
+    <hr>
+
+    <h3>Marcador!!!!</h3>
+    <a id="marca_dor" onclick="nombreMarcador()">Mostrar nombre del marcador</a>
+</body>
+</html>

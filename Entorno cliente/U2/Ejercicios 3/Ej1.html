@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let cadena = "hola quE tal, cuAnto tiempo compañero";
+
+        document.write("<h3> a) Cadena Invertida</h3>");        
+        let cadInv = invierteCadena(cadena);
+        document.write(cadInv);
+
+        document.write("<h3> b) Palabras Invertidas</h3>");
+        let palabraInvertid = inviertePalabras(cadena);
+        document.write(palabraInvertid);
+
+        document.write("<h3> c) Palabras más larga</h3>");
+        let palabraLarga = encuentraPalabraMasLarga(cadena);
+        document.write(palabraLarga);
+
+        document.write("<h3> d) Palabras con mayor cantidad de letras que i</h3>");
+        let cantLetras = 6;
+        let arrPalabras = fltraPalabrasMasLargas(cadena, cantLetras);
+        document.write(arrPalabras);
+
+        document.write("<h3> e) Formatear cadena</h3>");
+        let cadForm = cadenaBienFormada(cadena)
+        document.write(cadForm);
+
+    </script>
+</body>
+</html>

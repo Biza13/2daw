@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let segEmp = new Date().getTime();
+        //let nom = "Introduzca su nombre";
+        //let ape = "Introduzca sus apellidos";
+
+        let nom = prompt("Introduzca su nombre");
+        let ape = prompt("Introduzca sus apellidos");
+        let segTer = new Date().getTime();
+        let segTranscurridos = calcularSeg(segEmp, segTer);
+        document.write("En introducir " + nom + " " + ape + " has tardado " + segTranscurridos + " segundos");
+    </script>
+</body>
+</html>

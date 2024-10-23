@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desventajas</title>
+    <link href="estilos.css" rel="stylesheet" />
+  </head>
+  <body class="bdes">
+    <h1>DESVENTAJAS DE USAR JSDOC</h1>
+    <div>
+      <section>
+        <h3>1. Curva de aprendizaje</h3>
+        <p>
+          Para los desarrolladores que no están familiarizados con JSDoc, puede
+          haber una curva de aprendizaje. Entender el formato, las etiquetas y
+          cómo documentar correctamente puede tomar algo de tiempo.
+        </p>
+      </section>
+      <section>
+        <h3>2. Mantenimiento manual</h3>
+
+        <ul>
+          <li>
+            Aunque JSDoc genera documentación automáticamente, sigue dependiendo
+            de comentarios manuales en el código. Si los comentarios no se
+            actualizan cuando el código cambia, la documentación puede quedar
+            desactualizada o incorrecta.
+          </li>
+          <li>
+            El desarrollador debe ser disciplinado para mantener los comentarios
+            actualizados con el código fuente, lo que no siempre ocurre en
+            equipos grandes o en proyectos con alta rotación de personal.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>3. Comentarios excesivos o innecesarios</h3>
+
+        <ul>
+          <li>
+            JSDoc puede fomentar la tendencia a escribir comentarios
+            innecesarios o redundantes. Documentar cosas triviales, como
+            funciones muy simples, puede sobrecargar el código con comentarios
+            que no agregan valor.
+          </li>
+          <li>
+            Si el código está bien escrito y claro, algunos desarrolladores
+            argumentan que los comentarios pueden llegar a ser superfluos y sólo
+            complican la lectura.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>4. Limitaciones en la verificación automática</h3>
+
+        <ul>
+          <li>
+            Aunque JSDoc documenta tipos de datos y estructuras, no realiza una
+            verificación estricta de los mismos. No es un verificador de tipos
+            en tiempo real, por lo que puede documentar algo incorrectamente sin
+            generar advertencias o errores, lo que podría generar
+            inconsistencias entre lo que está documentado y lo que realmente
+            sucede en el código.
+          </li>
+          <li>
+            Aunque JSDoc se puede usar con herramientas como TypeScript para
+            verificar tipos, si se usa solo, no proporciona validaciones
+            robustas.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>5. Dependencia de herramientas externas</h3>
+
+        <ul>
+          <li>
+            Para generar la documentación en formato HTML o navegable, se
+            requiere ejecutar herramientas externas que interpreten los
+            comentarios de JSDoc. Esto agrega una capa extra de configuración y
+            dependencia en el flujo de trabajo.
+          </li>
+          <li>
+            Además, estas herramientas pueden necesitar mantenimiento y
+            actualizaciones, lo que agrega complejidad al entorno de desarrollo.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>6. No sustituye la documentación de alto nivel</h3>
+        <p>
+          JSDoc está enfocado en documentar el código a nivel de funciones,
+          métodos, clases, etc. Sin embargo, no es una herramienta adecuada para
+          documentar el diseño arquitectónico de alto nivel de una aplicación.
+          Para comprender cómo funciona todo el sistema, a veces se necesitan
+          diagramas, documentación más general o explicaciones adicionales que
+          no se pueden proporcionar solo con JSDoc.
+        </p>
+      </section>
+      <section>
+        <h3>7. Compatibilidad limitada con ciertos entornos</h3>
+        <p>
+          Aunque JSDoc es muy popular en proyectos JavaScript y TypeScript, no
+          todos los proyectos o entornos lo adoptan, especialmente si estás
+          trabajando en un ecosistema híbrido con otros lenguajes de
+          programación. En estos casos, puede que JSDoc no sea la mejor opción o
+          que haya incompatibilidades.
+        </p>
+      </section>
+      <section>
+        <h3>8. Poca flexibilidad para casos especiales</h3>
+        <p>
+          JSDoc está diseñado principalmente para documentar JavaScript y
+          variantes como TypeScript. Sin embargo, cuando se utilizan
+          características avanzadas de JavaScript como el uso dinámico de tipos
+          o patrones funcionales complejos, JSDoc puede no ser suficientemente
+          flexible o puede requerir anotaciones complejas que no siempre son
+          fáciles de manejar o interpretar.
+        </p>
+      </section>
+      <section>
+        <h3>9. Limitada personalización de la salida</h3>
+        <p>
+          La documentación generada por JSDoc sigue un formato predeterminado
+          que puede no ser el más adecuado o personalizable para algunos
+          proyectos. Aunque se pueden personalizar temas y plantillas, esto
+          requiere conocimientos adicionales de configuración.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

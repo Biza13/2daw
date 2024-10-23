@@ -1,0 +1,30 @@
+#nombre{
+    background-color: rgb(129, 243, 129);
+}
+
+#edad{
+    background-color: rgb(249, 113, 113);
+}
+
+#nombre:hover{
+    background-color: rgb(244, 244, 194);
+}
+
+#edad:hover{
+    background-color: rgb(244, 244, 194);
+}
+
+#nombre:focus{
+    background-color: rgb(135, 135, 234);
+    border-color: blue;
+}
+
+/*El + label es par ponerselo al hermano de abajo*/
+#sexo:checked + label{
+    font-style: italic;
+}
+
+#condiciones:checked + label{
+    background-color: yellow;
+    font-weight: bold;
+}

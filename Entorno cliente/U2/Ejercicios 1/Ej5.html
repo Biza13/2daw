@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let opcion = parseInt(prompt("Introduzca una de las siguientes opciones: \n 1.Potencia \n 2.Raiz \n 3.Redondeo \n 4.Trigonometría"));
+
+        switch (opcion){
+            case 1:
+                let numPow = parseInt(prompt("Introduzca la base"));
+                let exp = parseInt(prompt("Intruduzca el exponente"));
+                let pow = potencia(numPow,exp);
+                document.write("La potencia de " + numPow + " elevado a " + exp + " es " + pow);
+            break;
+            case 2:
+                let numRaiz = parseInt(prompt("Introduzca un número NO negativo y le mostrare su raiz"));
+                let rai = raiz(numRaiz);
+                document.write("La raíz de " + numRaiz + " es " + rai);
+            break;
+            case 3:
+                let numRdondeo = parseInt(prompt("Intruduzca un número decimal y lo redondeare arriba y abajo"));
+                let redondear = redondeo(numRdondeo);
+                document.write(redondear);
+            break;
+            case 4:
+                let numTang = parseInt(prompt("Introduzca los grados y le dire el seno, el coseno y la tangente del triangulo"));
+                let datos = trigonometria(numTang);
+                document.write(datos);
+            break;
+        }
+    </script>
+</body>
+</html>

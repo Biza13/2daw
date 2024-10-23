@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    <h2>Forma 1 con array</h2>
+    <script>
+        let arr = [2,5,9,3,"hola","que","tal"];
+        let slots = contarParametros(arr);
+        document.write("A la función se le pasan estos parámetros 2,5,9,3,'hola','que','tal' <br>");
+        document.write("La cantidad de parametros pasada a la función es de " + slots + "<br><br>");
+    </script>
+    <h2>Forma 2 con el array de arguments dentro de la función</h2>
+    <script>
+        let slots2 = countTheArgs(8,6,9,"hola","don","Pepito");
+        document.write("A la función se le pasan estos parámetros 2,5,9,3,'hola','don','Pepito' <br>");
+        document.write("La cantidad de parametros pasada a la función es de " + slots2);
+    </script>
+</body>
+</html>

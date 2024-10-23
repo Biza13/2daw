@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+    <script src="funciones.js"></script>
+  </head>
+  <body>
+    <p>Con setInterval nos muestra la cuenta atrás</p>
+    <p id="parrafo"></p>
+    <script>
+      let tiempo = 60;
+      setInterval(() => {
+        contador("parrafo");
+      }, 1000);
+    </script>
+    <br />
+    <p>
+      Con setTimeout hara lo que le pongas en el codigo despues de un tiempo,
+      que le especifiques
+    </p>
+    <br />
+
+    <p id="segundoparrafo"></p>
+
+    <script>
+      let tiempo2 = 60; // Tiempo inicial en segundos
+
+      function cuentaAtras() {
+        // Mostrar la cuenta atras en el párrafo cada segundo
+        for (let i = 0; i <= tiempo2; i++) {
+          setTimeout(function () {
+            if (i < tiempo2) {
+              document.getElementById("segundoparrafo").innerHTML = tiempo2 - i; // Mostrar el valor restante
+            }
+            /*Espera i segundos antes de ejecutar pero cuntando desde la primera vez que se ejecuta, es decir cuando i es 0 se ejecuta 
+            instantaneamente, cuando es 1 espera un segundo desde la primera vez que se ejecuto y saca tiempo2-i, cuando es 2 espera dos
+            segundos desde que se ejecuto por primera vez y saca tiempo2-i y asi sucesivamente*/
+          }, i * 1000);
+        }
+      }
+
+      cuentaAtras(); // Iniciar el temporizador
+    </script>
+  </body>
+</html>

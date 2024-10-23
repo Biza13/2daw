@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <h4>A)</h4>
+    <p>Fecha ultima actualizacion</p>
+    <p id="parrafo"></p>
+    <a onclick="actualizarFecha()">Click para actualizar</a>
+
+    <h4>B)</h4>
+    <p>Ver la url de la cual viene el usuario</p>
+    <a onclick="deDondeViene()">Clic para ver de donde viene</a>
+    <p id="referencia"></p>
+
+    <h4>C)</h4>
+    <p>Ver el titulo del documento actual</p>
+    <a  onclick="enseñarTitulo()">Clic para ver el titulo</a>
+    <p id="titulo"></p>
+
+    <h4>D)</h4>
+    <p>Muestra la url completa</p>
+    <a onclick="verUrl()">ver la url</a>
+    <p id="url"></p>
+
+    <h4>E)</h4>
+    <p>Ejemplos de sobreescritura</p>
+    <script>
+        document.write("Ejemplo que no sobreescribe hecho con un document.write() porque la págino no ha terminado de cargarse");
+    </script>
+    <br>
+    <p>La página ya esta cargada, asi que si pinchas abajo, todo lo escrito en la pagina se sustituira por un téxto</p>
+    <br>
+    <a onclick="paginaCargada()">Clic para sobreescribir el contenido de la página</a>
+</body>
+</html>

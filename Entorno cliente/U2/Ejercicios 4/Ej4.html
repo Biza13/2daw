@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <script>
+        let continuar = true;
+        do{
+            let cateto1 = parseFloat(prompt("Escriba la tamaño del cateto 1"));
+            let cateto2 = parseFloat(prompt("Escriba la tamaño del cateto 2"));
+            let hipot = hipotenusa(cateto1,cateto2);
+            //el hipot.toFixed(2) es para decirle que solo coja dos decimales en caso de tener mas de dos
+            document.getElementById("parrafo").innerHTML += ("La hipotenusa es: " + hipot.toFixed(2) +"<br>");
+            //El confirm hace aparecer una ventana emergente(como el alert) con aceptar y cancelar, lo cual devuelve el valor true en aceptar o falase en cancelar
+            continuar = confirm("¿Quieres calcular otra hipotenusa?");
+        }while (continuar == true);
+    </script>
+</body>
+</html>

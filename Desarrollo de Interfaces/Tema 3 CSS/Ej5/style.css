@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+}
+
+section{
+    width: 20%;
+    height: 250px;
+    display: inline-block;
+    margin: 30px;
+    padding-top: 110px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.primero{
+    background-color: aquamarine;
+    cursor: crosshair;
+}
+
+.a{
+    background-color: rgb(42, 134, 93);
+    cursor: help;
+}
+
+.b{
+    background-color: rgb(171, 81, 194);
+    cursor: move;
+}
+
+.c{
+    background-color: rgb(213, 165, 92);
+    cursor: pointer;
+}
+
+.d{
+    background-color: aquamarine;
+    cursor: progress;
+}
+
+.e{
+    background-color: rgb(42, 134, 93);
+    cursor: text;
+}
+
+.f{
+    background-color: rgb(171, 81, 194);
+    cursor: wait;
+}
+
+.g{
+    background-color: rgb(213, 165, 92);
+    cursor: vertical-text;
+}
+
+.h{
+    background-color: aquamarine;
+    cursor: alias;
+}
+
+.i{
+    background-color: rgb(42, 134, 93);
+    cursor: no-drop;
+}
+
+.j{
+    background-color: rgb(171, 81, 194);
+    cursor: grab;
+}
+
+.k{
+    background-color: rgb(213, 165, 92);
+    cursor: grabbing;
+}
+
+.l{
+    background-color: aquamarine;
+    cursor: zoom-in;
+}
+
+.m{
+    background-color: rgb(42, 134, 93);
+    cursor: zoom-out;
+}
+
+.n{
+    background-color: rgb(171, 81, 194);
+    cursor: not-allowed;
+}
+
+.o{
+    background-color: rgb(213, 165, 92);
+    cursor: no-drop;
+}
+
+.p{
+    background-color: aquamarine;
+    cursor: copy;
+}
+
+.q{
+    background-color: rgb(42, 134, 93);
+    cursor: ew-resize;
+}
+
+.r{
+    background-color: rgb(171, 81, 194);
+    cursor: ns-resize;
+}
+
+.s{
+    background-color: rgb(213, 165, 92);
+    cursor: nwse-resize;
+}
+
+.t{
+    background-color: aquamarine;
+    cursor: nesw-resize;
+}
+
+.u{
+    background-color: rgb(42, 134, 93);
+    cursor: col-resize;
+}
+
+.v{
+    background-color: rgb(171, 81, 194);
+    cursor: row-resize;
+}
+
+.x{
+    background-color: rgb(213, 165, 92);
+    cursor: context-menu;
+}
+
+.y{
+    background-color: aquamarine;
+    cursor: none;
+}
+
+.z{
+    background-color: rgb(42, 134, 93);
+    cursor: url("./amg.png"), auto; /*poner url y la url de la imagen que no sea muy grande o no funcionara*/
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    <script>
+        let num = "159";
+        let resultado = tieneTresDigitos(num);
+
+        let num1 = "15";
+        let resultado1 = tieneTresDigitos(num1);
+
+        let num2 = "1595";
+        let resultado2 = tieneTresDigitos(num2);
+
+        let respuesta;
+        if (resultado == true){
+            respuesta = "Contiene sólo 3 digitos"
+        }else{
+            respuesta = "NO tiene sólo 3 digitos"
+        }
+
+        let respuesta1;
+        if (resultado1 == true){
+            respuesta1 = "Contiene sólo 3 digitos"
+        }else{
+            respuesta1 = "NO tiene sólo 3 digitos"
+        }
+
+        let respuesta2;
+        if (resultado2 == true){
+            respuesta2 = "Contiene sólo 3 digitos"
+        }else{
+            respuesta2 = "NO tiene sólo 3 digitos"
+        }
+
+        document.write(num + " " + respuesta + "<br>");
+        document.write(num1 + " " + respuesta1 + "<br>");
+        document.write(num2 + " " + respuesta2);
+    </script>
+</body>
+</html>

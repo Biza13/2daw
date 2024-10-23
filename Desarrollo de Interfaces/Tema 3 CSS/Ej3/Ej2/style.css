@@ -1,0 +1,11 @@
+a:visited{
+    color:rgb(76, 211, 76);
+}
+
+h2:target{
+    color: green;
+}
+
+h2:target::before{
+    content: ">";
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        let cadena1 = "Hola don pepito, hola don jose, paso usted por mi casa, por su casa yo pase";
+        let cadena2 = "don jose";
+        let cadena3 = "doña amparo";
+
+        let comparativa1 = esParte (cadena1, cadena2);
+        let comparativa2 = esParte (cadena1, cadena3);
+
+        document.write("Es parte de la cadena principal ( " + cadena1 + " ), la subcadena ( " + cadena2 + " )? <br>" + comparativa1 + "<br><br>");
+        document.write("Es parte de la cadena principal ( " + cadena1 + " ), la subcadena ( " + cadena3 + " )? <br>" + comparativa2);
+    </script>
+</body>
+</html>

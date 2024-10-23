@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    <script>
+        let cantNumeros = parseInt(prompt("Cuantos números quieres sumar"));
+        let arrNumeros = [];
+        let suma;
+
+        for(let i = 0; i<cantNumeros; i++){
+            arrNumeros[i] = parseInt(prompt("Introduce el número " + (i+1))) 
+        }
+
+        suma = sum(arrNumeros);
+        document.write("los números introducidos son " + arrNumeros + "<br>");
+        document.write("La suma de todos ellos es " + suma);
+    </script>
+</body>
+</html>

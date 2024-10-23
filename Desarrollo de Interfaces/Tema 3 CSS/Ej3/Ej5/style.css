@@ -1,0 +1,59 @@
+/*Ejercicio a*/
+.a li:first-child{
+    color: green;
+}
+
+.a li:last-child{
+    color: red;
+}
+
+/*Ejercicio b*/
+.b p:nth-child(2){
+    border-top: 1px solid black;
+}
+
+.b p:last-child{
+    border-bottom: 1px solid black;
+}
+
+/*Ejercicio c*/
+.c ol:nth-child(2) li:nth-child(even){
+    text-decoration: underline;
+}
+
+.c ol:nth-child(2) li:nth-child(odd){
+    text-decoration: line-through;
+}
+
+.c ol:nth-child(3) li:nth-child(4n){    /*cada 4 los pinta*/
+    color: green;
+}
+
+/*Ejercicio d*/
+.d h3:nth-child(odd){
+    text-decoration: underline;
+}
+
+/*Ejercicio e*/
+.e strong:first-of-type{
+    color: red;
+}
+
+/*Ejercicio f*/
+.f li::first-letter{
+    text-decoration: underline;
+}
+
+/*Ejercicio g*/
+.g strong::before{
+    content: "¡";
+}
+
+.g strong::after{
+    content: "!";
+}
+
+/*Ejercicio h*/
+.h p::before{
+    content: "-❤️";
+}

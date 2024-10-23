@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Escribo el titulo de la primera tabla
+        document.write("<h3>Tabla del 1" + "</h3>");
+
+        //primer for para el primer operador de nuestras multiplicaciones que ira aumentando en 1 cada vuelta
+        for(i = 1; i<=10; i++){
+            /*segundo for paara aumentar el segundo operador de las multiplicaciones que dará 10 vueltas antes de que cambien al el primer 
+            operador de número*/
+            for(x = 1; x<=10; x++){
+                document.write(i + "x" + x + "=" + i*x + "<br>");
+            }
+            //este if es simplemente para que no me ponga tabla del 11 ya que no va a haber tabla del 11
+            if (i<10){
+                //escribir el titulo de cada tabla
+                document.write("<h3><br>" + "Tabla del " + (i+1) + "</h3>");
+            }
+        }
+    </script>
+</body>
+</html>

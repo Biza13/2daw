@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Funciones.js"></script>
+</head>
+<body>
+    <h2>Forma 1 sin pedir al usuario los datos</h2>
+    <script>
+        let arr1 = ["Roca", "Arena", "Lapislazuli",5];
+        let arr2 = ["Pelota", "Bicicleta", "Plastelina"];
+        let arrayConcat = combineTwoArrays(arr1, arr2);
+        document.write("El primer array contiene " + arr1 + "<br>");
+        document.write("El segundo array contiene " + arr2 + "<br>");
+        document.write("La concatenación de los dos arrays es " + arrayConcat);
+    </script>
+    <h2>Forma 2 Pidiendo datos al usuario</h2>
+    <script>
+        let cantNumeros = parseInt(prompt("Cuántos elementos quieres meter en el primer array"));
+        let arr1_2 = [];
+        let arr2_2 = [];
+
+        for(let i = 0; i<cantNumeros; i++){
+            arr1_2[i] = prompt("Introduce el elemento " + (i+1));
+        }
+
+        let cantNumeros2 = parseInt(prompt("Cuántos elementos quieres meter en el segundo array"));
+
+        for(let i = 0; i<cantNumeros2; i++){
+            arr2_2[i] = prompt("Introduce el elemento " + (i+1));
+        }
+
+        let arrayConcat2 = combineTwoArrays(arr1_2, arr2_2);
+        document.write("El primer array contiene " + arr1_2 + "<br>");
+        document.write("El segundo array contiene " + arr2_2 + "<br>");
+        document.write("La concatenación de los dos arrays es " + arrayConcat2);
+    </script>
+</body>
+</html>

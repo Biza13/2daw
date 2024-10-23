@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="categoria"></h3>
+    <script>
+        let edad = prompt("Escriba su edad");
+        if (edad > 18){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es absoluto";
+        }else if (edad >=16 && edad <=18){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es juvenil";
+        }else if (edad >=14 && edad <=15){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es cadete";
+        }else if (edad >=12 && edad <=13){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es infantil";
+        }else if (edad >=10 && edad <=11){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es alevin";
+        }else if (edad >=8 && edad <=9){
+            document.getElementById("categoria").innerHTML = "La categoria que le corresponde es benjamin";
+        }else //para cuando sea un número menor a 8
+            document.getElementById("categoria").innerHTML = "Demasiado pequeño aún, ya tendrás tiempo."
+    </script>
+</body>
+</html>

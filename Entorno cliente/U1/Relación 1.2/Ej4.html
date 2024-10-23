@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numCol = prompt("Escriba el número de columnas para la tabla.");
+        let altura = prompt("Escriba la altura de las celdas en pixeles.");
+        let anchura = prompt("Escriba la anchura de las celdas en pixeles.");
+
+        document.write("<table border='1' cellspacing = '2' style='background-color: black; width: 200px;'>");
+        document.write("<tr style='background-color: white; height: " + altura + "px;'>");
+
+        //declarar variable para que ela bucle while empiece a contar hasta llegar al número de columnas indicado por el usuario
+        let x = 1;
+        while (x <= numCol){
+            document.write("<td width = " + anchura + ">&nbsp;</td>");
+            x++;
+        }
+
+        //cerrar el tr y la tabla
+        document.write("</tr>");
+        document.write("</table>");
+    </script>
+
+</body>
+</html>
