@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+div{
+    width: 300px;
+    height: 120px;
+    margin: 1em;
+    background-color:rgb(183, 178, 178);
+
+    /*Para poner las letras en el centro*/
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+}
+
+div:first-of-type{
+    box-shadow: -8px -8px 0px red;
+}
+
+div:nth-child(2){
+    box-shadow: -8px -8px 10px rgb(27, 0, 135);
+}
+
+div:nth-child(3){
+    /*los 10 px es para que empieze desde la linea de la caja*/
+    box-shadow: -10px -10px 0px 10px red;
+}
+
+div:nth-child(4){
+    /*Ejex, ejey, difuminacion, tamaño, color*/
+    box-shadow: -8px -8px 10px 8px rgb(0, 88, 196);
+}
+
+div:nth-child(5){
+    box-shadow: 0px 0px 12px  rgb(135, 0, 133);
+}
+
+div:nth-child(6){
+    box-shadow: 0px 0px 10px 10px rgb(229, 245, 6);
+}
+
+div:nth-child(7){
+    box-shadow: -10px -10px 0px rgb(128, 1, 167) inset;
+}
+
+div:nth-child(8){
+    box-shadow: -10px -10px 12px rgb(0, 135, 83) inset;
+}
+
+div:nth-child(9){
+    box-shadow: -10px -10px 0px 8px rgb(219, 3, 179) inset;
+}
+
+div:nth-child(10){
+    box-shadow: -10px -10px 10px 8px rgb(3, 219, 21) inset, 2px 2px 10px rgb(3, 219, 21) inset;
+}
+
+div:nth-child(11){
+    box-shadow: 0px 0px 10px rgb(52, 1, 125) inset;
+}
+
+div:nth-child(12){
+    box-shadow: 0px 0px 10px 10px rgb(77, 77, 78) inset;
+}

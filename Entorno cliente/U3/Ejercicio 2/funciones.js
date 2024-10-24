@@ -26,3 +26,73 @@ function mayMenMed(arr) {
     "<br>El número del medio es " + med + 
     "<br>El número más pequeño es " + min;
 }
+
+function buscarEnArray(arr, busca){
+    let palabra = busca.toLowerCase();
+    //El includes devolvera true si si esta la palabra y false si no esta
+    return arr.includes(palabra);
+}
+
+function generarRandoms(cant=20, max=100){
+    let arr = [];
+    for(let i = 0; i<cant; i++){
+        arr[i] = Math.round(Math.random()*max);
+    }
+    return arr;
+}
+
+function compararArrays(arr1, arr2){
+    let int = [];
+    let uni = [];
+    let dif = [];
+    /* let fusion = [];
+    fusion = arr1.concat(arr2); */
+    for(let i = 0; i<arr1.length; i++){
+        if (arr2.includes(arr1[i])){
+            int.push(arr1[i]);
+        }else{
+            dif.push(arr1[i]);
+        }
+    }
+    for(let i = 0; i<arr2.length; i++){
+        if (!arr1.includes(arr2[i])){
+            dif.push(arr2[i])
+        }
+    }
+
+    /* fusion.forEach(element => {
+        if (!uni.includes(element)){
+            uni.push(element);
+        }
+    }); */
+
+    /*Se puede usar esto en lugar de lo que he comentado en el codigo,
+    desglosado significa:
+    1) el operador spread (...nombreArray), descompone el array en cada uno de sus elementos
+    2) si usas [...nombreArray, ...nombreArray2] estas descomponiendo los array y fusionandolos 
+    3) el new set se utiliza para eliminar elementos duplicados de un array
+    4) los ... antes del new set lo vuelve a componer pero ahora sin los elementos duplicados
+    Basicamente lo que hemos hecho ha sido fusionarlas y aplicarles el set*/
+    uni = [...new Set([...arr1, ...arr2])];
+
+    return "Elementos que se repiten en los arrays--> " + int + 
+    "<br> Elementos que no se repiten en los arrays--> " + dif +
+    "<br> Fusión de los dos arrays sin repetir elementos--> " + uni
+}
+
+function contenido(cad){
+    let arr = [];
+    //con .textContent coge el texto contenido de las etiquetas
+    let parrafos = document.getElementById("p").textContent;
+    arr = parrafos.split(" ")
+
+    /*1)El metodo filter crea un nuevo array con los elementos que cumplan la condiccion especificada
+      2)element representa cada elemento del array
+      3)trim elimina espacios en blanco al final y principio de una cadena
+      porlotanto eliminamos espacios en blanco y puede que quede o no una cadena vacia
+      con la comprobacion de (!== "") si NO esta vacia la cadena que devuelva trim devolvera true
+      si por lo contrari SI esta vacia devolvera false
+      4)por lo tanto filter devolvera un nuevo array solo con los elementos que devuelvan true*/
+    arr = arr.filter(element => element.trim() !== "");
+    return arr;
+}
