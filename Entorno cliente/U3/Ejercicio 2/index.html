@@ -9,7 +9,7 @@
 <body>
     <section>
         <h2>Ejercicio 1</h2>
-        <!-- <script>
+        <script>
             let num;
             let arr = new Array(5);
             for(let i = 0; i < arr.length; i++){
@@ -18,26 +18,26 @@
             }
             let orden = mayMenMed(arr);
             document.write(orden);
-        </script> -->
+        </script>
     </section>
 
     <section>
         <h2>Ehercicio 2</h2>
-        <!-- <script>
+        <script>
             let arr1 =  ["azul", "amarillo", "rojo", "verde", "café", "rosa"];
             let color = prompt("Escriba un color y le dire si lo tengo en la lista");
             let esta = buscarEnArray(arr1, color);
             document.write(esta);
-        </script> -->
+        </script>
     </section>
 
     <section>
         <h2>Ejercicio 3</h2>
-        <!-- <script>
+        <script>
             let maximo = prompt("Escriba el número que será el máximo de los números random");
             let randoms = generarRandoms(maximo);
             document.write(randoms);
-        </script> -->
+        </script>
     </section>
 
     <section>
@@ -63,15 +63,13 @@
     <section>
         <h2>Ejercicio 6</h2>
         <div id="p">
-            <p>El Gobierno propone blindar el parque público de vivienda para impedir su venta a precio libre</p>
-            <p>La simbiosis entre corales y algas, observada en arrecifes fósiles de 385 millones de años, permitió una explosión de vida que da de comer a 500 millones de personas</p>
-            <p>El secretario de Defensa, Lloyd Austin, advierte de que sería “muy, muy grave” si esas tropas se desplegasen para combatir en la guerra en Ucrania</p>
+            <p>El Gobierno propone blindar el parque público de vivienda para impedir su venta a precio libre.</p>
+            <p>La simbiosis entre corales y algas, observada en arrecifes fósiles de 385 millones de años, permitió una explosión de vida que da de comer a 500 millones de personas.</p>
+            <p>El secretario de Defensa, Lloyd Austin, advierte de que sería “muy, muy grave” si esas tropas se desplegasen para combatir en la guerra en Ucrania.</p>
         </div>
         <script>
-            /*No esta terminado*/
-            let si = "gobierno";
-            let no = "papagallo";
-            let siNo = contenido(si);
+            let cadena1 = prompt("Escriba una palabra o una cadena y le dire si esta contenida en los textos anteriores");
+            let siNo = contenido(cadena1);
             document.write(siNo);
         </script>
     </section>
@@ -79,21 +77,28 @@
     <section>
         <h2>Ejercicio 7</h2>
         <script>
-
+            let arr4 = generarRandoms();
+            document.write("Array desordenado " + arr4 + "<br>");
+            let ordenAsc = ordenarBurbuja(arr4);
+            document.write("Array ordenado de menor a mayor y sin duplicados " + ordenAsc);
         </script>
     </section>
 
     <section>
         <h2>Ejercicio 8</h2>
         <script>
-
+            let nombres = prompt("Escriba cuantos nombres quiera separados por una coma");
+            let cadOrd = ordenarNombres(nombres);
+            document.write(cadOrd);
         </script>
     </section>
 
     <section>
         <h2>Ejercicio 9</h2>
         <script>
-
+            let cadena = prompt("Escriba una frase");
+            let cosas = infoCadena(cadena);
+            document.write(cosas);
         </script>
     </section>
 </body>
