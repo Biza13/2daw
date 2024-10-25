@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de funciones</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <h2>Usando la palabra function, llamando las funciones de una pagina exterior al documento</h2>
+    <script>
+        let a = 10;
+        let b = 5;
+        let resultado = operacion(a, b, suma(a,b));
+        document.write(resultado);
+    </script>
+
+    <h2>Sin usar la palabra function desde el mismo script</h2>
+    <script>
+        //declaracion de la funcion arrow con dos parametros y el tercero que sera una funcion
+        //y luego => le decimos que nos devuelva el resultado de la funcion con los parametros a y b
+        const operacion1 = (a, b, func) => func(a,b);
+
+        //llamamos a operacion1 con los parametros a y b y el tercer parametro son los parametros de la funcion
+        // y => nos devuelve la operacion de a y b (seria el bloque de la funcion), simplemente cambiando el simbolo 
+        //nos hara la operacion deseada.
+        document.write(operacion1(a,b, (a,b) => a*b));
+    </script>
+
+    <h2>Destructure de un array</h2>
+    <script>    
+        const arr = [1, 2, 3, 4, 5]
+
+        //nos coge el primer y segundo valor del array y los mete en estas variables
+        //y resto sera un array por los ... de los valores 3, 4 y 5.
+        let [primero,segundo, ...resto] = arr;
+        document.write("El primero:" + primero + "<br> " + "El segundo: " + segundo + "<br> " + "El resto: " + resto);
+    </script>
+
+    <h2>Destructure de un objeto</h2>
+    <script>
+        const articulo = {codigo:5, nombre:"teclado", precio:9.50};
+        
+        //las dos funciones son lo mismo solo que en laprimera accede al articulo y en la segunda
+        //accedes al parametro del objeto
+        function pvp (art){
+            return art.precio * 1.21;
+        }
+
+        function pvp2 ({precio}){
+            return precio * 1.21;
+        }
+
+        //lo mismo que las funciones de arriba pero mas sencillo
+        //cogemos el atributo del objeto ({precio})
+        // y => el return sera el precio *1.21
+        const pvp3 = ({precio}) => precio * 1.21;
+
+        //para llamarlo tienes que decir la funcion (pvp3) y de que objeto lo quieres en este caso (articulo)
+        console.log(pvp3(articulo));
+
+    </script>
+</body>
+</html>

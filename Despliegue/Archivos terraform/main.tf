@@ -15,14 +15,17 @@ provider "aws" {
 
 # Crear una VPC
 resource "aws_vpc" "Desarrollo-web-VPC" {
-  cidr_block = "10.0.0.0/24"
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    "Name" = "VPC"
+  }
 }
 
 #red pública
 resource "aws_subnet" "subred-publica" {
-  vpc_id = aws_vpc.Desarrollo-web-VPC
-  cidr_block = "10.0.0.16/28"
-  map_public_ip_on_launch = true
+  vpc_id = aws_vpc.Desarrollo-web-VPC.id
+  cidr_block = "10.0.2.0/24"
+  map_public_ip_on_launch = true        #necesario para las redes publicas
   tags = {
     "Name" = "subred-publica"
   }
@@ -30,8 +33,8 @@ resource "aws_subnet" "subred-publica" {
 
 #red privada
 resource "aws_subnet" "subred-privada" {
-  vpc_id = aws_vpc.Desarrollo-web-VPC
-  cidr_block = "10.0.0.0/28"
+  vpc_id = aws_vpc.Desarrollo-web-VPC.id
+  cidr_block = "10.0.1.0/24"
   tags = {
     "Name" = "subred-privada"
   }
