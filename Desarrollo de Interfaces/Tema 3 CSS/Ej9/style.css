@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    margin: 2em;
+}
+
+h1 {
+    background: linear-gradient(rgb(58, 1, 99),rgb(218, 9, 241));
+    -webkit-background-clip: text; /*Hace que el fondo (el gradiente) solo se muestre en la parte del texto.*/
+    color: transparent;  
+  }
+
+div:first-of-type{
+    width: 80%;
+    height: 250px;
+    background: linear-gradient(to right, black, blue, yellow, green, red);
+}
+
+div:nth-child(3){
+    width: 80%;
+    height: 250px;
+    background: repeating-linear-gradient(to bottom, blue 0 10%, yellow 10% 20%, red 20% 30%);
+}
+
+div:nth-child(4){
+    width: 35%;
+    height: 300px;
+    background: radial-gradient(yellow, red, black);
+}
+
+div:nth-child(5){
+    width: 35%;
+    height: 300px;
+    /*Del 0% al 50% es completamente amarillo 50% al 60% es la transicion del amarillo al rojo
+    luego del 60% al 80% el rojo cambia al negro y a partir del 80% es negro*/
+    background: radial-gradient(yellow 50%, red 60%, black 80%);
+}
+
+div:nth-child(6){
+    width: 35%;
+    height: 300px;
+    background: radial-gradient(circle, yellow 50%, red 60%, black 80%);
+}
+
+div:nth-child(7){
+    width: 35%;
+    height: 300px;
+    background: radial-gradient(circle 600px at left, yellow 50%, red 60%, black 80%);
+}
+
+div:nth-child(8){
+    width: 70%;
+    height: 250px;
+    background: radial-gradient(circle, blue, red, yellow);
+}
+
+div:nth-child(9){
+    width: 70%;
+    height: 250px;
+    background: radial-gradient(blue 5%, red 50%, yellow 75%);
+}
+
+div:nth-child(10){
+    width: 70%;
+    height: 250px;
+    background: radial-gradient(circle, blue 15%, red, yellow);
+}
+
+div:nth-child(11){
+    width: 40%;
+    height: 400px;
+    background: repeating-radial-gradient(circle, rgb(233, 101, 101) 0 10%, red 10% 20%, rgb(142, 6, 6) 20% 30%);
+}
+
+div:nth-child(12){
+    width: 40%;
+    height: 400px;
+    /*en vez de at top tambien podrias poner ...*/
+    /*at coord eje x, coord eje y siendo 0 arriba y 50 seria el centro de la altura*/
+    background: conic-gradient(at top, blue, black);
+}
+
+div:nth-child(13){
+    width: 40%;
+    height: 400px;
+    /*Entre en 0 y el 10 se mezclan el azul y el amarillo, eltre el 10 y el 20 se mezcla
+    el amarillo y el rojo y a partir del 20 empieza el azul otra vez*/
+    background: repeating-conic-gradient(blue 0, yellow 10%, red 20%);
+}
