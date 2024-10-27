@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Arrow</title>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1 a)</h2>
+        <script>
+            document.write("Mirar la consola");
+            let suma = (num1, num2) => num1+num2;
+            console.log("Ejercicio 1 a");
+            console.log(suma(40,2));
+            console.log(suma(42,0));
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 1 B)</h2>
+        <script>
+            document.write("Mirar la consola");
+            let nombreCiudadMasLargo = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+            let carac = cad => cad.length;
+            console.log("Ejercicio 1 b");
+            console.log("El nombre más largo del mundo de una ciudad tiene " + carac(nombreCiudadMasLargo) + " caracteres");
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 1 C)</h2>
+        <script>
+            document.write("Mirar la consola");
+            let palabra = "willynilly";
+            let long = cad => cad.length;
+            console.log("Ejercicio 1 c")
+            console.log("La palabra " + palabra + " tiene " + long(palabra) + " caracteres");
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 1 D)</h2>
+        <script>
+            document.write("Mirar la consola");
+            let alerts = ["Hey, you are awesome", "You are so wonderful", "What a marvel you are", "You're so lovely", "You're so sweet that I'd think you're a sweet potato -- and I LOOOOVE POTATOES"];
+            //(Math.floor(Math.random()*alerts.length)) esto va a devolver un numero que sera el indice de el array alerts
+            let alerta = name => alert(alerts[(Math.floor(Math.random()*alerts.length))] + name);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2</h2>
+        <script>
+            let nombre = "Begoña";
+            let edad = 33;
+
+            let saludo = (name, age) => "Hello, I am " + name + " and I am " + age + " years old."
+            console.log("Ejercicio 2");
+            console.log(saludo(nombre, edad));
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3</h2>
+        <script>
+            let arr = [5,8,4,6,3,2,1,8];
+            /*el reduce es un metodo para aculumar valores y en este caso llama a una funcion callback
+            que tiene dos parametros, uno es el acumulador, el cual se inicializa a 0 al final de la funcion
+            y el segundo es cada uno de los elementos de array*/
+            let sum = array => array.reduce((acumulador, elemento) => {
+                return acumulador + elemento
+            }, 0); //aqui se inicializa el acumulador
+            console.log("La suma de todos los números del array es: " + sum(arr));
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 4</h2>
+        <script>
+            
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 5</h2>
+        <script>
+            
+        </script>
+    </section>
+</body>
+</html>

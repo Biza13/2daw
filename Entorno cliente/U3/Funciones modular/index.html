@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Programación Modular</title>
+    <script src="modAuxiliar.js"></script>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1</h2>
+        <script>
+            let filtro = filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7);
+            document.write(filtro);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 2</h2>
+        <script>
+            let textoCambiado = toHackerSpeak("I'm a hacker now");
+            document.write(textoCambiado);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 3</h2>
+        <script>
+            let extension = getFileExtension("imagen.jpg");
+            document.write(extension);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 4</h2>
+        <script>
+            let juntarArrays = flatArray([[1, 5, 4], [3, 10], [2, 5]]);
+            document.write(juntarArrays);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 5</h2>
+        <script>
+            let sinDuplicados = removeDuplicates([4, 5, 10, 4, 10, 2]);
+            document.write(sinDuplicados);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 6</h2>
+        <script>
+            let letra = countLetter("a", "javascript");
+            document.write(letra);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 7</h2>
+        <script>
+            let quitarPalabras = removeWords("This is a really bad test", ["really", "bad"]);
+            document.write(quitarPalabras);
+        </script>
+    </section>
+</body>
+</html>

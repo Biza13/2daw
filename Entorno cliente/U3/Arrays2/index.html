@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays 2</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1</h2>
+        <script>
+            let alumno = [{nombre:"Ian Cabo", edad:15, NotPrimerTrimestre:10, NotSegundoTrimestre: 9, NotTercerTrimestre:10}]
+            let clase = [];
+            clase.push(alumno);
+            console.log("Ejercicio 1");
+            console.log(clase);
+            document.write("Inspeccionar. Mirar consola, array con informacion de alumno");
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 2</h2>
+        <script>
+            //Para de clarar objetos con {}
+            //para declarar array con []. clase1 es un array de objetos
+            let alumno1 = {numeroEstudiante: 2, nombre:"Ian Cabo", edad:15, notaPrimerTrimestre:10, NotSegundoTrimestre: 9, NotTercerTrimestre:10};
+            let alumno2 = {numeroEstudiante: 6, nombre:"Jose Maldonado", edad:16, notaPrimerTrimestre:8, NotSegundoTrimestre: 6, NotTercerTrimestre:6};
+            let alumno3 = {numeroEstudiante: 7, nombre:"Ana Rodriguez", edad:15, notaPrimerTrimestre:7, NotSegundoTrimestre: 9, NotTercerTrimestre:9};
+            let clase1 = [];
+            clase1.push(alumno1, alumno2, alumno3);
+            //meter el campo del trimestre como string para poder acceder a el desde la funcion
+            notaAlumno = nota(clase1, 2, "notaPrimerTrimestre");
+            document.write(notaAlumno);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 3</h2>
+        <script>
+            //usando el array de objetos del ejercicio anterior
+            let edad = mediaEdad(clase1);
+            document.write(edad);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 4</h2>
+        <script>
+            //usaremos los datos del ejercicio 2
+            let alumnoRandom = alumnoAzar(clase1);
+            document.write(alumnoRandom);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 5</h2>
+        <script>
+            let numeros = paresImpares();
+            document.write("Mira la consola. Array con objeto pares y objeto impares");
+            console.log("Ejercicio 5");
+            console.log(numeros);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 6</h2>
+        <script>
+            let vendedor1 = {nombre: "Antonio Ortega", sueldoBase: 200, ventas: 2500, total: 425}
+            let vendedor2 = {nombre: "Rodrigo Alacuas", sueldoBase: 200, ventas: 3600, total: 524}
+            let vendedores = [];
+            vendedores.push(vendedor1);
+            vendedores.push(vendedor2);
+            console.log("Ejercicio 6");
+            //llamamos a la funcion para agregar al vendedor
+            altaVendedor (vendedores, "Belen Asensio", 6700);
+            console.log(vendedores);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 7</h2>
+        <script>
+            let arrNum = [5,7,6,3,1,4,9,6,1,4]
+            document.write("Array original --> " + arrNum + "<br>")
+            let aCero = establecerValoresACero(arrNum)
+            document.write("Cambiando valores a 0 --> " + aCero + "<br>");
+            let sumandoUno = añadirUno(arrNum);
+            document.write("Añadir uno a cada valor en el array original --> " + sumandoUno + "<br>");
+            let espacios = arraySeparadaPorEspacios(arrNum);
+            document.write("Separando el array por espacios en vez de con comas --> " + espacios);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 8</h2>
+        <script>
+            let cantSumas = dados();
+            document.write("Mirar en consola también <br>");
+
+            for(let i = 0;i<cantSumas.length; i++){
+                document.write("Ha salido el número " + i + ": " + cantSumas[i] + " veces <br>");
+            }
+
+            console.log("Ejercicio 8");
+            console.log(cantSumas);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 9</h2>
+        <script>
+            let comb = dadosBidimensionales();
+            console.log("Ejercicio 9");
+            console.log(comb[0]);
+            console.log(comb[1]);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 10</h2>
+        <script>
+
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 11</h2>
+        <script>
+
+        </script>
+    </section>
+</body>
+</html>
