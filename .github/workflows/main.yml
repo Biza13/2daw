@@ -6,26 +6,26 @@ name: Terraform AWS Deployment
 #      - main
 
 #Este evento es para que solo se deployee si se lo digo manualmente
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+#on:
+#  workflow_dispatch:
+#    inputs:
+#      logLevel:
+#        description: 'Log level'
+#        required: true
+#        default: 'warning'
+#        type: choice
+#        options:
+#        - info
+#        - warning
+#        - debug
+#      tags:
+#        description: 'Test scenario tags'
+#        required: false
+#        type: boolean
+#      environment:
+#        description: 'Environment to run tests against'
+#        type: environment
+#        required: true
 
 jobs:
   despliegue:   #nombre del job
