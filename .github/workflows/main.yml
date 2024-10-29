@@ -1,10 +1,18 @@
 name: Terraform AWS Deployment
+
 #evento para que se deployee cuando se hace el push
 #on:
   #push:   #evento a hacer en este caso cuando hagamos un push
     #branches:   #en la rama main
     #  - main
 
+
+
+#Comento estas linea para que no me de error cada vez que hago un push
+#on:
+#  push:   #evento a hacer en este caso cuando hagamos un push
+#    branches:   #en la rama main
+#      - main
 
 #Este evento es para que solo se deployee si se lo digo manualmente
 on:
