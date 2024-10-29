@@ -1,0 +1,60 @@
+.static{
+    background-color: yellow;
+    position: static;
+    top: 50px;  /*no coge las propiedades de top y left las ignora en la posicion statica*/
+    left: 100px;
+}
+
+.relative{
+    background-color: turquoise;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    /* top: 50px;
+    left: 150px; */
+}
+
+/*Absolute con respecto al body*/
+.absolute{
+    background-color: tomato;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/*Esta va a ser un absolute con respecto al padre que contiene la posicion relative*/
+.relativo-padre{
+    background-color: khaki;
+    width: 600px;
+    height: 200px;
+    position: relative;
+}
+
+.absolute-hijo{
+    background-color: coral;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    /* top: 100px;
+    left: 100px; */
+    bottom: 0;
+    right: 0;
+}
+
+/*Fixed con respecto al body*/
+.fixed{
+    background-color: lightgreen;
+    width: 300px;
+    height: 100px;
+    position: fixed;
+    top: 30px;
+    left: 400px;
+}
+
+.sticky{
+    background-color: lightblue;
+    position: sticky;
+    top: 50px;
+}

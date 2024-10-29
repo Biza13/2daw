@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="funciones.js"></script>
+  </head>
+  <body>
+    <script>
+      let arr = [5, 7, 9, 6, 3, 1, 4];
+
+      function doble(array) {
+        let nuevoArr = [];
+        array.forEach((element) => {
+          nuevoArr.push(element * 2);
+        });
+        return nuevoArr;
+      }
+
+      let arr2 = doble(arr);
+
+      document.write(arr2 + "<br>");
+
+      function incrementa(array) {
+        let nuevoArr = [];
+        array.forEach((element) => {
+          nuevoArr.push(element + 1);
+        });
+        return nuevoArr;
+      }
+
+      let arr3 = incrementa(arr);
+      document.write(arr3);
+
+
+      const modificaArr = (array, func) => {
+        let nuevoArr = [];
+        array.forEach((element) => {
+          nuevoArr.push(func(element));
+        });
+        return nuevoArr;
+      };
+
+      //esto llama a la funcion modifica y le pasamos como parametro el array y una funcion
+      //en este caso restar que es lo que hace en la funcion de arriba  de modifica array
+      let a = modificaArr(arr, valor => valor - 1);
+      document.write("<br>" + a);
+
+
+
+      //funcion que introducira un elemento en el array nuevo solo los que cumplan con la funcion
+      //la cual determinaremos en la llamada de la funcion
+      const filtrarArray = (arr, fun) => {
+        let nuevoArr = [];
+        arr.forEach(element => {
+            if ((fun(element))){
+                nuevoArr.push(element);
+            }
+        });
+        return nuevoArr;
+      }
+
+      //aqui en la llamada a  la funcion le dare el array y la funcion que hara
+      let b = filtrarArray([2,8,4,3,9,7], valor => valor<5);
+      document.write("<br>" + b);
+    </script>
+  </body>
+</html>

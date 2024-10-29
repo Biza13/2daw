@@ -60,5 +60,24 @@
         console.log(pvp3(articulo));
 
     </script>
+
+    <section>
+        <h2>Metodo splice</h2>
+        <script>
+            //ten en cuenta que splice modifica el array sobre el que actua, y devuelve otro array con los elementos eliminados 
+
+            let lista = ["Peras", "Manzanas", "Kiwis", "Plátanos", "Mandarinas"];
+            //quitar Manzanas
+            /*lista.splice(1,1); */
+
+            //Añadir NAranjas y Sandias despues de platano
+            /*lista.splice(4,0,"Naranjas", "Sandias"); */
+            
+            //quitar kiwis y añadir cerezas y nisperos
+            lista.splice(2, 1, "Cerezas", "Nisperos");
+            
+            document.write(lista);
+        </script>
+    </section>
 </body>
 </html>

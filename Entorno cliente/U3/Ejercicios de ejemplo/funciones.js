@@ -17,3 +17,16 @@ function div(a, b){
 function operacion(a, b, func){
     return func;
 }
+
+function mostrarArray2(arr){
+    console.log(arr);
+}
+
+function doble(array){
+    let nuevoArr = [];
+    array.forEach(element => {
+        nuevoArr.push(element*2);
+    });
+    return nuevoArr;
+}
+

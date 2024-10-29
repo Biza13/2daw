@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h2>fucniones como parametros en arrays</h2>
+      <script>
+        const alumno = {
+          Nombre: "Juan",
+          Grupo: "1smr",
+          Notas: [4, 6],
+          //enseñar las notas
+          showNotas: function () {
+            this.Notas.forEach((element) => {
+              console.log(element);
+            });
+          },
+          //añadir un anota
+          addNota: function (nota) {
+            this.Notas.push(nota);
+          },
+          //añadir varias notas
+          addNotas: function (arrNotas) {
+            this.Notas = this.Notas.concat(arrNotas);
+          },
+        };
+
+        //alumno.addNota();
+        alumno.addNotas([7, 6, 4]);
+        alumno.showNotas();
+      </script>
+    </section>
+
+    <section>
+      <h2>SORT</h2>
+      <script>
+        let alumnos = [
+          {
+            nombre: "Juan",
+            grupo: "1smr",
+            edad: 12,
+            notas: [4, 6],
+          },
+          {
+            nombre: "Antonio",
+            grupo: "1smr",
+            edad: 15,
+            notas: [6, 8],
+          },
+          {
+            filtrarNotas: (func) => {
+              let arrSalida = [];
+              this.notas.forEach((element) => {
+                if (func(element)) {
+                  arrSalida.push(element);
+                }
+              });
+              return arrSalida;
+            },
+          },
+        ];
+
+        function compararA(alumno1, alumno2) {
+          return alumno1.nombre.localeCompare(alumno2.nombre);
+        }
+
+        /*Todo esto se basa en que las fucniones nos devuelven un numero negativo, positivo o 0, si es negativo es que el primer elemento es menor que el segundo
+            si es positivo el primero es mayor que es segundo y si es 0 son iguales*/
+
+        /*PARA ORDENAR POR NOMBRE*/
+        //la funcion comparar que he definido
+        const comparar = (alumno1, alumno2) =>
+          alumno1.nombre.localeCompare(alumno2.nombre);
+
+        //y directamente llamamos a la funcion dentro del sort
+        console.log("Ordenar por nombre");
+        console.log(alumnos.sort(comparar));
+
+        //o directamente ponemos la funcion dentro del sort y ya el metodo sort se encarga de ordenar todos los elementos del array
+       /*  console.log(
+          alumnos.sort((alumno1, alumno2) =>
+            alumno1.nombre.localeCompare(alumno2.nombre)
+          )
+        ); */
+
+        /*PARA ORDENAR POR EDAD*/
+        console.log("Ordenar por la edad");
+        console.log(
+          alumnos.sort((alumno1, alumno2) => alumno1.edad - alumno2.edad)
+        );
+
+        /*PARA ORDENAR POR LA MEDIA DE LAS NOTAS*/
+        console.log("Ordenar pr la media de las notas");
+        /* console.log(alumnos.sort(alumno1,alumno2) => ); */
+
+        const filtrarNotas = (arrAl, func) => {
+          let arrSalida = [];
+          this.notas.forEach((element) => {
+            if (func(element)) {
+              arrSalida.push(element);
+            }
+          });
+          return arrSalida;
+        };
+
+        console.log(alumnos.filtrarNotas(valor => valor >=5));
+      </script>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+p{
+    background-color: lightblue;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+}
+
+li{
+    list-style: none;
+}
