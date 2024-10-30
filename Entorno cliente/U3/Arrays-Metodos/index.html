@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos</title>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1</h2>
+        <h3>Sort para encontrar el número más alto</h3>
+        <script>
+            let arr = [5,74,6,22,9,55,12,56];
+            document.write("Array original: " + arr + "<br>");
+
+            //el metodo sort modifica el array original
+            arr.sort((num1, num2) => num1 - num2);
+            let masAlto = arr[arr.length-1];
+
+            document.write("Número más alto: " + masAlto);
+        </script>
+        <h3>Reduce para encontrar la cadena más lagra</h3>
+        <script>
+            let arr2 = ["hola", "cuantos", "años", "tienes", "supercalifragilisticoespialidoso"];
+            /*funcion larga, toma como parametro un arr y que hace la funcion...
+            llama al metodo reduce del arr donde le paso los dos primeros parametros 
+            del array a comparar y si la long de a es mayor que la de b devieve a y sino b
+            y asi recorre todo el array hata que lo termina y alfinal devolvera la cadena mas larga*/
+            const larga = arr => arr.reduce((a,b) => {
+                if (a.length > b.length) return a;
+                else return b;
+            });
+
+            /* Esta funcion hace lo mismo pero el if else re reduce en el ? y los :
+            tienes la condicion y el if seria el ?. Es decir el ? pregunta la condicio
+            y si si se cumple devuelve a y si no secumple que seria el else son los :
+            devuelve b
+
+            const laMasLarga = arr => arr.reduce((a, b) => 
+                a.length > b.length ? a : b, ""
+            ); */
+
+            let pLarga = larga(arr2);
+            document.write(pLarga);
+        </script>
+        <h3>Filter para encontrar números pares (even)</h3>
+        <script>
+            //usare el array del primer ejercicio (arr)
+            const pares = arr.filter( num => num % 2 == 0);
+            document.write(pares);
+        </script>
+        <h3>Filter para encontrar números impares (odd)</h3>
+        <script>
+            //usare el array del primer ejercicio (arr)
+            const impares = arr.filter( num => num % 2 != 0);
+            document.write(impares);
+        </script>
+        <h3>Filter para encontrar la palabra "is"</h3>
+        <script>
+            let words = ["hispano", "casa", "pepino", "pis", "pompis", "clabaza"];
+            const ises = array => array.filter(palabra => palabra.includes("is"));
+            let palabrasConIs = ises(words);
+            document.write(palabrasConIs);
+        </script>
+        <h3>Every para saber si TODOS los numeros son divisibles por 3</h3>
+        <script>
+            //usaremos el array del primer ejercicio (arr) y otro en el que todos sean divisibles por 3
+            let divTres = [3,6,9,12,18];
+            const divPorTres = arr => arr.every( num => num % 3 == 0);
+            let res1 = divPorTres(divTres);
+            document.write("Array donde todos los números son divisibles por 3: " + divTres + "<br>")
+            document.write(res1);
+
+            document.write("<br> Array donde los elementos no son divisibles por 3; " + arr)
+            let res2 = divPorTres(arr);
+            document.write("<br>" + res2);
+        </script>
+        <h3>Map para emparejar dos arrays</h3>
+        <p>Mirar la consola</p>
+        <script>
+            let alumnos =["juan", "amparo", "ruben", "rocio" ,"jose", "lucia"];
+            let notas = [6,8,5,4,2,9];
+
+            /*el map actua sobre un array en este caso alumnos y lo que hacemos es:
+            recorrer los elementos del arrA (ementoAlumno) y el indice es el indice que le corresponde en el array
+            y con ({nombre:... nota:...}) le decimos que queremos un objeto del elemento de arrA con el elemento de arrB que coincida con el indice del arrA
+            y hay que indicarle el nombre de los campos.
+            Lo que hara es primero con el primero, el segundo con el segundo etc
+            y como map devuelve un array tenemos un array con tantos array dentro como elementos 
+            haya en el array
+
+            Ai lo prefieres con un array con arrays dentro seria asi [elementoAlumno, arrB[indice]]
+            en vez de asi ({alumno: elementoAlumno, nota: arrB[indice]})
+
+            SOLO funciona si los array tienen la misma longitud*/
+            const combinacion = (arrA, arrB) => arrA.map((elementoAlumno, indice) => 
+            ({alumno: elementoAlumno, nota: arrB[indice]}));
+
+            let combi = combinacion(alumnos, notas);
+            //usamos el join para darle un poco de formato y separar mejor entre las arrays internas
+            console.log("Emparejar dos arrys");
+            console.log(combi);
+        </script>
+        <h3>Sort para ordenar un array ya combinada por la nota, usaremos la anterior</h3>
+        <p>Mirar consola</p>
+        <script>
+            //usaremos el array combi del ejercicio anterior.
+            /*al sort le pasamos dos elementos a comparar en este caso dos alumnos
+            y luego comparamos las notas de estos con el alumno1.nota y alumno2.nota*/
+            const ordenNotas = combi.sort((alumno1, alumno2) => alumno1.nota - alumno2.nota);
+            console.log("Array de objetos de alumnos ordenados por nota");
+            console.log(ordenNotas);
+        </script>
+        <h3>Shift para eliminar el primera palabra del array</h3>
+        <script>
+            //usaremos el array de words para este ejercicio
+            document.write("array antes de eliminar el primer objeto: " + words + "<br>");
+            let eliminadoPrimero = words.shift();
+            document.write("Array despues de eliminar el primer elemento: " + words);
+        </script>
+        <h3>Unshift para poner una palabra al inicio de un array</h3>
+        <script>
+            //con el unshift metemos en la primera posicion del array (lo contrario de shift)
+            let palabra = "piscolabis";
+            words.unshift(palabra);
+            document.write("Nueva palabra añadida al principio del array: " + words);
+        </script>
+        <h3>Splice para reemplazar elementos de un array</h3>
+        <script>
+            let arrayParaReemplazar = [1,2,3,4, "cinco",6, "siete",8];
+            document.write("Array inicial: " + arrayParaReemplazar + "<br>");
+            //(4,1,5) empezamos en el indice 4, queremos borrar 1 elemento, y lo cambiamos por 5
+            arrayParaReemplazar.splice(4,1,5);
+            document.write("Array reemplazando el cinco en String por el 5 en entero" + arrayParaReemplazar + "<br>");
+            //(4,1,5) empezamos en el indice 6, queremos borrar 1 elemento, y lo cambiamos por 7
+            arrayParaReemplazar.splice(6,1,7);
+            document.write("Array reemplazando el siete en string por 7 en entero: " + arrayParaReemplazar);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 2</h2>
+        <script>
+            let nombres = ["juan lozano", "amparo maravilla", "jose fernandez", "lorena rodriguez", "josefa reverte", "roberto agustin"];
+            //filter devuelve un array por eso lo igualo a jotas
+            /*startsWith devuelve un booleano, entonces solo guardara en el array que devuelva 
+            filter los que sean true, es decir todos los que empiecesn por j*/
+            const jotas = nombres.filter(nombre => nombre.startsWith("j"));
+            document.write(jotas);
+            console.log(jotas);
+
+            const inicialesNombre = jotas.map(nombre => {
+                /*aqui con el split para dividir la cadena por el espacio(" ") y convertirla en un array
+                seria un array con dos elementos [juan, lozano] el nombre y el apellido*/
+                const nomApe = nombre.split(" ");
+                /*Aqui cogemos las iniciales del array creada anteriormente con el split
+                es decir del nombre y el apellido. Le pasamos el parametro palabra que va a ser 
+                el nombre y cogemos el index 0 (la primera letra) y despues sera el apellido
+                que hara lo mismo (coger la primera letra de este)*/
+                /*y con el join unimos esas dos letras del nombre y del apellido en un elemento
+                separado por nada ("") cadena vacia*/
+                const iniciales = nomApe.map(palabra => palabra[0]).join("");
+                return iniciales;
+            });
+            document.write("<br>Iniciales de los nombres con J: " + inicialesNombre);
+            console.log(inicialesNombre);
+
+            //cogemos las primera letra de cada nombre y apellido
+            const ordenado = inicialesNombre.sort();
+            document.write("<br>Array ordenado alfameticamente: " + ordenado);
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 3</h2>
+        <script>
+
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 4</h2>
+        <script>
+
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 5</h2>
+        <script>
+
+        </script>
+    </section>
+    <section>
+        <h2>Ejercicio 6</h2>
+        <script>
+
+        </script>
+    </section>
+</body>
+</html>

@@ -2,7 +2,6 @@
 resource "aws_eip" "NAt-gateway" {
   depends_on = [ aws_route_table_association.rt-asociacion-publica ]
   instance = aws_vpc.Desarrollo-web-VPC.id
-  domain = VPC  //indica que la ipc es para una vpc
 }
 
 resource "aws_nat_gateway" "nat-gateway" {

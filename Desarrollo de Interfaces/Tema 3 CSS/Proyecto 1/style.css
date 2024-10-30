@@ -1,0 +1,216 @@
+/*Fuentes*/
+@font-face {
+    font-family: "nevis"; /*nombre que le voy a poner a la fuente para poder llamarla*/
+    src: url("recursos/fonts/nevis.eot") format("embedded-opentype"),
+        url("recursos/fonts/nevis.woff") format("woff"),
+        url("recursos/fonts/nevis.ttf") format("truetype"),
+        url("recursos/fonts/nevis.svg") format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+/*Estilo generales*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./recursos/img/paven.png");
+}
+
+/*Estilo de la cabecera*/
+#header{
+    min-width: 1024px;
+    width: 100%;
+    height: 250px;
+    margin: o auto; /*para centrar la imagen*/
+}
+
+#header a{
+    text-decoration: none;  /*quita la barra de abajo del a*/
+    color: #70b231;
+}
+
+#header .logotipo{
+    width: 720px;
+    margin: 0 auto; /*para centrar la imagen*/
+    padding-top: 20px;
+}
+
+#header .logotipo img{
+    display: block; /*porque las imagenes son de linea la cambiamos a bloque*/
+    margin: 0 auto;  /*Esto es para centrar las cajas de bloque*/
+    width: 140px;
+}
+
+#header h1{
+    text-align: center;
+    font-size: 40px;
+    font-family: "nevis";
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    text-shadow: 0 2px 1px #333;    /*o en el eje x, 2 en el eje y y 1 px de desenfoque*/
+}
+
+#header h1:hover{
+    text-shadow: 0 2px 1px #333, 0 0 4px #70b231;
+}
+
+/*Estilos barra navegacion*/
+#nav{
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    font-family: "sans-serif, helvetica, arial";
+    font-size: 14px;
+    box-shadow: 0 0 2px gray;
+}
+
+#nav ul{
+    list-style: none;  
+    margin: 0 auto;
+    width: 1090px;
+}
+
+#nav>ul>li{
+    float: left;
+    line-height: 40px;  /*espaciado entre linea y linea*/
+    border-right: 1px solid gray;
+    position: relative; /*le ponemos el relative porque a los ul dentro del estos li, le damos la positoin absolute*/
+}
+
+#nav>ul>li>a{
+    display: block;
+    color: white;
+    padding-left:20px ;
+    padding-right:20px ;
+    /*padding-inline: 20px; esto hace lo mismo que las dos sentencias anteriores*/
+    text-decoration: none;
+}
+
+#nav>ul>li>a:first-child{
+    border-left: 1px solid gray;
+}
+
+#nav>ul>li:hover{
+    background-color: #70b231;
+    box-shadow: 0 0 4px green inset;
+}
+
+/*Estilo menu desplegable*/
+#nav>ul>li>ul{
+    display: none;  /*para que no se vea*/
+    position: absolute;
+    width: 160px;
+    box-shadow: 0 2px 2px gray;
+}
+
+#nav>ul>li:hover>ul{
+    display: block; /*que aparezcan en bloque los desplegables*/
+}
+
+#nav>ul>li:hover>ul>li{
+    background-color: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;  /*Linea entre los li*/
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px
+}
+
+#nav>ul>li:hover>ul>li a{
+    color: #666;
+    text-decoration: none;
+}
+
+#nav>ul>li:hover>ul>li:hover{
+    color: #ede7e7;
+    box-shadow: 0 0 6px #ccc inset;
+}
+
+/*Barra lateral*/
+#aside{
+    width: 200px;
+    float: left;
+    margin: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px #ccc;
+}
+
+#aside .widget{
+    width: 180px;
+    margin: 0 auto;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    border-bottom: 1px dashed #333;
+}
+
+#aside .widget:last-child{
+    margin-bottom: 20px;
+}
+
+#aside h3{
+    width: 100%;
+    color: #333;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    background-color: #f2f3f2;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+}
+
+/*Estilo formulario*/
+input[type="text"],
+input[type="password"]{
+    border: 1px solid #c9c9c9;
+    box-shadow: 0 0 2px #ccc inset;
+    background-color: white;
+    padding: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    outline: none;
+    border: 1px solid #70b231;
+    color: black;
+}
+
+input[type="submit"]{
+    border-radius: 2px;
+    border: 1px solid green;
+    width: 60px;
+    color: white;
+    background-color: #70b231;
+    padding: 3px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+input[type="submit"]:hover{
+    box-shadow: 0 0 4px gray;
+}
+
+input[type="submit"]:active{
+    box-shadow: 0 0 3px black inset;
+    text-shadow: 0 0 5px black;
+}
+
+#aside div a{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-decoration: none;
+    color: #70b231;
+}
