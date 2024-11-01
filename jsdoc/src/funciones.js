@@ -39,7 +39,7 @@ function suma(a,b){
 }
 
 /**
- * The function "mult" takes two parameters, multiplies them together, and returns the result.
+ * La funcion "mult" takes two parameters, multiplies them together, and returns the result.
  * @param a - Thank you for providing the `mult` function. How can I assist you with the parameters for
  * `a`?
  * @param b - It seems like you have provided a function `mult(a, b)` that multiplies two parameters
