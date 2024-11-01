@@ -1,7 +1,7 @@
 #Crear un ip elastica para la NAT gateway
 resource "aws_eip" "NAt-gateway" {
   depends_on = [ aws_route_table_association.rt-asociacion-publica ]
-  instance = aws_vpc.Desarrollo-web-VPC.id
+  domain = "vpc"
 }
 
 resource "aws_nat_gateway" "nat-gateway" {
@@ -32,6 +32,6 @@ resource "aws_route_table" "nat-gateway-rt" {
 #asociar la tabla de enrutamiento con el nat gateway
 resource "aws_route_table_association" "rt-asociacion-NAT" {
     //depends_on = [ aws_route_table.nat-gateway-rt ]
-  subnet_id = aws_subnet.subred-publica.id
+  subnet_id = aws_subnet.subred-privada.id
   route_table_id = aws_route_table.nat-gateway-rt.id
 }

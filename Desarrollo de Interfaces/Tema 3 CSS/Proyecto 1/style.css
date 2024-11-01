@@ -9,6 +9,23 @@
         font-style: normal;
 }
 
+@font-face {
+    font-family: "fajala";
+    src: url("./recursos/fonts/FjallaOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-size: normal;
+}
+
+@font-face {
+    font-family: "icons";
+    src: url("./recursos/fonts/websymbols-regular-webfont.eot") format("embedded-opentype");
+    src: url("./recursos/fonts/websymbols-regular-webfont.svg") format("svg");
+    src: url("./recursos/fonts/websymbols-regular-webfont.ttf") format("truetype");
+    src: url("./recursos/fonts/websymbols-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*Estilo generales*/
 *{
     padding: 0;
@@ -81,6 +98,7 @@ body{
     line-height: 40px;  /*espaciado entre linea y linea*/
     border-right: 1px solid gray;
     position: relative; /*le ponemos el relative porque a los ul dentro del estos li, le damos la positoin absolute*/
+    z-index: 20;
 }
 
 #nav>ul>li>a{
@@ -118,7 +136,7 @@ body{
     border-bottom: 1px solid #d6d6d6;  /*Linea entre los li*/
     padding: 8px;
     line-height: 25px;
-    font-size: 13px
+    font-size: 13px;
 }
 
 #nav>ul>li:hover>ul>li a{
@@ -132,13 +150,19 @@ body{
 }
 
 /*Barra lateral*/
-#aside{
+#aside, #frase{
     width: 200px;
     float: left;
     margin: 30px;
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 2px 2px #ccc;
+}
+
+#frase{
+    width: 180px;
+    padding: 10px;font-size: 14px;
+    /* clear: both; */    /*Para eliminar el float de la clase de arriba*/
 }
 
 #aside .widget{
@@ -194,6 +218,8 @@ input[type="submit"]{
     background-color: #70b231;
     padding: 3px;
     cursor: pointer;
+    display: block; /*Porque si es de linea el margin 0 auto no lo coge*/
+    margin: 0 auto;
     margin-top: 8px;
 }
 
@@ -212,5 +238,106 @@ input[type="submit"]:active{
     margin-top: 2px;
     margin-bottom: 2px;
     text-decoration: none;
+    color: #70b231;
+}
+
+#aside div a:visited{
+    color: #529125;
+}
+
+#aside div a:hover{
+    color: orange;
+}
+
+#aside li{
+    list-style: square;
+    margin-left: 20px;
+}
+
+.red{
+    color: red !important;
+}
+
+.blue{
+    color: blue !important;
+}
+
+#sections{
+    float: right;
+    width: 75%;
+    font-family: "sans-serif, Arial, Helvetica";
+    margin-right: 20px;
+}
+
+#sections .titulo{
+    font-family: "fajala";
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: -20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(181, 177, 177);
+}
+
+#sections section{
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #c9c9c9;
+    color: #333;
+    position: relative;
+}
+
+#sections .article{
+    margin: 20px 10px;
+}
+
+#section .date{
+    color: gray;
+    font-size: 14px;
+}
+
+#sections .stickerOne{
+    position: absolute;
+    top: -25px;
+    left: 10px;
+}
+
+#sections .stickerTwo{
+    position: absolute;
+    top: -25px;
+    right: 10px;
+}
+
+.icon{
+    font-family: "icons";
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.clearFix{  /*Para limpiar los flex a partir de donde esta este div es decitr los divs de debajo ya no estan sujetos al flex*/
+    float: none;
+    clear: both;
+}
+
+.history{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer{
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+}
+
+footer a{
     color: #70b231;
 }

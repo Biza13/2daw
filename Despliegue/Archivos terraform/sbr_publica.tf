@@ -11,7 +11,7 @@ resource "aws_route_table" "public-rt" {
   vpc_id = aws_vpc.Desarrollo-web-VPC.id
 
   route {   //definir la ruta
-    cidr_block = "0.0.0.0./0"   //permitir el trafico desde cualquier direccion ip hacia fuera de la vpc
+    cidr_block = "0.0.0.0/0"   //permitir el trafico desde cualquier direccion ip hacia fuera de la vpc
     gateway_id = aws_internet_gateway.igw.id
   }
 
