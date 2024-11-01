@@ -19,11 +19,11 @@ jobs:
           node-version: "20.11.1"  # Asegúrate de que la versión esté entre comillas
 
       - name: Install dependencies
-        run: 
+        run: |
           cd jsdoc
           npm install
 
       - name: Generate JSDoc
-        run: 
+        run: |
           cd jsdoc
           npm run docs
