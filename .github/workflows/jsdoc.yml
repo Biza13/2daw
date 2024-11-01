@@ -22,8 +22,17 @@ jobs:
           node-version: '20.11.1' # Especifica la versión de Node.js
           cache: 'npm' # Habilitar caché de npm
 
+      - name: Install dependencies
+        run: |
+          cd jsdoc # Cambia al directorio jsdoc
+          npm install # Esto instalará las dependencias usando el package-lock.json en jsdoc
+
       - name: Install JSDoc
-        run: npm install jsdoc
+        run: |
+          cd jsdoc # Cambia al directorio jsdoc
+          npm install jsdoc
 
       - name: Generate JSDoc
-        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
+        run: |
+          cd jsdoc # Cambia al directorio jsdoc
+          npx jsdoc -c jsdoc.json -r ./src -d ./docs
