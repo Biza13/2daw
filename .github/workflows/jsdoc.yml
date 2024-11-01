@@ -1,0 +1,29 @@
+name: Generate JSDoc
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  jsdoc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: '20.11.1' # Especifica la versión de Node.js
+          cache: 'npm' # Habilitar caché de npm
+
+      - name: Install JSDoc
+        run: npm install jsdoc
+
+      - name: Generate JSDoc
+        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
