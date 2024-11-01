@@ -22,17 +22,17 @@ jobs:
           node-version: '20.11.1'
           cache: 'npm'
 
+      - name: Change directory to jsdoc
+        run: cd jsdoc
+
       - name: Install dependencies
-        run: 
-          cd jsdoc
-          npm install
+        run: npm install
+        working-directory: jsdoc
 
       - name: Install JSDoc
-        run: 
-          cd jsdoc
-          npm install jsdoc
+        run: npm install jsdoc
+        working-directory: jsdoc
 
       - name: Generate JSDoc
-        run: 
-          cd jsdoc
-          npx jsdoc -c jsdoc.json -r ./src -d ./docs
+        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
+        working-directory: jsdoc
