@@ -22,17 +22,10 @@ jobs:
           node-version: '20.11.1'
           cache: 'npm'
 
-      - name: Change directory to jsdoc
-        run: cd jsdoc
-
       - name: Install dependencies
         run: npm install
-        working-directory: jsdoc
-
-      - name: Install JSDoc
-        run: npm install jsdoc
-        working-directory: jsdoc
+        working-directory: jsdoc  # Cambia al directorio jsdoc
 
       - name: Generate JSDoc
-        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
-        working-directory: jsdoc
+        run: npm run docs  # Ejecuta el script para generar documentación
+        working-directory: jsdoc  # Asegúrate de que este sea el directorio correcto
