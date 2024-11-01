@@ -3,10 +3,10 @@ name: Generate JSDoc
 on:
   push:
     branches:
-      - main
+      - main  # O la rama que desees
   pull_request:
     branches:
-      - main
+      - main  # O la rama que desees
 
 jobs:
   jsdoc:
@@ -20,12 +20,12 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: '20.11.1'
-          cache: 'npm'
+          cache: 'npm'  # Esto puede ayudar a acelerar las instalaciones
 
       - name: Install dependencies
         run: npm install
         working-directory: jsdoc  # Cambia al directorio jsdoc
 
       - name: Generate JSDoc
-        run: npm run docs  # Ejecuta el script para generar documentación
+        run: npm run docs
         working-directory: jsdoc  # Asegúrate de que este sea el directorio correcto
