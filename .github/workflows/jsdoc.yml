@@ -18,14 +18,15 @@ jobs:
         with:
           node-version: "20.11.1"
 
+      - name: moverse a carpeta
+        run: cd jsdoc
+
       - name: Install dependencies
         run: npm install
-        working-directory: ./jsdoc 
-      - name: Generate JSDoc
-        run: npm run docs
-        working-directory: ./jsdoc
 
       - name: Generate JSDoc
-        run: |
-          cd jsdoc
-          npm run docs
+        run: npm run docs
+
+
+      - name: Generate JSDoc
+        run: npm run docs
