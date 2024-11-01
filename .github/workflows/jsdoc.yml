@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-#holiii
+
 jobs:
   jsdoc:
     runs-on: ubuntu-latest
@@ -19,14 +19,20 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
-          node-version: '20.11.1' # Especifica la versión de Node.js
-          cache: 'npm' # Habilitar caché de npm
+          node-version: '20.11.1'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install # Esto instalará las dependencias usando el package-lock.json
+        run: 
+          cd jsdoc
+          npm install
 
       - name: Install JSDoc
-        run: npm install jsdoc
+        run: 
+          cd jsdoc
+          npm install jsdoc
 
       - name: Generate JSDoc
-        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
+        run: 
+          cd jsdoc
+          npx jsdoc -c jsdoc.json -r ./src -d ./docs
