@@ -23,16 +23,10 @@ jobs:
           cache: 'npm' # Habilitar caché de npm
 
       - name: Install dependencies
-        run: |
-          cd jsdoc # Cambia al directorio jsdoc
-          npm install # Esto instalará las dependencias usando el package-lock.json en jsdoc
+        run: npm install # Esto instalará las dependencias usando el package-lock.json
 
       - name: Install JSDoc
-        run: |
-          cd jsdoc # Cambia al directorio jsdoc
-          npm install jsdoc
+        run: npm install jsdoc
 
       - name: Generate JSDoc
-        run: |
-          cd jsdoc # Cambia al directorio jsdoc
-          npx jsdoc -c jsdoc.json -r ./src -d ./docs
+        run: npx jsdoc -c jsdoc.json -r ./src -d ./docs
