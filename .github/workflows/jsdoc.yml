@@ -1,27 +1,29 @@
-name: JSDoc Generation
+name: Generate JSDoc
 
 on:
   push:
     branches:
-      - main  # O la rama en la que quieras que se ejecute
+      - main
 
 jobs:
-  generate-docs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4.1.0
+        uses: actions/setup-node@v4
         with:
-          node-version: "20.11.1"  # Asegúrate de que la versión esté entre comillas
+          node-version: "20.11.1"
 
       - name: Install dependencies
-        run: |
-          cd jsdoc
-          npm install
+        run: npm install
+        working-directory: ./jsdoc 
+      - name: Generate JSDoc
+        run: npm run docs
+        working-directory: ./jsdoc
 
       - name: Generate JSDoc
         run: |
