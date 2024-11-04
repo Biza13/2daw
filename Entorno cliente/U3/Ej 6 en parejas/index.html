@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <a href="https://forum.freecodecamp.org/t/need-help-with-arrow-function/429151">Problema 1</a>
+    <p>
+        Por partes, primero, no puedes usar directamente el array y dividirlo entre dos porque el array es un prototipo.
+        Lo que deberías hacer es dividir entre dos cada elemento de dentro del array.
+        Entonces, esa x, lo que hace es darte cada uno de los elementos del array.
+    </p>
+
+    <h1>Ejercicio 2</h1>
+    <a href="https://forum.freecodecamp.org/t/what-purpose-of-arrow-functions/438156">Problema 2</a>
+    <p>
+        Ese espacio sirve para poner los argumentos que tu función necesita. En caso de ser sólo 1 argumento, no es
+        necesario escribir los paréntesis "()"; en cualquier otro caso, sí.
+    </p>
+
+    <h1>Ejercicio 3</h1>
+    <a href="https://forum.freecodecamp.org/t/confusion-on-arrow-function-syntax/368572">Problema 3</a>
+    <p>
+        "users" es un array que contiene varios prototipos object; mientras que "user" sería cada iteración de ese
+        array, luego sería cada prototipo objeto.
+    </p>
+
+    <h1>Ejercicio 4</h1>
+    <a href="https://forum.freecodecamp.org/t/arrow-function-how-to-rewrite-to-regular-function/417198">Problema 4</a>
+
+    <script>
+        function person(name) {
+            function sayName() {
+                console.log('my name is ' + name);
+            };
+            return sayName();
+        };
+
+
+        const Nerd = function (name) {
+            const sayName = person(name)
+            function doSomethingNerdy() {
+                console.log('nerd stuff');
+            }
+            return doSomethingNerdy();
+        };
+
+        const jeff = Nerd('jeff');
+
+    </script>
+
+
+    <h1>Ejercicio 5</h1>
+    <a href="https://forum.freecodecamp.org/t/arrow-function-not-working/350543">Problema 5</a>
+    <p>
+        Querido amigo. Primero de todo, deberías llamar a la función en el console.log pasándole los valores de los argumentos "console.log(sum(4,2))". 
+        Después, en la línea 3, si pones las llaves, debes de poner el return, o quitar las llaves y dejar todo como está. Un saludo.
+    </p>
+</body>
+
+</html>

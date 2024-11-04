@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones como Objetos</title>
+</head>
+<body>
+    <script>
+        //objeto literal
+        let alumn = {
+            Nombre: "Pepe",
+            Edad: 18,
+            dni: "54875621H"
+        };
+
+        //FUnciones para declarar objetos
+        function Usuario(dni, nombre, edad){
+            this.dni = dni;
+            this.nombre = nombre;
+            this.edad = edad;
+
+            this.showMe = function (){
+                console.log(`Dni: ${this.dni} -- Nombre: ${this.nombre}`);
+            }
+        }
+
+        let objUsuario1 = new Usuario("654587859H", "Juan", 16);
+        console.log(objUsuario1);
+        objUsuario1.showMe();
+
+        let objUsuario2 = new Usuario("784563219B", "Maria", 22);
+
+        let usuarios = [];
+        console.table( usuarios);
+
+        //Objetos con class
+        class Empleado{
+            constructor(codigo, nombre, telefono){
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.telefono = telefono;
+            }
+            muestraEmpleado (){
+                console.log("Empleado " + this.codigo + " -Nombre" + this.nombre);
+            }
+        }
+
+        let objEmpl = new Empleado(1, "Eustaquio", 654897521);
+        console.log(objEmpl);
+    </script>
+</body>
+</html>
