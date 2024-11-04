@@ -1,0 +1,60 @@
+section{
+    width: auto;
+    height: 700px;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex; /*Coge todo el espacio del contenedor*/
+    /*display: inline-flex;  adapta la caja al contenido, es decir reduce la caja a lo que ocupa el contenido*/
+    flex-direction: row;  /*aqui le estamos dando la direccion y si pones reverse te los pone alreves, del ultimo al primero*/
+    flex-wrap: wrap; /*Envuelve los elementos para que se queden dentro de la caja, mientras que que con el no-wrap que es el que viene por defecto se salen del contenedor padre*/
+    /*flex-wrap: wrap-reverse; los pone del reves*/
+    /*flex-flow: row wrap; Este es un short cut para los dos de arriba*/
+    justify-content: flex-start; /*La que viene por defecto que empieza desde el borde izquierdo*/
+    /*justify-content: flex-end;  empieza desde la derecha*/
+    /*justify-content: space-between;  la primera a la izquiera, la ultima a la derecha y las de enmedio les da el espacio sobrante*/
+    /*justify-content: space-around;  */
+    /*justify-content: space-evenly;  /*Reparte el espacio equitativamente por todos los sitios*/
+    /*si lo ponemos en column hace lo mismo pero verticalmente*/
+    align-items: flex-start;  /*alinea el contenido al top de la caja*/
+    /*align-items: flex-end;  alinea el contenido al bottom de la caja*/
+    /*align-items: baseline;  /*alinea las cajas segun el contenido de estas (las cajas han de tener diferentes tamaños para que se vea)*/
+    /*align-items: center;  /*Los pone en el centro pero arriba*/
+    /*align-content: center;  /*alinea el contenido al dentro en los ejes x e y de la caja*/
+    /*align items funciona en el eje y*/
+    /*justify contens funciona en el eje x*/
+}
+
+.cajas{
+    border: 4px solid black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 20px;
+    margin: 10px;
+}
+
+.red{
+    background-color: red;
+    /*flex-grow: 1; /*Crecen con respecto al width de la caja padre pero depende del numero creceran mas o menos (multiplicador del tamaño de la caja hija)*/
+    /*flex-shrink: 1; /*Lo mismo pero para decrecer*/
+
+}
+
+.blue{
+    background-color: blue;
+    /*width: 50px;*/
+    /*heigt:200px;*/
+    /* flex-grow: 2; */
+    align-self: center; /*Alinea cada uno de los contenidos por separado donde le digas con respecto a lcontenedor padre*/
+}
+
+.yellow{
+    background-color: yellow;
+    /* flex-grow: 3; */
+    /* order : -1;  /*Orden de las cajas. El valor por defecto es 0 asi que si las quieres mas a la izquierda valores negativos, mas a la derecha valores positivos*/
+    align-self: flex-end;
+}
+
+.green{
+    background-color: green;
+}
