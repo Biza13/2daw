@@ -19,3 +19,41 @@ h1{
     height: 200px;
     padding: 10px;
 }
+
+/*ESTILOS SEGUNDA PARTE*/
+.parteDos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parteDos .sectionB {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    width: 60%;
+    height: 250px;
+}
+
+.parteDos .sectionB img {
+    width: 30%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.sectionB div{
+    width: 60%;
+}
+
+.parteDos.sectionB .dos{
+    display: flex;
+    align-items: center;
+}
+
+.parteDos .sectionB .dos {
+    display: flex;
+}
+
+.dos div {
+    order: 2;   /*POner el div en la segunda posición es decir detras de la imagen*/
+    padding: 10px;
+}
