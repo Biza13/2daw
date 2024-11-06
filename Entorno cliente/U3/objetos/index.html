@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 1</h2>
+        <p>Mirar la consola</p>
+        <script>
+            let personas = [
+                { nombre: "Juana", edad: 18},
+                { nombre: "Jose", edad: 16},
+                { nombre: "Julián", edad: 19}
+            ];
+
+            let persona = new Personas("Lucas", 19);
+
+            personas.push(persona);
+            console.log("Ejercicio 1");
+            console.log(personas);
+
+            const edadMedia = personas => {
+                let edadMedia = 0;
+                personas.forEach(persona => {
+                    edadMedia += persona.edad;
+                });
+                return edadMedia / personas.length;
+            }
+
+            console.log("Ejercicio 1 edad promedio. Edades (18,16,19,19)");
+            console.log(edadMedia(personas));
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2</h2>
+        <p>Mirar consola</p>
+        <script>
+            let numero = new Telefono("654821357");
+            console.log("Numeros de telefono");
+            console.log(numero);
+            numero.llamar();
+            console.log("Llamamos al metodo llamar");
+            console.log(numero);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3</h2>
+        <p>Las funciones estan en el archivo .js</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4</h2>
+        <p>Mirar la consola</p>
+        <script>
+            console.log("console.log dentro de la funcion al crear cada casa");
+            let casaA = new Casas("Garcia Prieto", 58, 15706);
+            let casaB = new Casas("Camino Caneiro", 29, 32004);
+            let casaC = new Casas("San Clemente", "s/n", 15705);
+            
+            console.log("El código postal de la casa A es " + casaA.cp);
+            console.log("La calle de la casa C es " + casaC.calle);
+            //console.log("El código postal de la casa A es: " + casaA.cp);
+        </script>
+    </section>
+
+    <section>
+        <h2>Ejercicio 5 Centro educativo</h2>
+        <p>Mirar consola</p>
+        <script>
+            let alumnos = [];
+            console.log("Creando Alumnos");
+            alumnos.push(new Alumno("22", "Juan", 6));
+            alumnos.push(new Alumno("23", "Amparo", 9));
+            alumnos.push(new Alumno("24", "José", 5));
+            console.log(alumnos);
+
+            let colegios = [];
+            console.log("Creando colegios");
+            colegios.push(new Colegio("San cristobal", 5, 10));
+            colegios.push(new Colegio("Iliberis", 2, 5));
+            colegios.push(new Colegio("Carmelotes", 6, 8));
+
+            console.log("Los alumnos del colegio " + colegios[1].nombre + " son " + colegios[1].alumnos);
+            
+            colegios[1].arrAlumnos.forEach(alumno => {
+            console.log(alumno.nombre);
+            });
+
+            console.log("consultando nota media del alumno con id 1 del centro iliberis")
+            colegios[1].consultarNotaMedia(1);
+
+            console.log("modificando la nota media de este mismo alumno a un 7");
+            colegios[1].modificarNotaMedia(1, 7);
+        </script>
+    </section>
+</body>
+</html>
