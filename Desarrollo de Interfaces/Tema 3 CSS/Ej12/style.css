@@ -1,0 +1,111 @@
+/* ESTILOS GENERALES */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+}
+
+nav{
+    background-color: rgb(213, 213, 194);
+    width: 95%;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+
+li{
+    list-style: none;
+}
+
+nav ul li:hover{
+    background-color: rgb(107, 64, 147);
+}
+
+nav ul li{
+    float: left;
+    margin: 0 10px;
+    position: relative;
+    padding: 0 30px;
+}
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color: rgb(93, 202, 93);
+    left: 0;
+    top: 50px;
+    padding: 0;
+    width: 270px;
+}
+
+nav ul li:hover ul{
+    background-color: rgb(107, 64, 147);
+    display: block;
+}
+
+nav ul li ul li{
+    float: none;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0;
+}
+
+nav ul li ul li ul{
+    width: 100%;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+nav ul li ul li:hover ul li{
+    background-color: rgb(93, 202, 93);
+}
+
+nav ul li:hover ul li ul{
+    display: none;
+}
+
+nav ul li ul li:hover ul{
+    height: 100%;
+    display: block;
+    background-color: rgb(93, 202, 93);
+}
+
+nav ul li ul li ul li:hover{
+    background-color: rgb(107, 64, 147);
+}
+
+img{
+    max-width: 50px;
+    position: absolute;
+    right: 30px;
+}
+
+main{
+    width: 98%;
+    height: 300px;
+    margin: 10px auto;
+    position: fixed;
+    z-index: -1;
+    background-image: url("https://picsum.photos/1000/500");
+    background-size: cover;
+    text-align: center;
+}
+div{
+    padding-top: 75px;
+    color: white;
+}   
+
+button{
+    background-color: rgb(255, 102, 0);
+    color: white;
+    height: 35px;
+    width: 130px;
+    border: 0px;
+    border-radius: 5px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul id="hobby-list">
+        <li class="hobby">Playing the banjo</li>
+        <li class="hobby">Paddleboarding</li>
+    </ul>
+
+    <div>
+
+    </div>
+
+    <div class="parrafos">
+
+    </div>
+
+    <script>
+        var hobbyesList = document.getElementById("hobby-list");
+        var hobbies = document.getElementsByTagName("li");
+        var alsoHobbies = document.getElementsByClassName("hobby");
+        var firstHobby = document.querySelector("ul li.hobby");
+        var againAlsoHobbies = document.querySelectorAll("ul li.hobby")
+
+        console.log(hobbyesList);
+        console.log(hobbies);
+        console.log(alsoHobbies);
+        console.log(firstHobby);
+        console.log(againAlsoHobbies);
+
+        //coger el nodo padre
+        let nodoDiv = document.getElementsByTagName("div")[0];
+
+        //crear el p
+        let nodoP = document.createElement("p");
+
+        //ponerle el p como hijo al div
+        nodoDiv.appendChild(nodoP);
+
+        //let nodoP = nodoDiv.appendChild(document.createElement("p"));
+
+        //crear el texto y ponerselo al nodo p
+        let texto = document.createTextNode("Hola Pepe");
+        nodoP.appendChild(texto);
+
+        segundoDiv = document.querySelector("div.parrafos");
+        for(let i = 0; i<5; i++){
+            nodeP = document.createElement("p");
+            nodeText = document.createTextNode("parrafo " + (i+1));
+            nodeP.appendChild(nodeText);
+            segundoDiv.appendChild(nodeP);
+        }
+
+    </script>
+</body>
+</html>
