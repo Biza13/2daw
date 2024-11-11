@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando datos json</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <script type="module" src="main.js">  </script> -->
+    <script type="module">
+        import { arrArticulos } from "./modulos/articulos.mjs";
+
+        function formateaArtículos() {
+            console.log('Mostrando articulos..')
+            arrArticulos.forEach((articulo) => {
+                console.log(articulo);
+            });
+        }
+
+        formateaArtículos();
+
+        let section = document.createElement("section");
+        let body = document.querySelector("body");
+        body.appendChild(section);
+
+        arrArticulos.forEach(articulo => {
+            let article = document.createElement("article");
+            let img = document.createElement("img");
+
+            img.src = articulo.image;
+            article.appendChild(img);
+
+            let divPes = document.createElement("div");
+            article.appendChild(divPes);
+
+            let pCat = document.createElement("p");
+            let categoria = document.createTextNode("Categoría: " + articulo.category);
+            pCat.appendChild(categoria);
+            divPes.appendChild(pCat);
+
+            let pTit = document.createElement("p");
+            let titulo = document.createTextNode("Nombre: " + articulo.title);
+            pTit.appendChild(titulo);
+            divPes.appendChild(pTit);
+
+            let pDes = document.createElement("p");
+            let descripcion = document.createTextNode("Descripción: " + articulo.description);
+            pDes.appendChild(descripcion);
+            divPes.appendChild(pDes);
+
+            let pPunt = document.createElement("p");
+            let puntuacion = document.createTextNode("Puntuación: " + articulo.rating.rate);
+            pPunt.appendChild(puntuacion);
+            divPes.appendChild(pPunt);
+
+            let pPre = document.createElement("p");
+            let precio = document.createTextNode("Precio: " + articulo.price);
+            pPre.appendChild(precio);
+            divPes.appendChild(pPre);
+
+            section.appendChild(article)
+        });
+        
+    </script>
+</body>
+
+</html>

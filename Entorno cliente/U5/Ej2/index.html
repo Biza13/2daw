@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+    <style>
+        div #oculto{
+            display: none;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 1 esta hecho en la relación anterior</h2>
+    <h2>Ejercicio 2 y 3</h2>
+    <section>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit hic ratione rerum at debitis odio? Velit temporibus nisi est deserunt ad consequuntur nam, officia dolores nesciunt, voluptates hic nostrum assumenda!</p>
+            <p id="oculto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero explicabo atque non. Repellat vel odio, nemo exercitationem officia sed nulla non optio quaerat enim doloremque modi, aut minima? Sapiente, a.</p>
+        </div>
+        <script>
+            function mostrar(){
+                let parrafo = document.getElementById("oculto");
+                parrafo.style.display = "block"; 
+            }
+        
+            function ocultar(){
+                let parrafo = document.getElementById("oculto");
+                parrafo.style.display = "none";
+            }
+        </script>
+        <a href="#" onclick="mostrar()">Mostrar</a>
+        <br>
+        <a href="#" onclick="ocultar()">Ocultar</a>
+    </section>
+
+    <h2>Ejercicio 4</h2>
+    <section>
+        <ul id="lista">
+            <li>a</li>
+            <li>b</li>
+        </ul>
+        <button onclick="agregarElemento()">Agregar elemento a la lista</button>
+        <script>
+            function agregarElemento(){
+                let ul = document.getElementById("lista");
+                let li = document.createElement("li");
+                let texto = document.createTextNode("Nuevo elemento");
+
+                li.appendChild(texto);
+                ul.appendChild(li);
+            }
+        </script>
+    </section>
+
+    <h2>Ejercicio 5</h2>
+    <section>
+        <form action="" id="ej5">
+            <input type="file" id="archivo" name="archivo"><br><br>
+        </form>
+        <br>
+        <button onclick="añadirMasFicheros()">Adjuntar otro fichero</button>
+        <br><br>
+        <button>Enviar</button>
+        <script>
+            function añadirMasFicheros(){
+                let form = document.getElementById("ej5");
+                let input = document.createElement("input");
+                let br = document.createElement("br");
+                let br1 = document.createElement("br");
+
+                input.type = "file";
+                input.id = "archivo";
+                input.name = "archivo"
+
+                form.appendChild(input);
+                form.appendChild(br);
+                form.appendChild(br1);
+            }
+        </script>
+    </section>
+
+    <h2>Ejercicio 6</h2>
+    <section>
+        <button onclick="anterior()">Anterior</button>
+        <img src="./img/1.jpg" id="imagen">
+        <button onclick="siguiente()">Siguiente</button>
+        <script>
+            let imagenes = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg"];
+            let posicionActual = 0;
+            
+            function anterior(){
+                //si la posicion de el index es mayor a 0, le resto uno para mostrar la anterior
+                if (posicionActual > 0){
+                    posicionActual--;
+                //en caso de que sea 0 (es decir la primera imagen), muestro la ultima
+                }else{
+                    posicionActual = imagenes.length-1;
+                }
+                let imagen = document.getElementById("imagen");
+                imagen.src = imagenes[posicionActual];
+            }
+
+            function siguiente(){
+                //si la posicion menor a el lenght -1 del array, le sumo uno para mostrar la anterior
+                if (posicionActual < imagenes.length-1){
+                    posicionActual++;
+                //en caso de que sea 0 (es decir la primera imagen), muestro la ultima
+                }else{
+                    posicionActual = 0;
+                }
+                let imagen = document.getElementById("imagen");
+                imagen.src = imagenes[posicionActual];
+                
+            }
+        </script>
+    </section>
+</body>
+</html>

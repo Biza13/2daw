@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid{
+    width: 90%;
+    height: 500px;
+    outline: 3px solid black;
+    margin: 0 auto;
+    display: grid;   /*los hijos cogen todo el contenido de este contenedor (el padre)*/
+    /* grid-template-columns: 200px 300px auto; */  /*el tamaño de cada columna auto cogera el resto*/
+    /* grid-template-columns: 1fr 2fr 1fr; */     /*por fracciones la divide en 4 fracciones y le dices cada columna las fracciones que quieres*/
+    /* grid-template-columns: 200px 1fr 20%; */   /* mezclando */
+    /* grid-template-columns: repeat(3, 1fr); */   /*Crea 3 columnas de 1 fraccion cada una*/
+    /* grid-template-columns: repeat(3, 30px 80px); */   /*repite un patron, hara 3 columnas de dos en dos, (30,80 ; 30 80 ; 30,80)*/
+    /* grid-template-rows: repeat(3, auto); */   /*lo mismoo con las filas*/
+    /* grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+
+    /*Espaciadores entre celdas*/
+    /* row-gap: 20px; */  /*Espaciado entre filas*/
+    /* column-gap: 5px; */    /*Espaciado entre columnas*/
+    /* gap: 10px 20px; */    /*lo mismo short cut el primer valor las filas y el segundo las columnas*/
+    /* gap: 20px; */  /*selo aplica a las dos*/
+
+    /* grid-auto-flow: column; */ /*con esto cambiamos el flojo del trabajo en vez de que automaticamente se vayan en la lnes, asi se iran en columna*/
+    /* grid-auto-flow: dense; */   /*rellena los huecos en caso de que se queden huecos vacios en meio o delante*/
+
+    /* justify-content: stretch; */   /*coge todo el contenido*/
+    /* justify-items: start; */   /*Todo al principio y con el end todo al final*/
+
+    /* justify-content: center;
+    align-items: center; */
+
+    /* place-items: end start; */  /*short cut -->align-items justify-items*/
+
+    /*Pero para usar esto las celdas han de ser mas pequeñas que el contenedor padre, sino ocupan el maximo*/
+    /* justify-content: space-between;
+    align-content: space-between; */
+
+    /*Short cut para los dos de arriba*/
+    place-content: start end;   /*El primero es el align-content y el segundo el justify-content*/
+}
+
+.grid__item{
+    font-size: 3rem;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+}
+
+.grid__item:nth-child(1){
+    background-color: crimson;
+    /* grid-column-start: 3; */   /*Empezara a colocarse en la linea 3 estara entre la linea 3 y 5 ocupando dos*/
+    /* grid-column-end: 5; */    /*terminara de colocarse en la linea 5*/
+    /* grid-row-start: 2; */    /*Empezara en la fila 2*/
+    /* grid-row-end: 3; */   /*termina en la linea 3*/
+
+    /* align-self: start; */  /*Eje vertical*/
+    /* justify-self: end; */  /*Eje horizontal*/
+}
+
+.grid__item:nth-child(2){
+    background-color: darkmagenta;
+    /* grid-column: 3/5; */   /*Short cut para la colocacion en la columna el start y el end*/
+    /* grid-row: 3/4; */     /*Lo mismo con las filas*/
+    order: -3;
+}
+
+.grid__item:nth-child(3){
+    background-color: steelblue;
+    /* grid-row: 2 / span 2; */   /*Empieza en la dos y le decimos que se expanda 2 espacios*/
+    /* grid-column: 1 / span 2; */    /*Lo mismo en la fila*/
+    order: -5;
+}
+
+.grid__item:nth-child(4){
+    background-color: brown;
+    /* grid-column: 2/-1; */  /*Empieza en la 2 y llega hasta la -1 que es la ultima*/
+    order: -4;
+}
+
+.grid__item:nth-child(5){
+    background-color: chocolate;
+}
+
+.grid__item:nth-child(6){
+    background-color: midnightblue;
+    /* grid-area: 1/-3/-1/-1; */    /*este seria el orden --> Grid-row-start/grid colomn-start/grid-row-end/grid-column-end*/
+}
