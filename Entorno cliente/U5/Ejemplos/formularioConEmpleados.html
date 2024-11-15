@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de empleados</title>
+  </head>
+  <body>
+    <form onsubmit="return false" name="formEmpleado">
+      id: <input type="text" name="id" /><br />
+      Nombre: <input type="text" name="nombre" /><br />
+      Telefono: <input type="text" name="telefono" /><br />
+      <input
+        type="submit"
+        onclick="crearEmpleado()"
+        value="add"
+      />
+    </form>
+    <script>
+      class Empleado {
+        constructor(codigo, nombre, telefono) {
+          this.codigo = codigo;
+          this.nombre = nombre;
+          this.telefono = telefono;
+        }
+
+        muestraEmpleado() {
+          console.log("Empleado " + this.codigo + " -Nombre" + this.nombre);
+        }
+      }
+
+      function crearEmpleado() {
+        let formulario = document.forms.formEmpleado;
+
+        let id = formulario.elements.id.valaue;
+        let nombre = formulario.elements.nombre.value;
+        let telefono = formulario.elements.telefono.value;
+
+        let objEmpleado = new Empleado(id, nombre, telefono);
+
+        arrEmpl.push(objEmpleado);
+        return objEmpleado;
+      }
+
+      let emp = "";
+      let arrEmpl = [];
+
+      arrEmpl.forEach(element => {
+        element.muestraEmpleado();
+      });
+
+    </script>
+  </body>
+</html>

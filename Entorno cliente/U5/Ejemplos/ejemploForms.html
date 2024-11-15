@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <form name="login" onsubmit="return false">
+      Usuario: <input type="text" name="usuario" /><br />
+      Contraseña: <input type="password" name="pass" /><br />
+      <input onclick="validar()" type="submit" value="Enviar" />
+    </form>
+    <script>
+      let arr = [
+        {
+          usuario: "pepe",
+          contraseña: "1234",
+        },
+        {
+          usuario: "jose",
+          contraseña: "1234",
+        },
+        {
+          usuario: "maria",
+          contraseña: "1234",
+        },
+        {
+          usuario: "amparo",
+          contraseña: "1234",
+        },
+      ];
+      let form = document.forms.login;
+      let usuario = form.elements.usuario.value;
+      console.log(usuario);
+      function validar() {
+        let form = document.forms.login;
+        let usuario = form.elements.usuario.value;
+        let pass = form.elements.pass.value;
+        if (usuario == "" || pass == "") {
+          alert("El campo usuario y contraseña son obligatorio");
+        }
+      }
+    </script>
+  </body>
+</html>

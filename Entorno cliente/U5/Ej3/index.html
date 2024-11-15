@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios DOM</title>
+    <!-- <script src="main.js"></script> -->
+    <style>
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 2px;
+        }
+
+        .casilla {
+            background-color: rgb(183, 181, 181);
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .vacia {
+            background-color: #666565;
+            cursor: default;
+        }
+
+        #tableroB{
+            background-color: black;
+            width: 406px;
+            height: 406px;
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 2px;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <section>
+        <div id="cont">
+            0
+        </div>
+        <button onclick="incrementa()">Incrementar</button>
+        <script>
+            function incrementa(){
+                let div = document.getElementById("cont");
+                let contenido = parseInt(div.textContent);
+        
+                contenido = contenido + 1;
+                div.textContent = contenido;
+            }
+        </script>
+    </section>
+
+    <h2>Ejercicio 2</h2>
+    <section>
+        <div id="tablero"></div>
+        <script>
+            //crear un objeto que NO permite valores duplicados con el set
+            let numeros = new Set();
+            let arrTablero = [];
+            let tableroBidimensional = [];
+
+            //CREAR LAS CASILLAS
+            for(let i = 0; i<16; i++){
+
+                let div = document.getElementById("tablero");
+                let divCasilla = document.createElement("div");
+                //dar una clase a los divs casillas 
+                divCasilla.className = "casilla";
+
+                let numRand;
+
+                //generara numeros random hasta que uno NO este en el objeto numeros
+                do {
+                    numRand = Math.floor(Math.random() * 16) + 1;
+                } while (numeros.has(numRand));
+
+                //añadir al objeto numeros el numero random
+                numeros.add(numRand);
+                
+                if (numRand == 16){
+                    numRand = "";
+                    // esto añade una clase extra a la casilla vacia para añadir css
+                    //classLIst crea una coleccion de clases de un elemento y add añade otra clase
+                    divCasilla.classList.add("vacia");
+                }
+                //creamos el nodo contenido con el numero random
+                let contenido = document.createTextNode(numRand);
+                divCasilla.appendChild(contenido);
+                div.appendChild(divCasilla);
+
+                arrTablero.push(numRand);
+            }
+
+            //para convertir el arrTablero en un array bidimensional de 4 filas
+            //hay que usar += para que cambie el valor a la i, no funciona si solo pnes i + 4, yqa que no cambia el valor a i
+            for (let i = 0; i < arrTablero.length; i += 4) {
+                //con slice cortamos el array desde i que es 0 hasta 0+4
+                //en la siguiente vuelta i sera 4 y cogera de 4 a 8
+                tableroBidimensional.push(arrTablero.slice(i, i + 4));
+            }
+            console.log(arrTablero);
+            console.log(tableroBidimensional);
+
+            //funcion para obtener la posicion vacia
+            function obtenerVacia(arr){
+                for(let f = 0; f<arr.length; f++){
+                    for(let c = 0; c<arr[f].length; c++){
+                        if (arr[f][c] == ""){
+                            return f.toString() + c.toString();
+                        }
+                    }
+                }
+            }
+            
+            console.log(obtenerVacia(tableroBidimensional));
+
+            let vaciaFila = parseInt(obtenerVacia(tableroBidimensional).substring(0,1));
+            let vaciaColumna = parseInt(obtenerVacia(tableroBidimensional).substring(1,2));
+
+            console.log(vaciaFila);
+            console.log(vaciaColumna);
+
+            //asignarle evento onclick a las casillas adyacentes a la vacia
+            function actualizarCasillasMovibles() {
+                let divs = document.querySelectorAll('div.casilla');
+
+                let vacia = obtenerVacia(tableroBidimensional);
+                let vaciaFila = parseInt(vacia.substring(0, 1));
+                let vaciaColumna = parseInt(vacia.substring(1, 2));
+
+                //comprobar que no se salgan de los limites del arrayBidimensional
+                /*Esta forma de poner condiciones se traduce en esto
+                if(vaciaFila > 0){
+                    arriba = tableroBidimensional[vaciaFila-1][vaciaColumna]
+                }else{
+                    arriba = undefined
+                }
+                es decir, se pone la condicion y si es true se asignara lo de despues del ? y si es false se asignara lo de despues del :*/
+                let arriba = (vaciaFila > 0) ? tableroBidimensional[vaciaFila - 1][vaciaColumna] : undefined;
+                let abajo = (vaciaFila < 3) ? tableroBidimensional[vaciaFila + 1][vaciaColumna] : undefined;
+                let izq = (vaciaColumna > 0) ? tableroBidimensional[vaciaFila][vaciaColumna - 1] : undefined;
+                let der = (vaciaColumna < 3) ? tableroBidimensional[vaciaFila][vaciaColumna + 1] : undefined;
+
+                //dar evento listener a las casillas movibles
+                divs.forEach(div => {
+                    let contenido = div.textContent;
+                    //coger las casillas que son adyadecnes para darles el evento
+                    if (contenido == arriba || contenido == abajo || contenido == izq || contenido == der) {
+                        div.addEventListener('click', moverCasilla);
+                        div.classList.remove("no-movible");
+                        //si no son adyacentes quitar el listener
+                    } else {
+                        div.removeEventListener('click', moverCasilla);
+                    }
+                });
+            }
+
+            function moverCasilla(){
+                let contenido = this.textContent;
+
+                //posicion de la casilla vacia
+                let vacia = obtenerVacia(tableroBidimensional);
+                let fVacia = parseInt(vacia.substring(0,1));
+                let cVacia = parseInt(vacia.substring(1,2));
+
+                //obtener la posicion de el div clicado
+                let posAct;
+                for(let f = 0; f<tableroBidimensional.length; f++){
+                    for(let c = 0; c<tableroBidimensional[f].length; c++){
+                        if (tableroBidimensional[f][c] == contenido){
+                            posAct = f.toString() + c.toString();
+                            break;
+                        }
+                    }
+                }
+
+                let filaActual = parseInt(posAct.substring(0, 1));
+                let colActual = parseInt(posAct.substring(1, 2));
+
+                //actualizar el array con los valores cambiados
+                tableroBidimensional[fVacia][cVacia] = contenido;
+                tableroBidimensional[filaActual][colActual] = "";
+
+                //actualizar el contenido que se ve y no solo en el array
+                this.textContent = "";
+
+                let divs = document.querySelectorAll('div.casilla');
+                divs.forEach(div => {
+                    if (div.classList.contains("vacia")) {
+                        div.textContent = contenido; // Coloca el contenido movido en la casilla vacía
+                        div.classList.remove("vacia"); // Quita la clase 'vacia' del div
+                    }
+                });
+                this.classList.add("vacia");
+
+                actualizarCasillasMovibles();
+            }
+
+            actualizarCasillasMovibles();
+        </script>
+    </section>
+
+    <h2>Ejercicio 3</h2>
+    <section>
+        <div id="tableroB"></div>
+        <script>
+            //crear un objeto que NO permite valores duplicados con el set
+            let numerosa = new Set();
+            let arrTableroa = [];
+            let tableroBidimensionala = [];
+
+            // Crear las casillas
+            for (let i = 0; i < 16; i++) {
+                let numRand;
+
+                // Generar números aleatorios hasta que uno no esté en el objeto numeros
+                do {
+                    numRand = Math.floor(Math.random() * 16) + 1;
+                } while (numerosa.has(numRand));
+
+                // Añadir al objeto numeros el número aleatorio
+                numerosa.add(numRand);
+                arrTableroa.push(numRand);  // Guardamos el número para la disposición final
+            }
+
+            // Creamos el tablero visual
+            let div = document.getElementById("tableroB");
+
+            arrTableroa.forEach(num => {
+                let imagen = document.createElement("img");
+                imagen.className = "casilla";
+                imagen.src = "./img/" + num + ".webp"
+                div.appendChild(imagen);
+
+                if (num == 16) {
+                    div.classList.add("vacia");
+                }
+            });
+
+            // Para convertir el arrTableroa en un array bidimensional de 4 filas
+            for (let i = 0; i < arrTableroa.length; i += 4) {
+                tableroBidimensionala.push(arrTableroa.slice(i, i + 4));
+            }
+
+            //funcion para obtener la posicion vacia
+            function obtenerVaciaImg(arr){
+                for(let f = 0; f<arr.length; f++){
+                    for(let c = 0; c<arr[f].length; c++){
+                        if (arr[f][c] == 16){
+                            return f.toString() + c.toString();
+                        }
+                    }
+                }
+            }
+
+            //asignarle evento onclick a las casillas adyacentes a la vacia
+            function actualizarCasillasMoviblesI() {
+                let imgs = document.querySelectorAll('img.casilla');
+
+                let vacia = obtenerVaciaImg(tableroBidimensionala);
+                let vaciaFila = parseInt(vacia.substring(0, 1));
+                let vaciaColumna = parseInt(vacia.substring(1, 2));
+
+                //comprobar que no se salgan de los limites del arrayBidimensional
+                /*Esta forma de poner condiciones se traduce en esto
+                if(vaciaFila > 0){
+                    arriba = tableroBidimensional[vaciaFila-1][vaciaColumna]
+                }else{
+                    arriba = undefined
+                }
+                es decir, se pone la condicion y si es true se asignara lo de despues del ? y si es false se asignara lo de despues del :*/
+                let arriba = (vaciaFila > 0) ? tableroBidimensionala[vaciaFila - 1][vaciaColumna] : undefined;
+                let abajo = (vaciaFila < 3) ? tableroBidimensionala[vaciaFila + 1][vaciaColumna] : undefined;
+                let izq = (vaciaColumna > 0) ? tableroBidimensionala[vaciaFila][vaciaColumna - 1] : undefined;
+                let der = (vaciaColumna < 3) ? tableroBidimensionala[vaciaFila][vaciaColumna + 1] : undefined;
+
+                imgs.forEach(img => {
+                    // coger el numero antes de el .webp y como el match devuelve un array siendo la posicion 0 todo el contenido y la 1 lo que queremos ocnseguir, accederemos al 1
+                    let num = parseInt(img.src.match(/(\d+)\.webp/)[1]); 
+
+                    // Comprobamos si la casilla está en una posición adyacente
+                    if (num == arriba || num == abajo || num == izq || num == der) {
+                        // Asignar evento click solo a las casillas adyacentes
+                        img.addEventListener('click', moverCasillaI);
+                        img.classList.remove("no-movible");
+                    } else {
+                         // Si no es adyacente, quitamos el evento de click
+                        img.removeEventListener('click', moverCasillaI);
+                        img.classList.add("no-movible");
+                    }
+                });
+            }
+
+            console.log(tableroBidimensionala)
+            function moverCasillaI(){
+                let contenido = this.getAttribute('src');
+                console.log("Contenido actual de this.src:", contenido);
+                //posicion de la casilla vacia
+                let vacia = obtenerVaciaImg(tableroBidimensionala);
+                let fVaciaa = parseInt(vacia.substring(0,1));
+                let cVaciaa = parseInt(vacia.substring(1,2));
+
+                //obtener la posicion de el img clicado
+                let posAct;
+                for (let f = 0; f < tableroBidimensionala.length; f++) {
+                    for (let c = 0; c < tableroBidimensionala[f].length; c++) {
+                        let numImg = tableroBidimensionala[f][c];
+                        if ("./img/" + numImg + ".webp" == contenido) {
+                            posAct = f.toString() + c.toString();
+                            break;
+                        }
+                    }
+                }
+                console.log(posAct)
+                let filaActuala = parseInt(posAct.substring(0, 1));
+                let colActuala = parseInt(posAct.substring(1, 2));
+
+                //actualizar el array con los valores cambiados
+                tableroBidimensionala[fVaciaa][cVaciaa] = tableroBidimensionala[filaActuala][colActuala];
+                tableroBidimensionala[filaActuala][colActuala] = 16;
+
+                //actualizar el contenido que se ve y no solo en el array
+                let imgs = document.querySelectorAll('img.casilla');
+                imgs.forEach(img => {
+                    let imgSrc = img.getAttribute('src');
+                    let num = parseInt(imgSrc.match(/(\d+)\.webp/)[1]);
+
+                    // Si es la casilla vacía, se actualiza
+                    if (imgSrc === "./img/16.webp") {
+                        img.src = "./img/" + tableroBidimensionala[fVaciaa][cVaciaa] + ".webp";
+                    }
+
+                    // Si es la imagen que se movió
+                    if (imgSrc === contenido) {
+                        img.src = "./img/16.webp"; // Poner la imagen vacía
+                    }
+                });
+                this.classList.add("vacia");
+
+                actualizarCasillasMoviblesI();
+            }
+
+            actualizarCasillasMoviblesI();
+        </script>
+    </section>
+</body>
+</html>
