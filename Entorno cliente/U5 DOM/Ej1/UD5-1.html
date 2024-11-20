@@ -13,6 +13,7 @@
     <script type="module">
         import { arrArticulos } from "./modulos/articulos.mjs";
 
+        //informacion en consola
         function formateaArtículos() {
             console.log('Mostrando articulos..')
             arrArticulos.forEach((articulo) => {
@@ -25,6 +26,11 @@
         let section = document.createElement("section");
         let body = document.querySelector("body");
         body.appendChild(section);
+
+        //Creacion de un fragmento para mejor optimizacion del dom
+        //añadiremos los articles al fragmento en cada pasada del foreach
+        //y fuera del foreach añadiremos el fragmento a la section (elemento padre)
+        let fragmento = document.createDocumentFragment();
 
         arrArticulos.forEach(articulo => {
             let article = document.createElement("article");
@@ -52,7 +58,7 @@
             divPes.appendChild(pDes);
 
             let pPunt = document.createElement("p");
-            let puntuacion = document.createTextNode("Puntuación: " + articulo.rating.rate);
+            let puntuacion = document.createTextNode("Puntuación: " + articulo.rating.rate + "; Votos: " + articulo.rating.count);
             pPunt.appendChild(puntuacion);
             divPes.appendChild(pPunt);
 
@@ -61,8 +67,10 @@
             pPre.appendChild(precio);
             divPes.appendChild(pPre);
 
-            section.appendChild(article)
+            fragmento.appendChild(article);
         });
+
+        section.appendChild(fragmento);
         
     </script>
 </body>

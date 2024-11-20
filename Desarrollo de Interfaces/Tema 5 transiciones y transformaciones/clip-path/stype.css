@@ -1,0 +1,19 @@
+.clip{
+    background-color: hotpink;
+    width: 400px;
+    height: 400px;
+
+    /*para el circulo sircle(radio% at centro que va en dos puntos (50% 50%))*/
+    /* clip-path: circle(50% at 50% 50%); */
+
+    /*Para el cuadrado inset(... round para los border redondeados) cada esquina empezando por arriba derecha lo que se separa del borde*/
+    /* clip-path: inset(20% 20% 20% 20% round 20px); */
+
+    /*Para elipse ellipse() hay que darle los dos radios(el de la x y el de la y) y el centro*/
+    /*el centro tambien lo puedo decor con center, top bottom, left y right*/
+    /* clip-path: ellipse(25% 40% at center); */
+
+    /*Para el poligono polygon()hay que darle los puntos de la x y la y*/
+    /*Siempre en la direccion de las agujas del reloj*/
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}

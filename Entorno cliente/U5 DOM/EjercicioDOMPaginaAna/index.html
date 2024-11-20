@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Galería</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Galería de imágenes</h1>
+        <section class="galeria">
+            <img src="./img/uno.jpg" alt="uno">
+            <img src="./img/dos.jpg" alt="dos">
+            <img src="./img/tres.jpg" alt="tres">
+            <img src="./img/cuatro.jpg" alt="cuatro">
+            <img src="./img/cinco.jpg" alt="cinco">
+            <img src="./img/seis.jpg" alt="seis">
+        </section>
+        <section class="articulos">
+            <article>
+                <div>
+                    <h2>Galería 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus ipsum expedita magni quos est.
+                        Expedita aspernatur, facere ut id porro voluptatibus quos quisquam illum maxime repellendus.
+                        Laudantium ipsum culpa quam!
+                    </p>
+                </div>
+                <img src="https://picsum.photos/id/21/300/300" alt="Zapato Blanco">
+            </article>
+            <article>
+                <img src="https://picsum.photos/id/20/300/300" alt="Zapato Blanco">
+                <div>
+                    <h2>Galería 3</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic consequatur cupiditate sunt accusamus
+                        rem nobis necessitatibus ad. Non enim dolorum, perspiciatis sequi culpa dolore illo. Quibusdam vero
+                        facere atque quam.
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <h2>Galería 4</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam quasi natus voluptate
+                        praesentium quae fugiat, asperiores soluta eius eum quod aut excepturi autem pariatur nesciunt
+                        laborum itaque? Beatae, ad enim.
+                    </p>
+                </div>
+                <img src="https://picsum.photos/id/24/300/300" alt="Zapato Blanco">
+            </article>
+        </section>
+    </main>
+    <!-- <script>
+        /*RECORRER ELEMENTOS Y NODOS DE ARTICLE*/
+        const listaA = document.getElementsByTagName("article")[0];
+
+        //con el a nos muestra tambien los text que pueden ser retornos de carro porque coge todos los nodos y los textos son nodos
+        let a = listaA.childNodes;
+        //con el children solo nos da los elementos html
+        let b = listaA.children;
+        console.log(a)
+        console.log(b)
+        
+        //es lo mismo que el de abajo es para coger los nodos que no sean texto es de cir los elementos pero 
+        //el HTMLcolection no se puede recorrer con un foreach
+        for(let element of b){
+            if (element.nodeName != "#text"){
+                console.log(element);
+            }
+        }
+
+        /*FUNCION PARA VER LOS HIJOS RECURSIVAMENTE ES DECIR LOS HIJOS DE LOS HIJOS*/
+        console.log("recursividad")
+        function muestraElementosDom(element){
+            console.log(element.tagName);
+            for(const ele of element.childNodes){
+                if (ele.tagName != undefined){
+                    muestraElementosDom(ele);
+                }
+            }
+        }
+
+        let body = document.querySelector("body");
+        //console.log(muestraElementosDom(body));
+        muestraElementosDom(body)
+
+        /*CREAR OTRO ARICULO*/
+        let padre = document.getElementsByClassName("articulos")[0];
+        let src = "./img/uno.jpg"
+
+        let crearArt = (elem, imagen) => {
+            //crear los elementos
+            let fragmento = document.createDocumentFragment();
+            let articulo = document.createElement("article");
+            let img = document.createElement("img");
+            let div = document.createElement("div");
+            let h2 = document.createElement("h2");
+            let p = document.createElement("p");
+            let text = document.createTextNode("Lorem ipsum...");
+
+            //engancharlos al respectivo padre
+            fragmento.appendChild(articulo);
+            articulo.appendChild(img);
+            articulo.appendChild(div);
+            div.appendChild(h2);
+            div.appendChild(p);
+            p.appendChild(text);
+
+            img.src = imagen;
+
+            elem.appendChild(fragmento);
+        }
+
+        crearArt(padre, src);
+    </script> -->
+</body>
+
+</html>

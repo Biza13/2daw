@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+
+section{
+    width: 80%;
+}
+
+ul{
+    padding: 0;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+li{
+    width: 25%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: black;
+    color: white;
+    border-top: 5px solid;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+li span{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    transition: height 1s linear;
+    z-index: 5;
+}
+
+li:first-of-type{
+    border-top-color: yellow;
+}
+
+li:first-of-type span{
+    background-color: yellow;
+}
+
+li:nth-child(2){
+    border-top-color: green;
+}
+
+li:nth-child(2) span{
+    background-color: green;
+}
+
+li:nth-child(3){
+    border-top-color: red;
+}
+
+li:nth-child(3) span{
+    background-color: red;
+}
+
+li:last-of-type{
+    border-top-color: purple;
+}
+
+li:last-of-type span{
+    background-color: purple;
+}
+
+li:hover span{
+    height: 100%;
+}
+
+li a{
+    position: relative; /*Para que el z-index haga efecto*/
+    text-decoration: none;
+    color: white;
+    z-index: 10;
+}
+
+li:hover a{
+    z-index: 10;
+    /*color: yellow; a cada uno de los a con el color del borde para que desaparezca el contenido*/
+}

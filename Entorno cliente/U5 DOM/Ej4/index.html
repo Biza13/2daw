@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM juegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="cronometro">
+        <h2>Cronómetro</h2>
+        <div id="contador">00:00</div>
+        <script>
+            let seg = 1;
+            let min = 0;
+            
+            function contador(){
+                if (seg < 59){
+                    document.getElementById("contador").innerHTML = min + ":" + seg;
+                    seg ++;
+                }else{
+                    seg = 0;
+                    min++;
+                    document.getElementById("contador").innerHTML = min + ":" + seg;
+                }
+
+                let segFormat;
+                let minFormat;
+
+                if (min < 10){
+                    minFormat = "0" + min;
+                }else{
+                    minFormat = min;
+                }
+
+                if (seg < 10){
+                    segFormat = "0" + seg;
+                }else{
+                    segFormat = seg;
+                }
+
+                document.getElementById("contador").innerHTML = minFormat + ":" + segFormat;
+
+                /*Todo lo de arriba en dos lineas
+                document.getElementById("contador").innerHTML = 
+                    (min < 10 ? "0" + min : min) + ":" + (seg < 10 ? "0" + seg : seg); */
+            }
+
+            function limpiar(elemento){
+                clearInterval(a);
+                elemento.innerHTML = "00:00";
+                //resetear otra vez los minutos y segundos
+                seg = 1;
+                min = 0;
+            } 
+
+        </script>
+        <button onclick="a = setInterval(contador, 1000)">Start</button>
+        <button onclick="clearInterval(a)">Stop</button>
+        <button onclick="limpiar(document.getElementById('contador'))">Reset</button>
+    </section>
+
+    <section class="ahorcado">
+        <h2>Ahorcado</h2>
+        <script>
+            let arrAbc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+            let arrPalabras = [
+                "elefante",
+                "astronauta",
+                "murciélago",
+                "cometa",
+                "libertad",
+                "jardín",
+                "mariposa",
+                "montaña",
+                "universo",
+                "cascada",
+                "guitarra",
+                "salmón",
+                "tren",
+                "espejo",
+                "pantalla",
+                "tiburón",
+                "galaxia",
+                "alfombra",
+                "robot",
+                "pluma",
+                "revolución",
+                "música",
+                "filosofía",
+                "dragón",
+                "tormenta"
+            ];
+
+            let longArrPalabras = arrPalabras.length;
+            let numRand = Math.floor(Math.random() * longArrPalabras);
+            let palabra = arrPalabras[numRand];
+
+            //cogemos el section ahorcado
+            let sec = document.querySelector(".ahorcado");
+
+            //CREACION DEL PARRAFO DE LAS VIDAS
+            let vidas = 10;
+            let textoVidas = document.createTextNode("Te quedan " + vidas + " vidas");
+            let pVidas = document.createElement("p");
+            pVidas.appendChild(textoVidas);
+            sec.appendChild(pVidas)
+
+            //FOREACH PARA CREAR LOS BOTONES
+            arrAbc.forEach(letra => {
+                const fragmento = document.createDocumentFragment();
+                let boton = document.createElement("button");
+                let letras = document.createTextNode(letra);
+                //crear el eventoListener con un click y añadiendole la funcion de addLetra()
+                //hay que añadir la funcion flecha para que solo se lame a la funcion si se presiona el boton
+                boton.addEventListener("click", () => addLetra(palabra, letra));
+                //boton.setAttribute("onclick", "addLetra(" + letra + ")");
+
+                boton.appendChild(letras);
+                fragmento.appendChild(boton);
+
+                sec.appendChild(fragmento);
+            });          
+
+            //CREACION DE LA PALABRA CON GUIONES
+            let palabraEncriptada = "_ ".repeat(palabra.length);
+            let palabraEncr = document.createTextNode(palabraEncriptada);
+            let parrafoPalabra = document.createElement("p");
+            parrafoPalabra.appendChild(palabraEncr);
+            sec.appendChild(parrafoPalabra);
+
+            //FUNCION PARA VER SI LAS LETRAS ESTAN O NO EN LA PALABRA
+            function addLetra(palabra, letraX){
+                let arrPosiciones = [];
+
+                let sec = document.querySelector(".ahorcado");
+                let p = document.createElement("p");
+                
+                if (palabra.includes(letraX)){
+                    for(let i = 0; i < palabra.length; i++){
+                        if (palabra[i] == letraX){
+                            let posi = i+1;
+                            arrPosiciones.push(posi);
+                        }
+                    }
+
+                    //el join recorre el arra y y separa los elementos por comas
+                    let texto = document.createTextNode("La letra " + letraX + " está en las posiciones: " + arrPosiciones.join(", "));
+                    p.appendChild(texto);
+                }else{
+                    let texto = document.createTextNode("La letra " + letraX + " no esta en la palabra");
+                    p.appendChild(texto);
+                    vidas--;
+                    pVidas.textContent = "Te quedan " + vidas + " vidas";
+                } 
+                sec.appendChild(p);
+
+                if (vidas == 0){
+                    let perder = document.createTextNode("Has Perdido");
+                    let h3 = document.createElement("h3");
+                    h3.appendChild(perder);
+
+                    //recargara la pagina en dos segundos
+                    setTimeout(() => {
+                        location.reload(); // Recarga la página
+                    }, 2000);
+
+                    //Busco el segunco hijo de la section con sec.children[1], ya que la 0 es el h2
+                    //y hago que me inserte antes del hijo[1]
+                    sec.insertBefore(h3, sec.children[1]);
+                }
+            }
+
+            console.log(palabra)
+        </script>
+        
+
+    </section>
+
+    <section>
+
+    </section>
+
+    <section>
+
+    </section>
+</body>
+</html>
