@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /*para no poner tantos br y tener un scroll*/
+    min-height: 400vh;
+}
+
+.container{
+    outline: 2px solid crimson;
+    height: 500px;
+    width: 90%;
+    margin: 60px auto;
+}
+
+.element{
+    background-color: steelblue;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+
+    /*Translate mueve la caja 300px en el eje x 300px*/
+    /* transform: translateX(300px); */
+
+    /*lo mismo en el eje y*/
+    /* transform: translatey(300px); */
+    /*si usamos porcentaje cogera el 100% del tamaño del objeto(de la caja)*/
+    /* transform: translatey(100%); */
+
+    /*para moverlo en las dos dimensiones siendo el primero el eje x y el segundo el y*/
+    /* transform: translate(200px, 100px); */
+
+    /*rotate puedes poner grados(deg), (turn)*/
+    /* transform: rotate(45deg); */
+    /* transform: rotate(0.5turn); */
+
+    /*escala el objeto y si lo pones en negativo tambien le da la vuelta*/
+    /* transform: scale(-2); */
+
+    /*es una deformacion y se pone en grados*/
+    /* transform: skewX(30deg); */
+
+    /*Se pueden mezclar varias*/
+    /* transform: scale(0.5) translate(200px); */
+
+    transition: transform 2s ease;
+}
+
+.container:hover .element{
+    transform: scale(0.5) translate(200px);
+    /* transform: rotate(360deg); */
+    /* transform: translate(300px, 300px); */
+}
