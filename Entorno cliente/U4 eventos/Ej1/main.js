@@ -44,10 +44,10 @@ window.addEventListener("load", () =>{
     let x = 0;
     let y = 0;
 
-    function pintar(contexto, x1, y1, x2, y2){
+    function pintar(contexto, x1, y1, x2, y2, color = "black"){
         //se llama a este metodo antes de comenzar cada linea
         contexto.beginPath();
-        contexto.strokeStyle = "black"; //color de la linea
+        contexto.strokeStyle = color; //color de la linea
         contexto.lineWidth = 1; //ancho de la linea
         //moveTo para decir de donde empieza la linea
         contexto.moveTo(x1, y1);
@@ -76,14 +76,33 @@ window.addEventListener("load", () =>{
     canvas.addEventListener("mousemove", (evento) => {
         //si la variable sigue en true (es decir el boton del mouse sigue polsado)
         if (estaPintando){
-            /*llamamos a la funcion dandole como parametros las coordenadas de "x" y de "y"
+            //Segun se presione control, shift o nada se pintara de un color
+            if (evento.ctrlKey) {
+                pintar(contexto, x, y, evento.offsetX, evento.offsetY, "red");
+                x = evento.offsetX;
+                y = evento.offsetY;
+            } else if (evento.shiftKey) {
+                pintar(contexto, x, y, evento.offsetX, evento.offsetY, "blue");
+                x = evento.offsetX;
+                y = evento.offsetY;
+            }else if (evento.altKey){  
+                pintar(contexto, x, y, evento.offsetX, evento.offsetY, "white");
+                x = evento.offsetX;
+                y = evento.offsetY;
+            } else {
+                pintar(contexto, x, y, evento.offsetX, evento.offsetY, "black");
+                x = evento.offsetX;
+                y = evento.offsetY;
+            }    
+
+            /*llamamos a la funcion pintar dandole como parametros las coordenadas de "x" y de "y"
             las cuales estan modificadas en el mousedown dando la posicion del punto inicial
             y las otras dos variables son el punto donde se mueve el mouse las posiciones "x" e "y"*/
-            pintar(contexto, x, y, evento.offsetX, evento.offsetY);
+            //pintar(contexto, x, y, evento.offsetX, evento.offsetY);
             //actualizamos el final de la linea con las posiciones actuales del mouse
-            x = evento.offsetX;
-            y = evento.offsetY;
+            
         }
+        
     });
 
     canvas.addEventListener("mouseup", (evento) => {
@@ -97,6 +116,161 @@ window.addEventListener("load", () =>{
             estaPintando = false;
         }
     });
+
+    //cojo el boton con el id le añado el listener del click
+    borrar.addEventListener("click", () => {
+        /*y con el clearRect limpio el canvas desde las posiociones 0 en x y 
+        0 en y hasta el ancho del canvas y el alto del mismo*/
+        contexto.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+    });
 });
 
-console.log(body)
+//EJERCICIO 7
+let section = document.getElementById("ej7");
+let form = document.createElement("form");
+section.appendChild(form);
+
+let nombre = document.createElement("input");
+nombre.type = "text";
+nombre.name = "nombre";
+nombre.id = "nombre";
+nombre.placeholder = "Nombre";
+form.appendChild(nombre);
+
+//parrafo para mostrar cuando tiene el focus con el display none
+let nombreP = document.createElement("p");
+nombreP.textContent = "Por favor, ingresa tu nombre completo.";
+nombreP.style.display = "none";
+form.appendChild(nombreP);
+
+nombre.addEventListener("focus", () => {
+    nombreP.style.display = "block"
+});
+  
+nombre.addEventListener("blur", () => {
+    nombreP.style.display = "none";
+});
+
+let email = document.createElement("input");
+email.type = "email";
+email.name = "email";
+email.id = "email";
+email.placeholder = "Email";
+form.appendChild(email);
+
+//parrafo para mostrar cuando tiene el focus con el display none
+let emailP = document.createElement("p");
+emailP.textContent = "Por favor, ingresa tu email.";
+emailP.style.display = "none";
+form.appendChild(emailP);
+
+email.addEventListener("focus", () => {
+    emailP.style.display = "block"
+});
+  
+email.addEventListener("blur", () => {
+    emailP.style.display = "none";
+});
+
+let comentario = document.createElement("textarea");
+comentario.name = "comentario";
+comentario.id = "comentario";
+comentario.placeholder = "Comentario";
+form.appendChild(comentario);
+
+//parrafo para mostrar cuando tiene el focus con el display none
+let comentarioP = document.createElement("p");
+comentarioP.textContent = "Por favor, ingresa tu comentario y le responderemos lo antes posible.";
+comentarioP.style.display = "none";
+form.appendChild(comentarioP);
+
+comentario.addEventListener("focus", () => {
+    comentarioP.style.display = "block"
+});
+  
+comentario.addEventListener("blur", () => {
+    comentarioP.style.display = "none";
+});
+
+let submitE = document.createElement("input");
+submitE.type = "submit";
+submitE.name = "enviar";
+submitE.value = "Enviar"
+form.appendChild(submitE);
+
+let submitB = document.createElement("input");
+submitB.type = "reset";
+submitB.name = "borrar";
+submitB.value = "Borrar"
+form.appendChild(submitB);
+
+//EJERCICIO 8
+let section8 = document.getElementById("ej8");
+let form8 = document.createElement("form");
+section8.appendChild(form8);
+
+let txtArea = document.createElement("textarea");
+form8.appendChild(txtArea);
+
+// Función para cambiar los ampersand (&) por "and" al perder el foco
+function reemplazarAmpersand(evento) {
+    /*Obtener el valor del textarea, el target hara referencia al text area cuando 
+    cuando luefo llamemos al eventListener del text area*/
+    let texto = evento.target.value;
+
+    //usamos el replace del & y la g es de global, es decir que se reemplacen todos, sino solo se reemplazaria el primero
+    let textoModificado = texto.replace(/&/g, "and");
+
+    //Le damos al value el texto modificado
+    evento.target.value = textoModificado;
+}
+
+//en el evento blur hara el reemplazo, es decir cuando se quite el foco
+txtArea.addEventListener("blur", reemplazarAmpersand);
+
+//EJERCICIO 9
+//ya teniamos el body cogido anteriormente
+body.style.position = "relative";
+
+let sec9 = document.getElementById("ej9");
+let img = document.createElement("img");
+img.setAttribute("src", "./rata.png");
+img.setAttribute("id", "arrastrar");
+img.style.position = "absolute";
+//img.draggable = true;
+sec9.appendChild(img);
+
+//va a ser la distancia entre las coordenadas del click y el borde izq de la imagen y lo mismo con la y que sera el burde superior
+let distanciaX;
+let distanciaY;
+let arrastrando = false;
+
+img.addEventListener("mousedown", evento => {
+    /*Con el page nos da las coordenadas con relacion a toda la pagina*/
+    distanciaX = evento.pageX - img.offsetLeft;
+    distanciaY = evento.pageY - img.offsetTop;
+
+    arrastrando = true;
+
+    //creo los otros dos eventos dentro para que pasen mientras se mantenga
+    document.addEventListener("mousemove", moverImagen);
+    document.addEventListener("mouseup", dejarImagen);
+});
+
+function moverImagen(evento){
+    if (arrastrando){
+        let newX = evento.pageX - distanciaX;
+        let newY = evento.pageY - distanciaY;
+
+        img.style.left = newX + "px";
+        img.style.top = newY + "px";
+    }
+}
+
+function dejarImagen(evento){
+    arrastrando = false;
+    document.removeEventListener("mousemove", moverImagen);
+    document.removeEventListener("mouseup", dejarImagen);
+}
+
+console.log()

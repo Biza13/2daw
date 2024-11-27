@@ -11,6 +11,18 @@
         canvas {
             border: 1px solid black;
         }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            gap: 10px;
+        }
+        input[type="submit"]{
+            width: 80px;
+        }
+        input[type="reset"]{
+            width: 80px;
+        }
     </style>
 </head>
 <body>
@@ -25,11 +37,28 @@
     <section id="ej3">
     </section>
 
-    <h2>Ejercicio 4</h2>
+    <h2>Ejercicio 4 y 5</h2>
     <section id="ej4">
+        <p>Control + boton izquierdo del mouse para pintar de rojo</p>
+        <p>Shift + boton izquierdo del mouse para pintar de azul</p>
+        <p>alt + boton izquierdo del mouse para borrar</p>
+
+        <canvas id="canvas" width="300" height="300"></canvas>
+        <br>
+        <button id="borrar">Borrar</button>
     </section>
 
-    <canvas id="canvas" width="300" height="300"></canvas>
+    <h2>Ejercicio 7</h2>
+    <section id="ej7">
+    </section>
+
+    <h2>Ejercicio 8</h2>
+    <section id="ej8">
+    </section>
+
+    <h2>Ejercicio 9</h2>
+    <section id="ej9">
+    </section>
 
     <script src="main.js"></script>
 </body>
