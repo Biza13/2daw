@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    /*Con esto evitamos que los elementops no se estiren hacia abajo (cojen solo el tamaño necesario)*/
+    /* align-items: flex-start; */
+}
+
+.main{
+    background-color: rgb(227, 227, 175);
+}
+
+div{
+    width: 100px;
+    height: 100vh;
+    background-color: rgb(70, 158, 188);
+}
+
+h1{
+    color: rgb(4, 4, 94);
+    font-size: large;
+}
+
+.enlaces{
+    margin: 10px 20px;
+    border: 1px solid black;
+    background-color: rgb(232, 229, 229);
+}
+
+.enlaces a{
+    display: inline-block;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+
+.contenido{
+    padding: 0 20px;
+    width: 100%;
+}
+
+.contenido p{
+    margin: 20px auto;
+}
+
+.contenido p:nth-child(3){
+    display: block;
+    font-weight: bold;
+}
+
+.contenido p:last-of-type{
+    border: 1px solid black;
+    padding: 5px;
+    background-color: yellow;
+}
