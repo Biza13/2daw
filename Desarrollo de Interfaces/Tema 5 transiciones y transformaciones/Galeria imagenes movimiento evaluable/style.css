@@ -83,18 +83,6 @@ main{
     display: block;
 } 
 
-/* span{
-    position: absolute;
-    background-color: rgba(31,78,165,0.7);
-    width: 350px;
-    height: 250px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.6s linear;
-} */
-
 .galeria__imagenes div:hover a{
     opacity: 1;
 }
@@ -126,4 +114,43 @@ main{
 
 #imagen1 .imagenGrande {
     background-image: url("./img/imagen1.jpg");
+}
+
+#imagen2 .imagenGrande {
+    background-image: url("./img/imagen2.jpg");
+}
+
+#imagen3 .imagenGrande {
+    background-image: url("./img/imagen3.jpg");
+}
+
+#imagen4 .imagenGrande {
+    background-image: url("./img/imagen4.jpg");
+}
+
+#imagen5 .imagenGrande {
+    background-image: url("./img/imagen5.jpg");
+}
+
+#imagen6 .imagenGrande {
+    background-image: url("./img/imagen6.jpg");
+}
+
+.grande a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.grande a:hover{
+    background-color: black;
+    color: white;
 }
