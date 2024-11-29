@@ -1,100 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM</title>
-  </head>
-  <body>
-    <section>
-      <h2>Ejercicio 1</h2>
-      <p>
-        <a href="#"></a>
-        <a href="https://www.google.com">a google</a>
-      </p>
-      <p>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="https://www.google.com">a google</a>
-      </p>
-      <p>
-        <a href="#"></a>
-      </p>
-      <script>
-        let enlaces = document.getElementsByTagName("a");
-        console.log(enlaces);
-        console.log(enlaces.length);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form onsubmit="return false" name="login">
+        Nombre:<input type="text" name="nombre" id="nombre">
+        Contraseña:<input type="password" name="password" id="password">
+        <button type="submit" onclick="fenviar()">Enviar</button>
+    </form>
 
-        let penultimo = enlaces[enlaces.length - 2];
-        let atributo = penultimo.getAttribute("href");
-        console.log(atributo);
+    <p id="error"></p>
 
-        console.log(penultimo.href);
+    <script>
+        let usuarios = [{nombre:"pepe", contrasena:"1234"}, {nombre:"ana", contrasena:"4321"}, {nombre:"jose", contrasena:"5678"}];
 
-        let cont = 0;
-        for (let i = 0; i < enlaces.length; i++) {
-          let a = enlaces[i];
-          if (a.href.includes("www.google.com")) {
-            cont++;
-          }
+        function fenviar(){
+
+            let nombreV = document.forms.login.nombre.value
+            let contV = document.forms.login.password.value
+
+            usuarios.forEach(usuario => {
+                if (usuario.nombre == nombreV && usuario.contrasena == contV){
+                    console.log("Nom: " + nombreV + " Pass" + contV);
+
+                    //estos dos son iguales
+                    location.href = "UD5-1.html";
+                    //location.replace("./UD5-1.html");
+                }else{
+                    let p = document.getElementById("error");
+                    p.textContent = "Usuario o contraseña erroneos";
+                }
+            });
         }
-
-        console.log("Enlaces con href a google " + cont);
-
-        let ps = document.getElementsByTagName("p");
-
-        let ultimoP = ps[ps.length - 1];
-
-        let as = ultimoP.getElementsByTagName("a");
-
-        console.log("Cantidad de enlaces del ultimo p: " + as.length);
-      </script>
-    </section>
-
-    <section id="b">
-      <h2>Ejercicio 2</h2>
-      <script>
-        let personas = [
-          { codigo: 1, dni: "4455544X", Nombre: "Juan López López", edad: 18 },
-          { codigo: 2, dni: "7778888X", Nombre: "Luis Mateo López", edad: 25 },
-          {
-            codigo: 3,
-            dni: "6654545M",
-            Nombre: "Pedro Guitierrez López",
-            edad: 41,
-          },
-          {
-            codigo: 4,
-            dni: "9998897X",
-            Nombre: "María Guitierrez López",
-            edad: 32,
-          },
-        ];
-
-        //cogemos el section con id b
-        let sectionB = document.getElementById("b");
-        //creamos un div
-        let divA = document.createElement("div");
-        // le metemos el div a la seccion como hijo
-        sectionB.appendChild(divA);
-
-        console.log(personas);
-
-        personas.forEach((persona) => {
-          console.log(persona);
-          let ps = document.createElement("p");
-          divA.appendChild(ps);
-          let nombre = document.createTextNode("Nombre: " + persona.Nombre);
-          ps.appendChild(nombre);
-          let cod = document.createTextNode(" Código: " + persona.codigo);
-          ps.appendChild(cod);
-          let dni = document.createTextNode(" Dni: " + persona.dni);
-          ps.appendChild(dni);
-          let edad = document.createTextNode(" Edad: " + persona.edad);
-          ps.appendChild(edad);
-        });
-      </script>
-    </section>
-    <a href="./UD5-1.html"><h2>Ejercicios 3 y 4</h2></a>
-  </body>
+        
+    </script>
+</body>
 </html>

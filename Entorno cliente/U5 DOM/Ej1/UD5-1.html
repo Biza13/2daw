@@ -15,7 +15,7 @@
 
         //informacion en consola
         function formateaArtículos() {
-            console.log('Mostrando articulos..')
+            console.log('Mostrando articulos...')
             arrArticulos.forEach((articulo) => {
                 console.log(articulo);
             });
@@ -43,6 +43,7 @@
             article.appendChild(divPes);
 
             let pCat = document.createElement("p");
+            /* pCat.textContent = "Categoría: " + articulo.category */ /*Tambien se puede hacer asi y nos ahorramos una linea*/
             let categoria = document.createTextNode("Categoría: " + articulo.category);
             pCat.appendChild(categoria);
             divPes.appendChild(pCat);

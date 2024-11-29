@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y DOM</title>
+</head>
+<body>
+    <form name="login" method="post" onsubmit="return false;">
+        Login:<input name="login" type="text"> <br/>
+        <!-- Password:<input name="pass" type="password"> <br/> -->
+        <button type="submit" onclick="fenviar(event)">Submit</button>
+    </form>
+     
+      <form >
+        <input type="radio" name="estadocivil" value="casado"> casado/a
+        <input type="radio" name="estadocivil" value="soltero"> soltero/a
+      </form>
+
+      <select id="Grupo">
+        <option value="smr">SMR</option>
+        <option value="daw" selected>DAW</option>
+      </select>
+      <script>
+        function fenviar(event){
+            //event.preventDefault();
+
+            //formas de acceder al formulario
+            //navegación de formularios document.forms o document.forms[name/index]
+            console.log('Formulario:',document.forms.login)
+            console.log('Formulario:',document.forms[0])
+            console.log('Formulario:',document.forms['login'])
+            
+            //mostramos los elementos del formulario
+            const formLogin=document.forms.login
+            
+            //HTMLFormControlsCollection
+            console.log(formLogin.elements)
+
+            //recorremos el HTMLFormControlsCollection, no permite foreach
+            for (input of formLogin.elements){
+                console.log(input)
+            }
+            
+            //HTMLInputElement podemos acceder con elements o sin el
+            let login=formLogin.elements.login;
+            let pass=formLogin.elements.pass;
+
+            login=formLogin.login;
+            login=formLogin[0];
+            pass=formLogin.pass;
+
+            console.log('HTMLInputElement',login,pass)
+            console.log('Contenido HTMLInputElement',login.value,pass.value)
+
+        }
+      </script>
+</body>
+</html>
