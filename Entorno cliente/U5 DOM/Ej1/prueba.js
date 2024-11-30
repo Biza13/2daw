@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrando datos json</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-
-    </header>
-    <section id="carrito"></section>
-    <button id="botonCarrito">Ver carrito</button>
-    <!-- <script type="module" src="main.js">  </script> -->
-    <script type="module">
-        import { arrArticulos } from "./modulos/articulos.mjs";
+import { arrArticulos } from "./modulos/articulos.mjs";
 
         //informacion en consola
         function formateaArtículos() {
@@ -29,7 +11,6 @@
         //formateaArtículos();
 
         let section = document.createElement("section");
-        section.id = "contenedora"
         let body = document.querySelector("body");
         body.appendChild(section);
 
@@ -110,13 +91,15 @@
 
                 arrCarrito.push(obj);
 
-                alert("Articulo añadido con éxito");
-
-                /* let header = document.querySelector("header");
+                let header = document.querySelector("header");
                 let info = document.createElement("p");
                 info.textContent = "Articulo: " + titulo + " añadido al carrito";
-                header.appendChild(info); */
+                header.appendChild(info);
 
+                console.log(obj);
+                console.log(arrCarrito);
+
+                //fSeleccion(article);
             });
             //FIN CAMBIO
 
@@ -129,48 +112,35 @@
         section.appendChild(fragmento);
 
         //CAMBIO
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            let botonCarrito = document.getElementById("botonCarrito");
-
-            botonCarrito.addEventListener("click", () => {
-                let section = document.getElementById("carrito");
-                //limpiar la seccion cada vez que se le da al boton de mostrar carrito
-                section.innerHTML = "";
-                let cont = 1;
-
-                arrCarrito.forEach(element => {
-                    let h2 = document.createElement("h2");
-                    h2.textContent = "Artículo número " + cont;
-                    section.appendChild(h2);
-
-                    let div = document.createElement("div");
-                    section.appendChild(div);
-
-                    let pTit = document.createElement("p");
-                    pTit.textContent = element.title;
-                    div.appendChild(pTit);
-
-                    /* let pDesc = document.createElement("p");
-                    pDesc.textContent = element.description;
-                    div.appendChild(pDesc); */
-
-                    let pPrec = document.createElement("p");
-                    pPrec.textContent = element.price;
-                    div.appendChild(pPrec);
-
-                    let pCat = document.createElement("p");
-                    pCat.textContent = element.category;
-                    div.appendChild(pCat);
-
-                    cont++;
-                }); 
+        function leerCarrito(carrito){
+            carrito.forEach(element => {
+                return "Título: " + element.title +
+                        "Precio: " + element.price +
+                        "Descrippción: " + element.description +
+                        "Category: " + element.category;
             });
-        });    
+        }
+
+        function verCarrito(arrCarrito){
+            let section = document.getElementById("carrito");
+            
+            carrito.forEach(element => {
+                let div = document.createElement("div");
+                section.appendChild(div);
+
+                let pTit = document.createElement("p");
+                pTit.textContent = element.title;
+
+                let pDesc = document.createElement("p");
+                pDesc.textContent = element.description;
+
+                let pPrec = document.createElement("p");
+                pPrec.textContent = element.price;
+
+                let pCat = document.createElement("p");
+                pCat.textContent = element.category;
+            });
+            
+        }
         //FIN CAMBIO
         
-    </script>
-</body>
-
-</html>
