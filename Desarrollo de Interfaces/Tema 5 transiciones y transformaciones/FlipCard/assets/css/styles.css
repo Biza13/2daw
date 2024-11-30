@@ -44,5 +44,5 @@ h1 {
 }
 
 .flip-back {
-    transform: rotateY(180deg);;
+    transform: rotateY(180deg);
 }

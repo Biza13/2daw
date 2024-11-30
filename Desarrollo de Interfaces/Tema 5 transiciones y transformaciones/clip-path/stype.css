@@ -24,7 +24,7 @@
     height: 400px;
     /*Para elipse ellipse() hay que darle los dos radios(el de la x y el de la y) y el centro*/
     /*el centro tambien lo puedo poner con center, top bottom, left y right*/
-    clip-path: ellipse(35% 50% at center);
+    clip-path: ellipse(50% 50% at center);
 }
 
 .clip3{
