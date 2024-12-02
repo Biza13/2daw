@@ -111,12 +111,6 @@
                 arrCarrito.push(obj);
 
                 alert("Articulo añadido con éxito");
-
-                /* let header = document.querySelector("header");
-                let info = document.createElement("p");
-                info.textContent = "Articulo: " + titulo + " añadido al carrito";
-                header.appendChild(info); */
-
             });
             //FIN CAMBIO
 
@@ -137,7 +131,7 @@
             botonCarrito.addEventListener("click", () => {
                 let section = document.getElementById("carrito");
                 //limpiar la seccion cada vez que se le da al boton de mostrar carrito
-                section.innerHTML = "";
+                section.textContent = "";
                 let cont = 1;
 
                 arrCarrito.forEach(element => {
