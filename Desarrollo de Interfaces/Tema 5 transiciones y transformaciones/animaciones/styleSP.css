@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cuadrado{
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: steelblue;
+    overflow: hidden;
+
+    /*Empizan las animaciones*/
+    /*orden: nombre duracion delay formaDeAnimacion*/
+    animation: cuadrado_move 1s 2s ease;
+}
+
+/*Aqui se constroye la animacion*/
+@keyframes cuadrado_move {
+    /*En el 0% (el principio) hara un transform*/
+    0%{
+        transform: rotate(0);
+    }
+    /*En el 50% rotara 360 grados y escalara de tamaño*/
+    50%{
+        transform: rotate(180deg) scale(1.3);
+    }
+
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.spiderman{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    animation: move_spiderman 5s infinite;
+}
+
+@keyframes move_spiderman {
+    0%{
+        /*En el eje y se dubira 50px hacia arriba*/
+        transform: translateY(-50px);
+    }
+    25%{
+        /*que baje un poco y rote*/
+        transform: translateY(0) rotate(5deg);
+    }
+    50%{
+        /*rota en el sentido contrario*/
+        transform: rotate(-5deg);
+    }
+    75%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}

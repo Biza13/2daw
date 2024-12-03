@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Examen</title>
+</head>
+<style>
+    img{
+        max-width: 80px;
+    }
+    #articulos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    article{
+        border: 1px solid black;
+        margin: 10px 50px;
+    }
+</style>
+<body id="datosEx">
+    <form onsubmit="return false">
+        Filtro: <select name="select" id="select">
+            <option value="price">Precio</option>
+            <option value="rate">Valoracion</option>
+            <option value="count">Votos</option>
+        </select>
+        Valor: <input type="text" name="valor">
+    </form>
+    <div id="carrito"></div>
+</body>
+<script src="BDExamen.js"></script>
+</html>
