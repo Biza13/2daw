@@ -92,14 +92,7 @@ function creaCartas(arr){
             //limpiar seccion de carrito
             limpiarSection(document.querySelector(".cervezas__carrito"));
 
-            document.querySelector(".cervezas__mensaje").innerHTML = "Artículo añadido al carrito";
-            cambiarEstilo(document.querySelector(".cervezas__mensaje"), 1);
-
-            arrCarrito.push(elemento);
-
-            setTimeout(() => {
-                cambiarEstilo(document.querySelector(".cervezas__mensaje"), 0)
-            }, 800);
+            anadirAlCarro (arrCarrito, elemento);
 
         });
 
@@ -139,7 +132,7 @@ function ohYeah(){
  * @param {Number} cant cantidad por la que filtrar
  * @returns {Array} devuelve un array con los objetos filtrados
  */
-function filtro (arr, filtrar, operando, cant){
+function filtro (arr, filtrar, operador, cant){
     
     let resultadoBusqueda = [];
     /**
@@ -148,7 +141,7 @@ function filtro (arr, filtrar, operando, cant){
      * para poner una variable como propiedad de un objeto usamos los corchetes
      */
     arr.forEach(element => {
-        switch (operando){
+        switch (operador){
             case ">":
                 if (element[filtrar] > cant){
                     resultadoBusqueda.push(element);
@@ -191,7 +184,7 @@ function modApiData(arr) {
         //mas el average y las reviews
         //en definitiva he cambiado la estructura del objeto para quitar el array que habia dentro del objeto
         return { ...rest, average: +average.toFixed(3), reviews, price: +elemento.price.slice(1) }
-        //a la key de average le un toFixed para redondear a 3 decimales
+        //a la key de average le pongo un toFixed para redondear a 3 decimales
         //y a la key de price le quito el simbolo del dolar con el slice(1)
         //el + es un parseInt es decir lo parsea a número
 
@@ -251,6 +244,18 @@ function creaTabla (arr){
         let tdPric = document.createElement("td");
         tdPric.textContent = "$" + element.price;
         fila.appendChild(tdPric);
+
+        //boton borrar
+        let tdBorrar = document.createElement("td");
+        let botonBorrar = document.createElement("button");
+        botonBorrar.textContent = "Borrar"
+        //todo esto ponerlo en el css
+        botonBorrar.style.background = "transparent";
+        botonBorrar.style.border = "none"
+        botonBorrar.style.cursor = "pointer"
+        botonBorrar.style.color = "red"
+        tdBorrar.appendChild(botonBorrar);
+        fila.appendChild(tdBorrar);
     });
     return tabla
 
@@ -281,23 +286,23 @@ function contarRepetidos(carrito) {
 
 }    
 
-//Funcion para cargar las cervezas con el scroll infinito
-function cargarCervezas (tipo){
+/**
+ * Función para añadir elementos al carrito, que tambien guarda el carrito en el local storage
+ * @param {array} arrCarrito 
+ * @param {object} elemento 
+ */
+function anadirAlCarro (arrCarrito, elemento){
 
-    //evita que se hagan multiples llamadas a la api, es decir que no se hara la llamada a la api
-    //hasta que no termine de cargar la anterior
-    if (estaCargando) return;
+    document.querySelector(".cervezas__mensaje").innerHTML = "Artículo añadido al carrito";
+    cambiarEstilo(document.querySelector(".cervezas__mensaje"), 1);
 
-    //si no es true, la iguale a true y hago la llamada
-    estaCargando = true;
-    document.querySelector(".cargando").style.display.block;
+    arrCarrito.push(elemento);
 
-    //con la pagina actual que la primera vez sera la 1
-    getFetch(tipo, paginaActual)
-    .then((datos) => {
-        const modData = modApiData(datos);
-        creaCartas(modData);
-    });
+    localStorage.setItem('carrito', JSON.stringify(arrCarrito));
+
+    setTimeout(() => {
+        cambiarEstilo(document.querySelector(".cervezas__mensaje"), 0)
+    }, 800);
 
 }
 
@@ -322,10 +327,6 @@ let aStouts = document.querySelector("body main nav ul li:last-of-type a");
 
 //crear un array que contendra todos los elementos del carrito
 let arrCarrito = [];
-
-//variables para el manejo del scroll infinito la pagina actual que empieza en la primera y la bandera
-let paginaActual = 1;
-let estaCargando = false;
 
 /*--------------------FIN MANEJO--------------------*/
 
@@ -396,21 +397,27 @@ document.querySelector("#carrito").addEventListener("click", () => {
 
     let section = document.querySelector(".cervezas__carrito");
 
+    // Esto es una especie de operador ternario que si el primero es true devolvera el primero, sino ( || ), esto que es el or, devolvera en este caso un array vacio( [] )
+    //Aqui cojo del local storage (especie de cookies) el carrito en caso de que lo haya, sino hay nada en el local storage sera un array vacio
+    let arrCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
     //modificar el array de carrito para que diga la cantidad de veces que un elemento esta en el carrito
     let carritoConCantidades = contarRepetidos(arrCarrito);
     let tabla = creaTabla(carritoConCantidades, carritoConCantidades.length)
     section.appendChild(tabla);
 
-    //borrar el carrito
+    //Listener para borrar el carrito
     document.querySelector("#borrarCarrito").addEventListener("click", () => {
 
-    arrCarrito = [];
-    section.textContent = "";
+        //si hay el el local storage un carrito guardado, lo borramos
+        localStorage.removeItem('carrito');
+
+        //si no hay nada en el local storage pero queremos borrar el carrito pues ponemos el array vacia
+        arrCarrito = [];
+        section.textContent = "";
 
     });
 
 });
 
 /*--------------------FIN EVENTOS--------------------*/
-
-/*---MAS COSAS--- QUE LUEGO HAY QUE ORGANIZAR---*/

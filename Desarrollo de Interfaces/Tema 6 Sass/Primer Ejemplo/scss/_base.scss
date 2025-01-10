@@ -1,0 +1,10 @@
+//definir una lista de colores (array)
+$colors: (#3498db, #2ecc71, #1abc9c);
+
+//Definir una variable para el texto
+$text-color: #fff;
+
+//definir una funcion
+@function get-color($index){
+    @return nth($colors, $index);
+}
