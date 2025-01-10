@@ -214,7 +214,7 @@ function creaTabla (arr){
         crearElemento(tdBorrar, "button", "borrarUnoCarrito", "borrarUnoCarrito", "Borrar uno");
 
         tdBorrar.addEventListener("click", () => {
-            let arrCarritoModificado = eliminarUnoDelCarrito(arr, element);
+            eliminarUnoDelCarrito(arr, element);
         });
 
     });
@@ -224,14 +224,14 @@ function creaTabla (arr){
 
 function eliminarUnoDelCarrito (array, elemento){
 
-    if (elemento.cantidad == 1){
-        //cojo el indice del elemento en el array
-        let indiceElemeto = array.indexOf(elemento); 
-        //lo saco del array con el splice donde el primer elemento es el indice y el segundo cuantos elementos quiero eliminar
-        array.splice(indiceElemeto, 1);
-    }else{
+    if (elemento.cantidad > 1){
         //si el elemento tiene mas de 1 en cantidad, le resto uno
         elemento.cantidad--;
+    }else{
+        //cojo el indice del elemento en el array
+        let indiceElemeto = array.findIndex(item => item.id === elemento.id);
+        //lo saco del array con el splice donde el primer elemento es el indice y el segundo cuantos elementos quiero eliminar
+        array.splice(indiceElemeto, 1);
     }
 
     //actualizar el local storage el stringify convierte el objeto a una cadena de texto con formato json
@@ -239,7 +239,6 @@ function eliminarUnoDelCarrito (array, elemento){
 
     //limpiar la sección y actualizar la tabla
     limpiarSection(document.querySelector(".cervezas__carrito")); 
-    creaTabla(array);
     return array;
 }
 
@@ -261,32 +260,7 @@ function crearElemento(elementoPardre, elementoACrear, ident="", clase="", conte
     elementoPardre.appendChild(nodo);
     return nodo;
 
-}
-
-/**
- * Función que recibe un array y va a crearle una propiedad nueva cada objeto con la cantidad de veces que esta el objeto en el array
- * @param {Array} carrito 
- * @returns {Array} carritoModificado devuelve el array modificado con la propiedad cantidad
- */
-function contarRepetidos(carrito) {
-
-    let carritoModificado = [];
-
-    carrito.forEach(element => {
-        //con find verificamos si esta o no el elemento en el array de carrito modificado
-        const productoExistente = carritoModificado.find(cervezaMod => cervezaMod.id === element.id);
-
-        if (productoExistente) {
-            //si existe, incrementamos la propiedad cantidad que creamos abajo cuando es la primera vez que lo metemos en el array
-            productoExistente.cantidad++;
-        } else {
-            //si no existe, desestructuramos el elemento, le añadimos la propiedad cantidad con el valor de 1 y lo añadimos al array
-            carritoModificado.push({ ...element, cantidad: 1 });
-        }
-    });
-    return carritoModificado;
-
-}    
+}  
 
 /**
  * Función para añadir elementos al carrito, que tambien guarda el carrito en el local storage
@@ -298,7 +272,18 @@ function anadirAlCarro (arrCarrito, elemento){
     document.querySelector(".cervezas__mensaje").innerHTML = "Artículo añadido al carrito";
     cambiarEstilo(document.querySelector(".cervezas__mensaje"), 1);
 
-    arrCarrito.push(elemento);
+    //con find verificamos si esta o no el elemento en el array de carrito modificado
+    let cerv = arrCarrito.find(cerveza => cerveza.id === elemento.id)
+
+    if (cerv){
+        //si existe, incrementamos la propiedad cantidad que creamos abajo cuando es la primera vez que lo metemos en el array
+        cerv.cantidad++;
+    }else{
+        //si no existe, desestructuramos el elemento, le añadimos la propiedad cantidad con el valor de 1 y lo añadimos al array
+        arrCarrito.push({ ...elemento, cantidad: 1 });
+    }
+
+    //arrCarrito.push(elemento);
 
     localStorage.setItem('carrito', JSON.stringify(arrCarrito));
 
@@ -402,11 +387,9 @@ document.querySelector("#carrito").addEventListener("click", () => {
     // Esto es una especie de operador ternario que si el primero es true devolvera el primero, sino ( || ), esto que es el or, devolvera en este caso un array vacio( [] )
     //Aqui cojo del local storage (especie de cookies) el carrito en caso de que lo haya, sino hay nada en el local storage sera un array vacio
     //el parse al contrario que el stringify convierte la cadena de texto en formato json en un objeto js
-    let arrCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    arrCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    //modificar el array de carrito para que diga la cantidad de veces que un elemento esta en el carrito
-    let carritoConCantidades = contarRepetidos(arrCarrito);
-    let tabla = creaTabla(carritoConCantidades);
+    let tabla = creaTabla(arrCarrito);
     section.appendChild(tabla);
 
     //Listener para borrar el carrito
@@ -416,7 +399,8 @@ document.querySelector("#carrito").addEventListener("click", () => {
         localStorage.removeItem('carrito');
 
         //si no hay nada en el local storage pero queremos borrar el carrito pues ponemos el array vacia
-        carritoConCantidades = [];
+        //carritoConCantidades = [];
+        arrCarrito = [];
         section.textContent = "";
 
     });
