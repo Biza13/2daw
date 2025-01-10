@@ -27,9 +27,8 @@ function creaCarta(objeto){
     nodoDom.className = "contenedora__articulo"
 
     //creamos la imagen y la metemos en el articulo
-    let img = document.createElement("img");
+    let img = crearElemento(nodoDom, "img");
     img.src = objeto.image;
-    nodoDom.appendChild(img);
 
     //Esto es porque hay imagenes que no funcionan, entonces en caso de error mostrare otra imagen
     img.onerror = () => {
@@ -37,25 +36,13 @@ function creaCarta(objeto){
     };
 
     //creamos el div que contendra la información y lo metemos en el articulo
-    let div = document.createElement("div");
-    nodoDom.appendChild(div);
+    let div = crearElemento(nodoDom, "div");
 
     //cremos todos los p con la información u lo metemos en el div
-    let pNom = document.createElement("p");
-    pNom.textContent = objeto.name;
-    div.appendChild(pNom);
-
-    let pPrec = document.createElement("p");
-    pPrec.textContent = "$ " + objeto.price;
-    div.appendChild(pPrec);
-
-    let pAve = document.createElement("p");
-    pAve.textContent = "Media: " + objeto.average;
-    div.appendChild(pAve);
-
-    let pRev = document.createElement("p");
-    pRev.textContent = " Reviews: " + objeto.reviews;
-    div.appendChild(pRev);
+    crearElemento(div, "p", "","", objeto.name);
+    crearElemento(div, "p", "","", objeto.price);
+    crearElemento(div, "p", "","", "Media: " + objeto.average);
+    crearElemento(div, "p", "","", "Reviews: " + objeto.reviews);
 
     return nodoDom;
 
@@ -200,64 +187,79 @@ function modApiData(arr) {
  */
 function creaTabla (arr){
 
-    let boton = document.createElement("button");
-    boton.textContent = "Borrar carrito";
-    boton.id = "borrarCarrito";
-    boton.className = "borrarCarrito";
-    document.querySelector(".cervezas__carrito").appendChild(boton);
+    //Crear boton de eliminar carrito
+    crearElemento(document.querySelector(".cervezas__carrito"), "button", "borrarCarrito", "borrarCarrito", "Borrar carrito")
 
     let tabla = document.createElement("table");
-    let caption = document.createElement("caption");
-    caption.textContent = "Carrito"
-    tabla.appendChild(caption);
+    tabla.className = "cervezas__carrito__tabla";
+    crearElemento(tabla, "caption", "cervezas__carrito__caption", "cervezas__carrito__caption", "Carrito");
 
     //fila de información
-    let filaInfo = document.createElement("tr");
-    tabla.appendChild(filaInfo);
-    tabla.className = "cervezas__carrito__tabla";
+    let filaInfo = crearElemento(tabla, "tr");
 
     //columnas de información
-    let tdCant = document.createElement("th");
-    tdCant.textContent = "Cantidad"
-    filaInfo.appendChild(tdCant);
-
-    let tdTit = document.createElement("th");
-    tdTit.textContent = "Nombre"
-    filaInfo.appendChild(tdTit);
-
-    let tdPrec = document.createElement("th");
-    tdPrec.textContent = "Precio"
-    filaInfo.appendChild(tdPrec);
+    crearElemento(filaInfo, "th", "thCantidad", "thCantidad", "Cantidad");
+    crearElemento(filaInfo, "th", "thNombre", "thNombre", "Nombre");
+    crearElemento(filaInfo, "th", "thPrecio", "thPrecio", "Precio");
 
     arr.forEach(element => {
-        let fila = document.createElement("tr");
-        tabla.appendChild(fila);
+        let fila = crearElemento(tabla, "tr");
 
-        let tdCant = document.createElement("td");
-        tdCant.textContent = element.cantidad;
-        fila.appendChild(tdCant);
-
-        let tdNom = document.createElement("td");
-        tdNom.textContent = element.name;
-        fila.appendChild(tdNom)
-
-        let tdPric = document.createElement("td");
-        tdPric.textContent = "$" + element.price;
-        fila.appendChild(tdPric);
+        crearElemento(fila, "td", "celda", "celda", element.cantidad);
+        crearElemento(fila, "td", "celda", "celda", element.name);
+        crearElemento(fila, "td", "celda", "celda", element.price);
 
         //boton borrar
-        let tdBorrar = document.createElement("td");
-        let botonBorrar = document.createElement("button");
-        botonBorrar.textContent = "Borrar"
-        //todo esto ponerlo en el css
-        botonBorrar.style.background = "transparent";
-        botonBorrar.style.border = "none"
-        botonBorrar.style.cursor = "pointer"
-        botonBorrar.style.color = "red"
-        tdBorrar.appendChild(botonBorrar);
-        fila.appendChild(tdBorrar);
+        let tdBorrar = crearElemento(fila, "td");
+        crearElemento(tdBorrar, "button", "borrarUnoCarrito", "borrarUnoCarrito", "Borrar uno");
+
+        tdBorrar.addEventListener("click", () => {
+            let arrCarritoModificado = eliminarUnoDelCarrito(arr, element);
+        });
+
     });
     return tabla
+
+}
+
+function eliminarUnoDelCarrito (array, elemento){
+
+    if (elemento.cantidad == 1){
+        //cojo el indice del elemento en el array
+        let indiceElemeto = array.indexOf(elemento); 
+        //lo saco del array con el splice donde el primer elemento es el indice y el segundo cuantos elementos quiero eliminar
+        array.splice(indiceElemeto, 1);
+    }else{
+        //si el elemento tiene mas de 1 en cantidad, le resto uno
+        elemento.cantidad--;
+    }
+
+    //actualizar el local storage el stringify convierte el objeto a una cadena de texto con formato json
+    localStorage.setItem('carrito', JSON.stringify(array));
+
+    //limpiar la sección y actualizar la tabla
+    limpiarSection(document.querySelector(".cervezas__carrito")); 
+    creaTabla(array);
+    return array;
+}
+
+/**
+ * Función para crear un nodo y ponerlo dentro de otro con un id y un textContent
+ * @param {node} elementoPardre Elemento al que hacerle el appendChild
+ * @param {string} elementoACrear Elemento que quieres crear
+ * @param {string} ident id que le quieres dar al nodo
+ * @param {string} clase clase que se le quiere dar al nodo
+ * @param {string} contenido Contenido que quieres que tenga
+ * @returns {Node} Devuelve un nodo de dom
+ */
+function crearElemento(elementoPardre, elementoACrear, ident="", clase="", contenido=""){
+
+    let nodo = document.createElement(elementoACrear);
+    nodo.textContent = contenido;
+    nodo.id = ident;
+    nodo.className = clase
+    elementoPardre.appendChild(nodo);
+    return nodo;
 
 }
 
@@ -399,11 +401,12 @@ document.querySelector("#carrito").addEventListener("click", () => {
 
     // Esto es una especie de operador ternario que si el primero es true devolvera el primero, sino ( || ), esto que es el or, devolvera en este caso un array vacio( [] )
     //Aqui cojo del local storage (especie de cookies) el carrito en caso de que lo haya, sino hay nada en el local storage sera un array vacio
+    //el parse al contrario que el stringify convierte la cadena de texto en formato json en un objeto js
     let arrCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     //modificar el array de carrito para que diga la cantidad de veces que un elemento esta en el carrito
     let carritoConCantidades = contarRepetidos(arrCarrito);
-    let tabla = creaTabla(carritoConCantidades, carritoConCantidades.length)
+    let tabla = creaTabla(carritoConCantidades);
     section.appendChild(tabla);
 
     //Listener para borrar el carrito
@@ -413,7 +416,7 @@ document.querySelector("#carrito").addEventListener("click", () => {
         localStorage.removeItem('carrito');
 
         //si no hay nada en el local storage pero queremos borrar el carrito pues ponemos el array vacia
-        arrCarrito = [];
+        carritoConCantidades = [];
         section.textContent = "";
 
     });
