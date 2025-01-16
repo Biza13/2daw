@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedora{
+    width: 100%;
+    height: 100vh;
+}
+
+.articulo{
+    width: 20%;
+    height: 80vh;
+    margin: 0 auto;
+    border: 2px solid black;
+    margin-top: 10vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.circulo{
+    width: 80px;
+    height: 80px;
+    clip-path: circle(50% at 50% 50%);
+    background-color: black;
+    margin: 10px auto;
+    margin-top: 40px;
+}
+
+.boton{
+    width: 70%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.contenedora p{
+    color: grey;
+}

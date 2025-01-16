@@ -1,7 +1,5 @@
-import styles from './Ejercicio1.module.css'
-
-export default function Parrafo ({children, codigo}){
+export default function Parrafo ({className, codigo, children=""}){
     return(
-        <p className={styles.p}>{codigo + " " + children}</p>
+        <p className={className}>{codigo + " " + children}</p>
     )
 }

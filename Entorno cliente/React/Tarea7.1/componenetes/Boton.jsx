@@ -1,7 +1,5 @@
-import styles from './Ejercicio1.module.css'
-
-export default function Boton ({children}){
+export default function Boton ({className, children}){
     return(
-        <button className={styles.boton}>{children}</button>
+        <button className={className}>{children}</button>
     )
 }

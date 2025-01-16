@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedora{
+    background-image: url("./assets/404.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.barraNav{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 44, 91);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    color: white;
+}
+
+.barraNav a{
+    color: white;
+}
+
+.barraNav ul{
+    display: flex;
+}
+
+.barraNav ul li{
+    list-style: none;
+    margin: 10px;
+}
+
+.boton{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(0, 62, 128);
+    border-radius: 15px;
+    color: white;
+}
+
+.articulo{
+    color: white;
+    width: 20%;
+    position: absolute;
+    top: 60%;
+    margin-left: 45px;
+    text-align: center;
+}
+
+.articulo h1{
+    font-size: 70px;
+}
+
+.articulo .subTit{
+    font-size: 40px;
+}
+
+.articulo .p{
+    margin: 10px auto;
+}
