@@ -1,4 +1,4 @@
-import jsonData from '../datos/productos.json';
+import jsonData from '../json/productos.json';
 import Producto from './Producto.jsx'
 
 
