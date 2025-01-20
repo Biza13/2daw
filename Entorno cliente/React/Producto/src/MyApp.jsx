@@ -1,5 +1,7 @@
 import ProductList from '../componentes/ProductList.jsx'
 import Producto from '../componentes/Producto.jsx'
+import Filtro from '../componentes/Filtro.jsx'
+import styles from './MyApp.module.css'
 
 export default function MyApp(){
 
@@ -16,9 +18,12 @@ export default function MyApp(){
     }
     return(
         <>
+            <Filtro></Filtro>
             {/* <Producto obj={obj1}></Producto>
             <Producto obj={obj2}></Producto> */}
-            <ProductList></ProductList>
+            <section className={styles.contenedoraArticulos}>
+                <ProductList></ProductList>
+            </section>
         </>
     )
 }

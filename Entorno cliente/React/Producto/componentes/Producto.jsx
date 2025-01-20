@@ -1,13 +1,13 @@
 import styles from './Producto.module.css'
 
-export default function Producto ({ children, obj }){
+export default function Producto ({ obj }){
 
     return (
-        <>
-            <p>{obj.title}</p>
-            <p>{obj.description}</p>
-            <p>{"Precio: " + obj.price + "€"}</p>
-            <img src={obj.image} className={styles.img}></img>
-        </>
+        <div className={styles.articulo}>
+                <p>{obj.title}</p>
+                {/* <p>{obj.description}</p> */}
+                <p>{"Precio: " + obj.price + "€"} {obj.price > 200 && '✅'}</p>
+                <img src={obj.image} className={styles.img}></img>   
+        </div>
     )
 }
