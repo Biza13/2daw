@@ -24,6 +24,7 @@ export default function Filtro (){
             </form>
 
             {/* Dos formas de hacerlo, una creando un button y la otra llamando a el subcomoponente de Boton al cual le paso la funcion como parametro*/}
+            {/* si la funcion tiene para metros, para llamarla has de hacerlo como funcion anonima arrow function */}
             <button onClick={() => HandleClick(precioInput)}>Filtrar 1</button>
             <Boton onClick={() => HandleClick(precioInput)} className={styles.boton}></Boton>
         </>

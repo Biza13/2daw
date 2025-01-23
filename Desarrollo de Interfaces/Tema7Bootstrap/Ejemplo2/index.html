@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejemplo</title>
+
+    <!-- O usas el css en local despues de descargarlo -->
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
+
+    <!-- O copias el css del cdn de la pagina oficial -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header class="row">
+            <div class="col">
+                <h1>Header</h1>
+                <p>12 columnas</p>
+            </div>
+        </header>
+
+        <section class="container-main row align-items-center">
+            <main class="col-md-8">
+                <h2>MAIN</h2>
+                <!-- display d la izquierda siempre el telefono y la derecha el ordenador -->
+                <p class="d-none d-md-block">8 columnas</p>
+                <p class="d-block d-md-none">12 columnas</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, inventore ipsa ut magni delectus harum assumenda ullam consectetur quasi at necessitatibus corrupti, in adipisci, minus officiis. Tempora, similique. Vitae, earum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem reprehenderit vel veniam vero officiis minus, accusantium error, ab quos, nam molestiae possimus incidunt quidem dolore excepturi? Officiis, necessitatibus at.</p>
+            </main>
+
+            <aside class="col-md-4">
+                <h3>ASIDE</h3>
+                <p class="d-none d-md-block">4 columnas</p>
+                <p class="d-block d-md-none">12 columnas</p>
+            </aside>
+        </section>
+    </div>
+
+
+    <!-- O usas el js en local despues de descargarlo -->
+    <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- O copias el script del cdn de la pagina oficial -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

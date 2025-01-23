@@ -226,33 +226,36 @@ const cadJSonUsuarios = `
 var arrObjUsuarios = JSON.parse(cadJSonUsuarios);
 
 //Funcion para validar el ususario y la contraseña
-function valida(usuario, cont) {
-    arrObjUsuarios.forEach((usu) => {
-      if (usu.username == usuario && usu.password == cont) {
-        //redirigir
-        location.href = "./datosExamen.html";
+function valida(usuarioIntr, contIntr) {
+  let objUsu;
+  let usu = arrObjUsuarios.find(
+    (usuario) => usuario.username == usuarioIntr && usuario.password == contIntr
+  );
 
-        let objUsu = {
-          id: usu.id,
-          email: usu.email,
-          username: usu.username,
-        };
-
-        return objUsu;
-      } else {
-        return alert("Usuario o contraseña erroneo");
-      }
-    });
+  if (usu) {
+    objUsu = {
+      id: usu.id,
+      email: usu.email,
+      username: usu.username,
+    };
+    return objUsu;
+  } else {
+    return null;
   }
-  //Fin funcion valida
+}
+//Fin funcion valida
 
-  let boton = document.getElementById("boton");
+let boton = document.getElementById("boton");
 
-  boton.addEventListener("click", () => {
-    let nombre = document.getElementById("nombre").value;
-    let cont = document.getElementById("contrasena").value
+boton.addEventListener("click", () => {
+  let nombre = document.getElementById("nombre").value;
+  let cont = document.getElementById("contrasena").value;
 
-    valida(nombre, cont);
+  if (valida(nombre, cont) == null) {
+    alert("Usuario o contraseña erroneo");
+  } else {
+    location.href = "./datosExamen.html";
+  }
 
-    console.log(nombre + " " + cont);
-  });
+  console.log(nombre + " " + cont);
+});

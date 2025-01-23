@@ -2,6 +2,8 @@ import ProductList from '../componentes/ProductList.jsx'
 import Producto from '../componentes/Producto.jsx'
 import Filtro from '../componentes/Filtro.jsx'
 import styles from './MyApp.module.css'
+import Contador from '../componentes/Contador.jsx'
+import Tareas from '../componentes/Tareas.jsx'
 
 export default function MyApp(){
 
@@ -18,9 +20,11 @@ export default function MyApp(){
     }
     return(
         <>
+            <Tareas></Tareas>
             <Filtro></Filtro>
             {/* <Producto obj={obj1}></Producto>
             <Producto obj={obj2}></Producto> */}
+            <Contador></Contador>
             <section className={styles.contenedoraArticulos}>
                 <ProductList></ProductList>
             </section>
