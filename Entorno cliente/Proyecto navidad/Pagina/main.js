@@ -5,7 +5,7 @@
  * @param {string} tipo tipo de cerveza
  * @returns {Promise} Devuelve una PROMESA en forma de array
  */
-function getFetch(tipo, pagina){
+function getFetch(tipo){
 
     return fetch("https://api.sampleapis.com/beers/" + tipo)
     .then((result) => result.json())

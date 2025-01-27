@@ -478,33 +478,12 @@ var arrObjUsuarios = JSON.parse(cadJSonUsuarios);
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
-  //Funcion para validar el ususario y la contraseña que estara en login.js
-  function valida(usuario, cont) {
-    arrObjUsuarios.forEach((usu) => {
-      if (usu.username == usuario && usu.password == cont) {
-        location.href = "./articulos.html";
-
-        let objUsu = {
-          id: usu.id,
-          email: usu.email,
-          username: usu.username,
-        };
-
-        return objUsu;
-      } else {
-        return alert("Usuario o contraseña erroneo");
-      }
-    });
-  }
-  //Fin funcion valida
-
   //creamos la seccion para contener los articulos
   let body = document.getElementById("datosEx");
   let section = document.createElement("section");
   section.id = "articulos";
   body.appendChild(section);
 
-  //funcion para crear las cartas
   let secArt = document.getElementById("articulos");
 
   let fragmento = document.createDocumentFragment();
@@ -512,6 +491,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   //array del carrito
   let arrCarr = [];
 
+  //funcion para crear las cartas
   function creaCard(element){
     let article = document.createElement("article");
 

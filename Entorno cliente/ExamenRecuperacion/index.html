@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen recuperacion js</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <form onsubmit="return false" id="formBuscar">
+        <label for="buscar">Busca una pelicula</label>
+        <input type="text" name="buscar" id="buscar">
+        <button>Buscar</button>
+    </form>
+
+    <form onsubmit="return false" id="filtro">
+        <label for="filtrar">Filtrar por año de estreno</label>
+        <input type="text" name="filtrar" id="filtrar">
+        <button class="filtrarBtn">Filtrar peliculas</button>
+    </form>
+    
+    <section class="movies"></section>
+    
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

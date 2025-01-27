@@ -228,8 +228,8 @@ var arrObjUsuarios = JSON.parse(cadJSonUsuarios);
 //Funcion para validar el ususario y la contraseña
 function valida(usuarioIntr, contIntr) {
   let objUsu;
-  let usu = arrObjUsuarios.find(
-    (usuario) => usuario.username == usuarioIntr && usuario.password == contIntr
+  let usu = arrObjUsuarios.find((usuario) => 
+    usuario.username == usuarioIntr && usuario.password == contIntr
   );
 
   if (usu) {
@@ -242,6 +242,10 @@ function valida(usuarioIntr, contIntr) {
   } else {
     return null;
   }
+
+  //tambien se podria hacer asi: si es true va a devolver un objeto con esos valores y si es false devolvera null
+  //return usu ? { id: usu.id, email: usu.email, username: usu.username } : null;
+
 }
 //Fin funcion valida
 

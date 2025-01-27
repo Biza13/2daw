@@ -1,0 +1,19 @@
+.movies{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.movies div{
+    border: 1px solid black;
+}
+
+.movies img{
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
