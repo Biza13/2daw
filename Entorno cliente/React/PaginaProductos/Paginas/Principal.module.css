@@ -1,0 +1,27 @@
+.nav ul{
+    display: flex;
+}
+
+.nav ul li{
+    width: 10%;
+    height: 30px;
+    margin: 0 10px;
+    line-height: 30px;
+    list-style: none;
+}
+
+.contenedoraProducto{
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contenedoraProducto div{
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.contenedoraProducto div img{
+    max-width: 150px;
+}
