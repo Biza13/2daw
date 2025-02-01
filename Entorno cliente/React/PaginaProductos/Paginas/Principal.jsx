@@ -1,4 +1,4 @@
-import Navegacion from '../Componentes/Navegacion.jsx'
+import Navegacion from './Navegacion.jsx'
 import Buscador from '../Componentes/Buscador.jsx'
 import GridProductos from '../Componentes/GridProductos.jsx'
 

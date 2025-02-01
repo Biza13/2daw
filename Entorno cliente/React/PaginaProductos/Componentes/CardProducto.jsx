@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function CardProducto ({ obj }){
 
     return (
@@ -5,6 +7,9 @@ export default function CardProducto ({ obj }){
             <img src={obj.image} alt="imgProducto" />
             <p>{obj.title}</p>
             <p>{obj.description}</p>
+            <Link to={'/detalle/' + obj.id}>
+                <button>Detalles</button>
+            </Link>
         </div>
     )
 }
