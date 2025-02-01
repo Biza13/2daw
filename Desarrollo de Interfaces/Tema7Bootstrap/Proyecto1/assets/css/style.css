@@ -130,3 +130,9 @@ a:hover{
 .bg-secondary-alpha-color{
     background-color: var(--secondary-alpha-color);
 }
+
+/* PAGINA COMENCEMOS */
+
+.imagenes-comencemos{
+    width: 50%;
+}
