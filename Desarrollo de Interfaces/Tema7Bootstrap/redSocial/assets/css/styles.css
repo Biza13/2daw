@@ -1,0 +1,30 @@
+:root{
+    --primary-color: black;
+    --text-color: white;
+    --secondary-color: rgb(84, 84, 84);
+}
+
+.bg-color{
+    background-color: var(--primary-color) !important;
+}
+
+.color{
+    color: var(--text-color);
+}
+
+.bg-sec-color{
+    background-color: var(--secondary-color);
+}
+
+.navBar-ul{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+.search{
+    border: none;
+    border-radius: 20px;
+}

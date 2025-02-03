@@ -136,3 +136,9 @@ a:hover{
 .imagenes-comencemos{
     width: 50%;
 }
+
+/* PÁGINA CONTACTOS */
+
+.carousel-caption{
+    z-index: 1;
+}
