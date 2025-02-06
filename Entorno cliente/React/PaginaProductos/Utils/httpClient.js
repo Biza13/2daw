@@ -1,4 +1,4 @@
 export function getFetch(url){
-    fetch(url)
-    .then(resp=>resp.json())
+    return fetch(url)
+            .then(resp=>resp.json())
 }

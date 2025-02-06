@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Crear variables para colores */
+@theme{
+    --color-pasion-rojo: #a73b3c;
+}
