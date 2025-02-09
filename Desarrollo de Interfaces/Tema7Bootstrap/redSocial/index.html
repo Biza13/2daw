@@ -13,46 +13,204 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-color">
-            <div class="container-fluid">
-                <!-- icono B -->
-              <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarTogglerDemo01">
 
-                <div class="d-flex f-column">
-                    <a class="navbar-brand" href="#"><i class="bi bi-bootstrap-fill"></i></a>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 bg-sec-color search" type="search" placeholder="Buscar" aria-label="Search">
+          <nav class="mi-navbar row bg-color-light mb-0">
+            <div class="col-6 col-md-8 col-lg-4 d-flex align-items-center div-izquierda-nav">
+              <a class="color-w p-0 fs-2 me-3" href="#"><i class="bi bi-bootstrap-fill"></i></a>
+                    <!-- <span class="lupa">
+                      <i class="bi bi-search"></i>
+                    </span> -->
+                    <form class="d-none d-sm-block" role="search">
+                        <input class="form-control me-2 bg-sec-color search pl-4" type="search" placeholder="Buscar" aria-label="Search">
                     </form>
-                </div>
-                <!-- ul central -->
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item color"><i class="bi bi-house-door-fill"></i></li>
-                    <li class="nav-item color"><i class="bi bi-flag"></i></li>
-                    <li class="nav-item color"><i class="bi bi-play-btn"></i></li>
-                    <li class="nav-item color"><i class="bi bi-shop-window"></i></li>
-                    <li class="nav-item color"><i class="bi bi-people"></i></li>
-                </ul>
-                <!-- ul final -->
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link color" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link color" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link color" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-
-              </div>
             </div>
+
+            <!-- ul central -->
+            <ul class="col-md-12 col-lg-4 d-flex justify-content-evenly align-items-center mb-0 order-1 order-lg-0">
+              <li class="color-w nav-li-central fs-4"><i class="bi bi-house-door-fill"></i></li>
+              <li class="color-w nav-li-central fs-4"><i class="bi bi-flag"></i></li>
+              <li class="color-w nav-li-central fs-4"><i class="bi bi-play-btn"></i></li>
+              <li class="color-w nav-li-central fs-4"><i class="bi bi-shop-window"></i></li>
+              <li class="color-w nav-li-central fs-4"><i class="bi bi-people"></i></li>
+            </ul>
+
+            <!-- ul final -->
+            <ul class="ul-derecha col-6 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
+              <li class="d-flex align-items-center me-3">
+                <img class="img-perfil me-2" src="./assets/img/persona3.jpg" alt="perfil">
+                <p class="color-w usuario d-flex align-items-center">Bego</p>
+              </li>
+              <li class="d-flex align-items-center justify-content-center burbuja">
+                <a class="color-w" href="#"><i class="bi bi-grid-fill"></i></a>
+              </li>
+              <li class="d-flex align-items-center justify-content-center burbuja">
+                <a class="color-w" href="#"><i class="bi bi-chat-fill"></i></a>
+              </li>
+              <li class="d-flex align-items-center justify-content-center burbuja">
+                <a class="color-w" href="#"><i class="bi bi-bell-fill"></i></a>
+              </li>
+            </ul>
           </nav>
+
     </header>
 
     <main>
 
+      <section class="row bg-color contenedora ">
 
+        <aside class="col-lg-4 d-none d-lg-block">
+          <ul>
+            <li class="d-flex m-2 mb-3">
+              <img class="img-perfil me-2" src="./assets/img/persona3.jpg" alt="perfil">
+              <p class="color-w usuario d-flex align-items-center">Bego Cabo</p>
+            </li>
+
+            <li class="d-flex color-w mb-2">
+              <a class="color-w me-2" href="#"><i class="bi bi-people-fill"></i></a>
+              <p>Amigos</p>
+            </li>
+
+            <li class="d-flex color-w mb-2">
+              <a class="color-w me-2" href="#"><i class="bi bi-flag-fill"></i></a>
+              <p>Páginas</p>
+            </li>
+
+            <li class="d-flex color-w mb-2">
+              <a class="color-w me-2" href="#"><i class="bi bi-collection-fill"></i></a>
+              <p>Grupos</p>
+            </li>
+
+            <li class="d-flex color-w mb-2">
+              <a class="color-w me-2" href="#"><i class="bi bi-bag-fill"></i></a>
+              <p>Marketplace</p>
+            </li>
+
+            <li class="d-flex color-w mb-2">
+              <a class="color-w me-2" href="#"><i class="bi bi-tv-fill"></i></a>
+              <p>Watch</p>
+            </li>
+            
+            <li class="d-flex color-w">
+              <a class="color-w me-2" href="#"><i class="bi bi-calendar3-event-fill"></i></a>
+              <p>Eventos</p>
+            </li>
+          </ul>
+
+          <section>
+            <div>
+              <a class="sec-color me-2" href="#">Privacidad</a>
+              <a class="sec-color" href="#">Condiciones</a>
+            </div>
+            <div>
+              <a class="sec-color me-2" href="#">Publicidad</a>
+              <a class="sec-color" href="#">Opciones de anuncios</a>
+            </div>
+            <div>
+              <a class="sec-color me-2" href="#">Cookies</a>
+              <a class="sec-color" href="#">Más</a>
+            </div>
+          </section>
+        </aside>
+
+        <article class="col-sm-12 col-md-8 col-lg-4 mt-3 article-central">
+          <section class="section-central bg-color-light p-2 mb-3">
+            <div class="mt-2 d-flex div-post">
+              <img class="img-perfil me-2" src="./assets/img/persona3.jpg" alt="perfil">
+              <form class="form-post pb-3" action="">
+                <input class="form-control me-2 bg-sec-color search pl-4" type="search" placeholder="¿Que estás pensando, Bego?" aria-label="Search" size="50">
+              </form>
+            </div>
+
+            <div class="d-flex justify-content-evenly mt-4 mb-3">
+              <a href="#" class="color-w"><i class="bi bi-camera-video-fill me-2"></i>Video</a>
+              <a href="#" class="color-w"><i class="bi bi-images me-2"></i>Foto</a>
+              <a href="#" class="color-w"><i class="bi bi-emoji-smile-fill me-2"></i>Sentimiento</a>
+            </div>
+          </section>
+
+          <section class="mb-3">
+
+            <div class="section-central section-central-posts bg-color-light p-2 mb-3">
+              <div class="d-flex align-items-center">
+                <img class="img-perfil me-2" src="./assets/img/persona4.jpg" alt="perfil">
+                <div class="color-w">
+                  <p class="mb-0">Jon Cena</p>
+                  <small class="mb-0">1hr</small>
+                </div>
+              </div>
+              
+              <p class="color-w">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              
+              <img src="./assets/img/paisaje1.jpg" alt="paisaje1">
+              
+              <div class="d-flex justify-content-between">
+                <p class="color-w ps-3"><i class="bi bi-heart-fill color-red"></i> 60</p>
+                <p class="color-w pe-3">7 comentarios</p>
+              </div>
+              
+              <div class="d-flex justify-content-evenly">
+                <p class="color-w"><i class="bi bi-hand-thumbs-up"></i> Me gusta</p>
+                <p class="color-w"><i class="bi bi-chat-left"></i> Comentar</p>
+              </div>
+            </div>
+
+            <div class="section-central section-central-posts bg-color-light p-2">
+              <div class="d-flex align-items-center">
+                <img class="img-perfil me-2" src="./assets/img/persona2.jpg" alt="perfi2">
+                <div class="color-w">
+                  <p class="mb-0">Cesar Doe</p>
+                  <small class="mb-0">2hr</small>
+                </div>
+              </div>
+              
+              <p class="color-w">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              
+              <img src="./assets/img/paisaje2.jpg" alt="paisaje1">
+              
+              <div class="d-flex justify-content-between">
+                <p class="color-w ps-3"><i class="bi bi-heart-fill color-red"></i> 80</p>
+                <p class="color-w pe-3">15 comentarios</p>
+              </div>
+              
+              <div class="d-flex justify-content-evenly">
+                <p class="color-w"><i class="bi bi-hand-thumbs-up"></i> Me gusta</p>
+                <p class="color-w"><i class="bi bi-chat-left"></i> Comentar</p>
+              </div>
+            </div>
+
+          </section>
+
+        </article>
+
+        <aside class="col-lg-4  d-none d-lg-block aside-central-right">
+          <section class="d-flex flex-column section-aside-right ms-auto mb-3">
+            <h5 class="color-w">Publicidad</h5>
+            <div class="div-publia mb-2"></div>
+            <div class="div-publib"></div>
+          </section>
+
+          <section class="section-aside-right ms-auto">
+            <h5 class="color-w">Contactos</h5>
+            <div class="d-flex mb-2">
+              <img class="img-perfil me-2" src="./assets/img/persona2.jpg" alt="persona2">
+              <p class="color-w">Cesar Doe</p>
+            </div>
+
+            <div class="d-flex mb-2">
+              <img class="img-perfil me-2" src="./assets/img/persona4.jpg" alt="persona4">
+              <p class="color-w">Jon Cena</p>
+            </div>
+
+            <div class="d-flex mb-2">
+              <img class="img-perfil me-2" src="./assets/img/persona5.jpg" alt="persona5">
+              <p class="color-w">Jossett Pauline</p>
+            </div>
+            
+          </section>
+          
+        </aside>
+
+      </section>
 
     </main>
     

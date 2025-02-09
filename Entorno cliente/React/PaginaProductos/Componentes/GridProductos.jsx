@@ -30,9 +30,7 @@ export default function GridProductos (){
    /*  let arrayProductosp = arrayProductos.map(p => {
         return <CardProducto obj={p} key={p.id}></CardProducto>
     }) */
-
-
-    
+   
     return (
         
         <section className={styles.contenedoraProducto}>
