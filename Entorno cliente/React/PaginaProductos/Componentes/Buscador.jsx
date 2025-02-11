@@ -16,9 +16,12 @@ export default function Buscador() {
           id="buscador"
           name="buscador"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value)
+            navigate("?search=" + e.target.value)
+          }}
         />
-        <input type="submit" value="Buscar" />
+        {/* <input type="submit" value="Buscar" /> */}
       </form>
     </>
   );

@@ -40,3 +40,13 @@ img{
     border: 1px solid black;
     padding: 15px;
 }
+
+.lista{
+    display: flex;
+    list-style: none;
+}
+
+.carrusel{
+    width: 50%;
+    margin: 20px auto;
+}

@@ -3,8 +3,8 @@ import { Link } from "react-router";
 export default function Navegacion (){
     return(
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/Ofertas">Ofertas</Link>
+            <Link to="/" className="mx-3">Home</Link>
+            <Link to="/Ofertas" className="mx-3">Ofertas</Link>
         </nav>
     )
 }
