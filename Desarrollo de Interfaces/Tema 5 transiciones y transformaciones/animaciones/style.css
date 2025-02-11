@@ -33,7 +33,7 @@ body{
     grid-column: 4/-1;
     grid-row: 1/-1;
     background-position: center;
-    /*creamos un poligono que ahora ismo sera una linea porque los puntos estan en el m ismo sitio*/
+    /*creamos un poligono que ahora mismo sera una linea porque los puntos estan en el m ismo sitio*/
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     /*el forwards mantiene el keyframe, es decir, se queda el clipath del keyframe*/
     animation: show 2s 3.5s ease-out forwards;
@@ -49,6 +49,15 @@ body{
 .grid__title{
     font-size: 5rem;
 }
+
+/*Explicacion, las letras estan escondidas en un clipath abajo
+la primera animacion que se le mete a las letras en la de show que dura dos
+segundos y hace que el cplipath sea visible, y luego mete la animacion de move
+que hace que las letras se muevan a la izquierda y dura un segundo.-
+Por lo tanto tenemos 3 segundos de animacion. Ahora es cuando entra
+la animacion de la imagen a la cual de ponemos la misma animacion de show 
+(mostrar el clipath) pero despues de haber esperado 3.5segundos, es decir, despues de que terminen las otras animaciones
+*/
 
 .grid__texts{
     grid-row: 2/-2;

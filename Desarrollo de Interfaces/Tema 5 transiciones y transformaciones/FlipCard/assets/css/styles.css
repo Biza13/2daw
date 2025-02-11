@@ -12,13 +12,12 @@ h1 {
 .flip-card {
     border: thick solid black;
     margin: 0 auto;
-    margin-bottom: 80px;
     width: 600px;
     height: 400px;
     position: relative;
     cursor: pointer;
     /* Propiedades para que el hijo también obtenga el 3d */
-    perspective: 10rem;
+    perspective: 5rem;
     /* Este */transform-style: preserve-3d;
     transition: all 1s linear;
 }
@@ -39,9 +38,9 @@ h1 {
     backface-visibility: hidden;
 }
 
-.flip-front {
+/* .flip-front {
     transform: rotateY(0deg);
-}
+} */
 
 .flip-back {
     transform: rotateY(180deg);
