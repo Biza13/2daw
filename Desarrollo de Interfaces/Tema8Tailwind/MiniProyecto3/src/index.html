@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <title>Mini Proyecto 3</title>
+  </head>
+  <body>
+    <!-- global container -->
+    <div class="flex min-h-screen items-center justify-center bg-slate-100">
+      <!-- Card container -->
+      <div
+        class="rounded-2x1 shadow-2x1 m-3 flex flex-col bg-white p-6 md:flex-row md:space-x-10"
+      >
+        <div>
+          <img
+            src="./assets/img/headphone.png"
+            alt="cascos"
+            class="mx-auto w-60 transform duration-200 hover:scale-105"
+          />
+        </div>
+
+        <!-- contenido -->
+        <div class="flex flex-col space-y-6">
+          <!-- label y titulo -->
+          <div class="mb-4 flex flex-col space-y-3 text-center md:text-left">
+            <div
+              class="w-25 inline-block rounded-full bg-black px-3 py-1 text-sm text-white"
+            >
+              Envio gratis
+            </div>
+          </div>
+
+          <!-- titulo -->
+          <div class="text-2xl font-medium">
+            Razer Kraken kitty Edt Auriculares para juegos Cuarzo
+          </div>
+
+          <!-- Contenedor del precio -->
+          <div class="mb-4 flex flex-col space-y-3 text-center md:text-left">
+            <p class="line-through">799 €</p>
+            <p class="text-5xl font-bold">599 €</p>
+            <p class="text-sm font-light text-gray-400">
+              ¡Esta oferta es valida hasta el 25 febrero o hasta agotar
+              existencias!
+            </p>
+          </div>
+
+          <!-- boton -->
+          <!-- con la clase group agrupo y asi puedo hacer el hover a los de dentro partiendo del div padre -->
+          <div class="group">
+            <button
+              class="w-full rounded-lg border-b-8 border-b-blue-700 bg-blue-700 text-white group-hover:bg-blue-700 group-hover:shadow-lg"
+            >
+              <div
+                class="transform rounded-lg bg-blue-500 px-8 py-4 duration-200 group-hover:translate-y-1 group-hover:bg-blue-700"
+              >
+                Añadir a la cesta
+              </div>
+            </button>
+          </div>
+
+          <!-- Texto e icono -->
+          <div class="flex items-center space-x-3 group">
+            <div class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping">
+
+            </div>
+            <div>
+                50+ pcs. in stock
+            </div>
+          </div>
+
+          <!-- Botoes finales -->
+          <div class="flex flex-col md:flex-row space-y-4 space-x-4 md:spacing-x-4 md:spacing-y-0">
+            <button class="flex items-center justify-center border-2 border-gray-300 py-3 px-5 rounded-lg shadow-sm hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1 w-full h-full">
+                <img src="./assets/img/weight.png" alt="balanza" class="w-8 me-3">
+                <span>Añadir a la cesta</span>
+            </button>
+
+            <button class="flex items-center justify-center border-2 border-gray-300 py-3 px-5 rounded-lg shadow-sm hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1 w-full h-full">
+                <img src="./assets/img/heart.png" alt="corazon" class="w-8 me-3">
+                <span>Añadir a deseados</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
