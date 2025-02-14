@@ -37,7 +37,7 @@ body {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   clip-path: circle(0 at center);
-  transition: all 0.3s;
+  transition: all 0.8s;
 }
 
 .button--opacity:hover::before {
@@ -58,7 +58,7 @@ body {
   height: 100%;
   background-color: #673ab7;
   clip-path: circle(0 at top left);
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
 
 .button__text {
@@ -93,7 +93,7 @@ body {
   background-color: #673ab7;
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .link:hover::after {
