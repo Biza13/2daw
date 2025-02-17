@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <title>Proyecto Fylo</title>
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="container mx-auto mt-10 h-40 px-6 text-center md:h-20">
+      <!-- Logo -->
+      <div
+        class="bg-logo-light-mode left-10 top-10 mx-auto h-20 w-48 bg-no-repeat md:absolute md:mx-0"
+      ></div>
+      <!-- Menu -->
+      <div
+        class="right-10 top-12 flex items-center justify-center space-x-4 md:absolute md:space-x-10"
+      >
+        <a href="#funcionalidades" class="hover:text-cyan">Funcionalidades</a>
+        <a href="#testimonios" class="hover:text-cyan">Testimonios</a>
+
+        <!-- boton de oscuro y claro -->
+        <button
+          id="theme-toggle"
+          class="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200"
+        >
+          <!-- icono dark -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            id="moon-icon"
+            class="hidden h-5 w-5"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+            />
+          </svg>
+          <!-- icono light -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            id="sun-icon"
+            class="hidden h-5 w-5"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- seccion principal -->
+    <section class="bg-curvy-light-mode bg-contain bg-bottom bg-no-repeat">
+      <!-- contenedor principal -->
+      <div class="container mx-auto px-6 pb-52 text-center md:pt-20">
+        <img
+          src="./images/illustration-intro.png"
+          alt="intro"
+          class="mx-auto"
+        />
+        <h1
+          class="mx-auto mb-10 mt-14 max-w-2xl text-3xl font-bold leading-normal md:text-4xl"
+        >
+          Todos tus archivos en un lugar seguro, accesibles desde calquier
+          lugar.
+        </h1>
+        <p class="mx-auto mb-10 max-w-sm text-sm md:max-w-xl md:text-lg">
+          Fylo almacena todos tus archivos más importantes en un lugar seguro.
+          Accede a ellos donde los necesites, comparte y colabora con amigos,
+          familiares y compañeros de trabajo.
+        </p>
+        <button
+          class="bg-cyan w-52 transform rounded-full p-3 duration-200 hover:scale-90"
+        >
+          Comenzar
+        </button>
+      </div>
+    </section>
+
+    <!-- Seccion funcionalidades -->
+    <section id="funcionalidades" class="bg-gray-50 pt-12">
+      <!-- contenedor Funcionaidades -->
+      <div class="container mx-auto px-6 pb-32">
+        <!-- Primera row -->
+        <div
+          class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- item 1 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="./images/icon-access-anywhere.svg" alt="acceso" />
+            </div>
+            <h3 class="text-xl font-bold">
+              Accede a tu archivo desde cualquier lugar
+            </h3>
+            <p class="max-w-md">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
+              aliquam nesciunt officia dolores illum laboriosam quae ducimus
+              temporibus. Officiis iure repellendus consectetur veniam. Dolores
+              earum non fuga. Quam, officiis odit.
+            </p>
+          </div>
+
+          <!-- item 2 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="./images/icon-security.svg" alt="acceso" />
+            </div>
+            <h3 class="text-xl font-bold">Seguridad en la quepuedes confiar</h3>
+            <p class="max-w-md">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
+              aliquam nesciunt officia dolores illum laboriosam quae ducimus
+              temporibus. Officiis iure repellendus consectetur veniam. Dolores
+              earum non fuga. Quam, officiis odit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Segunda row -->
+        <div
+          class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0"
+        >
+          <!-- item 3 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="./images/icon-collaboration.svg" alt="colaboracion" />
+            </div>
+            <h3 class="text-xl font-bold">
+              Accede a tu archivo desde cualquier lugar
+            </h3>
+            <p class="max-w-md">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
+              aliquam nesciunt officia dolores illum laboriosam quae ducimus
+              temporibus. Officiis iure repellendus consectetur veniam. Dolores
+              earum non fuga. Quam, officiis odit.
+            </p>
+          </div>
+
+          <!-- item 4 -->
+          <div class="flex flex-col items-center space-y-2 md:w-1/2">
+            <div class="mb-6 flex h-24 items-center justify-center">
+              <img src="./images/icon-any-file.svg" alt="fichero" />
+            </div>
+            <h3 class="text-xl font-bold">Seguridad en la quepuedes confiar</h3>
+            <p class="max-w-md">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
+              aliquam nesciunt officia dolores illum laboriosam quae ducimus
+              temporibus. Officiis iure repellendus consectetur veniam. Dolores
+              earum non fuga. Quam, officiis odit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion Productividad -->
+    <section class="bg-white">
+      <!-- Contenedor Productivo -->
+      <div
+        class="container mx-auto flex flex-col items-center px-6 pb-32 pt-24 md:flex-row"
+      >
+        <!-- Imagen -->
+        <div class="md:w-1/2">
+          <img
+            src="./images/illustration-stay-productive.png"
+            alt="productividad"
+            class="mb-10"
+          />
+        </div>
+        <!-- Contenido de la derecha -->
+        <div class="flex flex-col items-start md:w-1/2">
+          <div class="flex flex-col space-y-5">
+            <h4 class="max-w-md text-xl font-bold md:text-4xl">
+              Mantenerte productivo, estés donde estés.
+            </h4>
+            <p class="text-md md:text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              rerum, non aspernatur sed eaque atque eius maiores? Dolorum, eaque
+              maxime?
+            </p>
+            <p class="text-md md:text-lg">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore,
+              voluptate? Ex voluptas corporis excepturi possimus.
+            </p>
+          </div>
+
+          <!-- Link -->
+          <div class="mt-4 block">
+            <a href="#" class="bordet-cyan text-cyan border-b"
+              >Descubre como funciona Fylo<img class="inline pb-2" src="./images/icon-arrow.svg" alt="flecha" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </body>
+</html>

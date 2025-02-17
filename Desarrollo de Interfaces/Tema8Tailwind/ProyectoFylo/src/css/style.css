@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/*Para los colores se pone con theme*/
+@theme {
+    --color-cyan: hsl(176, 68%, 64%);
+}
+
+/*Esto es para crear nuestras clases tienes que ponerlo dentro de @layer utulities*/
+@layer utilities {
+    .bg-logo-light-mode {
+        background-image: url("../images/logo-light-mode.svg");
+    }
+
+    .bg-curvy-light-mode {
+        background-image: url("../images/bg-curvy-light-mode.svg");
+    }
+}   
