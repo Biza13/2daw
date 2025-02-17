@@ -14,3 +14,10 @@ export function buscar (array, filtro){
   
     return matches;
   }
+
+  export function modUnidades (obj, sumRest){
+    let objMod = obj;
+    let unidadesMod = obj.unidades + sumRest;
+    objMod.unidades = unidadesMod
+    return objMod
+  }
