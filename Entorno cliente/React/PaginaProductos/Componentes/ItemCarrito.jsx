@@ -1,7 +1,7 @@
 import { useState } from "react"
 import * as funciones from "../Utils/httpClient"
 
-export default function ItemCarrito({obj} , array, setArray) {
+export default function ItemCarrito({obj , array, setArray}) {
 
   [array, setArray] = useState([])
 
