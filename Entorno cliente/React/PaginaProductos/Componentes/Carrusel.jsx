@@ -13,11 +13,9 @@ export default function carrusel(){
         fetch('https://fakestoreapi.com/products/' + indice)
             .then(res=>res.json())
             .then(json => { 
-                console.log(json)
                 setProducto(json)
         });
 
-        console.log("Cambiando estado");
     }, [indice]);
 
     return(
