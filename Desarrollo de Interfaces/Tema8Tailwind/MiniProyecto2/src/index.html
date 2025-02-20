@@ -7,22 +7,26 @@
     <title>Mini proyecto 2</title>
     <!-- <link rel="stylesheet" href="./assets/image.jpg"> -->
   </head>
-  <body>
+  <body class="bg-black/70">
     <!-- para coger toda la pantalla w-screen y h-screen -->
+
     <section
-      class="flex h-screen w-screen items-center justify-center bg-black/70"
+      class="flex justify-center h-full"
     >
-      <div class="rounded-2xl bg-black/30 md:h-80 md:w-2/3 flex">
-        <div class="h-full w-60 p-3">
-          <img src="./assets/image.jpg" alt="edamame" class="h-full rounded-l-xl transition-transform duration-200 transform hover:scale-105" />
+      <div class=" bg-black/30 lg:h-80 lg:w-2/3 lg:flex my-10 p-3 rounded-2xl">
+        <div class="lg:w-60">
+          <div class="w-full h-100 lg:w-60 lg:h-74 imagen bg-cover bg-center p-3 lg:p-0 rounded-xl lg:rounded-r-none transform hover:scale-105 transition-transform duration-200">
+          </div>
         </div>
 
-        <div class="flex flex-col justify-center space-y-4">
-          <h3 class="text-white text-2xl font-medium">Recibe consejos de dieta y ftness en tu bandeja de entrada</h3>
-          <p class="text-white">Come mejory haz ejercicio mejor. Suscribete el boletin de Diet&fitness</p>
-          <form action="#">
-            <input type="text" name="email" placeholder="Inserta tu email" class="h-12 p-4 me-5 border-2 border-gray-400 text-gray-400 w-70">
-            <button class="h-12 bg-lime-500 px-6 rounded-lg hover:text-white">Suscribete</button>
+        <div class="pt-6 lg:pt-0 px-10 flex flex-col justify-center">
+          <div class="w-full p-0 md:px-10 lg:p-0">
+            <h3 class="text-white text-2xl font-medium text-center lg:text-start mb-6">Recibe consejos de dieta y ftness en tu bandeja de entrada</h3>
+            <p class="text-white text-center lg:text-start mb-6">Come mejory haz ejercicio mejor. Suscribete el boletin de Diet&fitness</p>
+          </div>
+          <form action="#" class="flex flex-col lg:flex-row">
+            <input type="text" name="email" placeholder="Inserta tu email" class="placeholder:text-center lg:placeholder:text-start w-full mb-6 lg:mb-0 h-12 p-4 me-5 border-2 border-gray-400 text-gray-400 lg:w-70">
+            <button class="h-12 bg-lime-500 px-6 rounded-lg hover:text-white hover:bg-lime-600">Suscribete</button>
           </form>
         </div>
       </div>
