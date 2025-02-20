@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <title>Tailwind 4 Formularios</title>
+</head>
+<body>
+    <div class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% w-screen h-100 flex flex-col items-center">
+        <h1 class="text-4xl text-center text-white">Formulario en tailwind</h1>
+
+        <form action="" class="bg-white w-100 mx-auto rounded-lg p-6">
+            <!-- trbajando la propiedad disabled -->
+            <input type="text" placeholder="Nombre" class="border border-gray-300 w-full px-3 py-2 mb-4 rounded-md disabled:bg-red-200" disabled>
+            
+            <!-- input del tipo email para trabajar la propiedad focus -->
+            <!-- La propiedad invalid es que al ser un email has de poner un @ pues, si no pones un @, es decir, mientras sea invalido, el outline estara en rojo -->
+            <input type="email" placeholder="Email" class="border border-gray-300 w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-lime-700 invalid:focus:ring-red-700 peer">
+        
+            <!-- vamos a hacer que este texto aparezca cuando el email sea erroneo hay que poner en el input del correo al lado del invalid lo siguiente (peer) -->
+            <!-- Cuando el peer sea invalido pondra el p en block -->
+            <p class="text-red-400 hidden peer-invalid:block">El Correo es incorrecto</p>
+        </form>
+    </div>
+</body>
+</html>

@@ -17,7 +17,7 @@ export function buscar (array, filtro){
 
 export function modUnidades(array, obj, operacion) {
 
-  //hacemos es return del array modificado que nos devolvera el map
+  //hacemos es return del array modificado que nos devolvera el filter
   return array.map(item => {
     // Modificamos el objeto del que el cliente quiera aumentar o quitar unidades
     if (item.id === obj.id) {
