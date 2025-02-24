@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+    --color-softBlue: hsl(231, 69%, 60%);
+    --color-grayishBlue: hsl(229, 8%, 60%);
+    --color-darkViolet: hsl(257, 27%, 26%);
+    --color-cyan: hsl(180, 66%, 49%);
+    --color-cyanLight: hsl(180, 66%, 60%);
+}
+
+@layer utilities {
+    .img-dots{
+        background-image: url("../img/bg-dots.svg");
+        background-repeat: no-repeat;
+    }
+}
+
+@layer components {
+    .botones{
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin-right: 5px;
+        margin-bottom: 4px;
+    }
+}

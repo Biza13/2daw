@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <title>Examen Tailwind 4</title>
+</head>
+<body class="m-5">
+    <header>
+        <!-- Contenedora cabecera -->
+        <div class="w-full h-18 flex justify-between border-b-1 md:border-0">
+            <div class="flex flex-row justify-center items-center md:ml-10">
+                <img src="./assets/img/firefox.png" alt="firefox" class="max-h-10 mr-1">
+                <p class="font-bold mr-1">Firefox</p>
+                <p>Browser</p>
+            </div>
+            <!-- contenedor del nav -->
+            <div class="hidden md:block">
+                <nav class="mr-10 flex items-center justify-center h-full">
+                    <ul class="flex flex-row items-center justify-center h-10">
+                        <li class="mr-3 h-full flex items-center justify-center p-2 hover:bg-blue-500 rounded-md hover:text-white"><a href="#" class="font-medium">Caracteristicas</a></li>
+                        <li class="mr-3 h-full flex items-center justify-center p-2 hover:bg-yellow-500 rounded-md hover:text-white"><a href="#" class="font-medium">Ayuda</a></li>
+                        <li class="mr-3 h-full flex items-center justify-center p-2 hover:bg-green-500 rounded-md hover:text-white"><a href="#" class="font-medium">Componentes</a></li>
+                        <li class="mr-3 h-full flex items-center justify-center p-2 hover:bg-pink-500 rounded-md hover:text-white"><a href="#" class="font-medium">Idiomas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- primera sección -->
+        <section class="flex items-center justify-evenly mt-10">
+            <!-- div de texto y botones -->
+            <div class="md:ml-10">
+                <div>
+                    <h1 class="font-bold text-2xl md:text-4xl">Lorem ipsum dolor sit amet consectetur.</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus est minima ullam, quis distinctio </p>
+                </div>
+                <!-- div de los botones -->
+                 <!-- border-1 rounded-2xl bg-black text-white p-4 flex w-60 border-black mr-5 mb-4 -->
+                <div class="flex flex-col md:flex-col lg:flex-row">
+                    <button class="botones hover:bg-white group">
+                        <img src="./assets/img/logo_windows.png" alt="windows" class="max-h-10">
+                        <div>
+                            <p class="ml-2 mr-2 group-hover:text-black">INSTALAR EN </p>
+                            <p class="font-bold group-hover:text-black"> WINDOWS</p>
+                        </div>
+                    </button>
+                    <button class="botones hover:bg-white group">
+                        <img src="./assets/img/apple-logo.png" alt="apple-logo" class="max-h-10 group-hover:bg-black">
+                        <div>
+                            <p class="ml-2 mr-2 group-hover:text-black">INSTALAR EN</p>
+                            <p class="font-bold group-hover:text-black"> Mac OS</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!-- div de imagenes -->
+            <div class="hidden md:block mr-10 relative">
+                <div class="absolute top-10 left-10">
+                    <img src="./assets/img/image_hero1.png" alt="explorador" class="max-w-60">
+                </div>
+                <div class="">
+                    <img src="./assets/img/image_hero2.svg" alt="fondo" class="">
+                </div>
+            </div>
+        </section>
+
+        <!-- segunda sección -->
+        <section class="mt-20 mb-10 h-280 md:h-140">
+           <!-- div del texto -->
+           <div class="flex flex-col justify-center items-center w-150 m-auto mb-10">
+                <h2 class="text-3xl md:text-5xl font-bold">Download de extension</h2>
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem temporibus obcaecati quae vel doloribus omnis?</p>
+           </div>
+           <!-- div de cards -->
+           <div class="felx flex-col sm:block md:flex md:relative md:w-200 md:m-auto md:justify-around ">
+                <!-- cards -->
+                <div class="mb-10 md:absolute md:top-0 md:left-0 rounded-b-md shadow-2xl p-7 flex flex-col justify-center items-center">
+                    <img src="./assets/img/logo-chrome.svg" alt="chrome" class="w-20 mb-5">
+                    <p>Add to chrome</p>
+                    <p>Minimum version 3.3</p>
+                    <div class="img-dots h-8"></div>
+                    <button class="p-3 bg-violet-400 text-white rounded-md border-1 border-violet-400 hover:bg-white hover:text-violet-400">Add & install extension</button>
+                </div>
+                <div class="mb-10 md:absolute md:top-10 md:left-70 rounded-b-md shadow-2xl p-7 flex flex-col justify-center items-center">
+                    <img src="./assets/img/logo-firefox.svg" alt="firefox" class="w-20 mb-5">
+                    <p>Add to Firefox</p>
+                    <p>Minimum version 3.3</p>
+                    <div class="img-dots h-8"></div>
+                    <button class="p-3 bg-violet-400 text-white rounded-md border-1 border-violet-400 hover:bg-white hover:text-violet-400">Add & install extension</button>
+                </div>
+                <div class="md:absolute md:top-20 md:right-0 rounded-b-md shadow-2xl p-7 flex flex-col justify-center items-center">
+                    <img src="./assets/img/logo-opera.svg" alt="opera" class="w-20 mb-5">
+                    <p>Add to Opera</p>
+                    <p>Minimum version 3.3</p>
+                    <div class="img-dots h-8"></div>
+                    <button class="p-3 bg-violet-400 text-white rounded-md border-1 border-violet-400 hover:bg-white hover:text-violet-400">Add & install extension</button>
+                </div>
+           </div>
+        </section>
+
+        <!-- tercera sección -->
+        <section class="mb-20">
+            <!-- div para superponer las imagenes -->
+            <div class="md:relative">
+                <!-- div con imagen de fondo -->
+                <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1242 532" >
+                        <path fill="none" stroke="#ffba2d" stroke-width="2"
+                            d="M1198.8 232.3c4.7 3 6.1 9.1 3.2 13.8l-.2.3c-2.8 4.5-1.3 10.4 3.2 13.2 4.6 2.8 10.5 1.5 13.4-2.9l.2-.3c3.1-4.7 9.4-6 14.2-3.1 4.8 3 6.3 9.3 3.3 14.1-8.9 14.1-27.8 18.3-42 9.5-14.3-8.8-18.7-27.4-9.8-41.4 3-4.7 9.3-6.2 14.1-3.3l.2.1h.2z">
+                        </path>
+                        <linearGradient id="a2" x1="1046.5737" x2="1180.3937" y1="142.2743" y2="50.0583"
+                            gradientTransform="matrix(1 0 0 -1 0 519.0001)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#ffda65"></stop>
+                            <stop offset="1" stop-color="#ff9741"></stop>
+                        </linearGradient>
+                        <circle cx="1096.9" cy="411.4" r="120.5" fill="url(#a2)"></circle>
+                        <linearGradient id="b2" x1="-83.934" x2="122.2983" y1="-272.8492" y2="-30.4322"
+                            gradientTransform="matrix(.766 -.6428 -.6428 -.766 175.4476 172.2943)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#c857f1"></stop>
+                            <stop offset="1" stop-color="#2ebffc"></stop>
+                        </linearGradient>
+                        <path fill="url(#b2)"
+                            d="M45.1 300.6l323-271C421.4-15.3 501-8.3 545.8 45.1l.2.2c44.8 53.4 37.8 132.9-15.5 177.7l-323 271C154 538.7 74.4 531.8 29.7 478.4l-.2-.2c-44.8-53.3-37.8-132.9 15.6-177.6z">
+                        </path>
+                        <path fill="none" stroke="#ff008b" stroke-width="2"
+                            d="M130.5 193.8L522.4 58.9c52.9-18.2 110.5 9.9 128.7 62.8h0c18.2 52.9-9.9 110.5-62.8 128.7L196.5 385.3c-52.9 18.2-110.5-9.9-128.7-62.8h0c-18.3-52.9 9.8-110.5 62.7-128.7z">
+                        </path>
+                        <circle cx="811.9" cy="81.2" r="12" fill="#ff008b"></circle>
+                        <linearGradient id="c2" x1="733.0189" x2="647.999" y1="-193.4654" y2="-16.5744"
+                            gradientTransform="scale(1 -1) rotate(32.997 1111.38555617 211.5247949)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#f80089"></stop>
+                            <stop offset="1" stop-color="#b833e1"></stop>
+                        </linearGradient>
+                        <path fill="url(#c2)"
+                            d="M678 256.3L981.8 59.1c58.4-37.9 136.5-21.3 174.5 37.1l.1.2c37.9 58.4 21.3 136.5-37.1 174.5L815.5 468.1C757.1 506 679 489.4 641.1 431l-.1-.2c-38-58.4-21.4-136.5 37-174.5z">
+                        </path>
+                    </svg>
+                </div>
+                <!-- div con imagen de explorador -->
+                <div class="absolute md:top-10 md:left-15 lg:top-15 lg:left-35">
+                    <img src="./assets/img/image_info1.png" alt="info" class="max-h-30 md:max-h-60 lg:max-h-100">
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario -->
+        <section></section>
+
+        <!-- footer -->
+        <footer>
+
+        </footer>
+    </main>
+</body>
+</html>
