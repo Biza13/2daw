@@ -10,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Prinsipal</Text>
+      <Text>Principal</Text>
       <Link href="/detalles">
         Detalles Vista
       </Link>
