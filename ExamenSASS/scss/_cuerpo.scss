@@ -1,0 +1,30 @@
+.cubo{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.g--shadow-none{
+    box-shadow: none;
+    border: 1px solid black;
+}
+
+.g--shadow-1{
+    @include box-shadow(1px,3px)
+}
+
+.g--shadow-2{
+    @include box-shadow(4px,6px)
+}
+
+.g--shadow-3{
+    @include box-shadow(5px,15px)
+}
+
+.g--shadow-4{
+    @include box-shadow(10px,24px)
+}
+
+.g--shadow-5{
+    @include box-shadow(15px,35px)
+}

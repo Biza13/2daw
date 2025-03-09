@@ -33,7 +33,7 @@ body{
     grid-column: 4/-1;
     grid-row: 1/-1;
     background-position: center;
-    /*creamos un poligono que ahora mismo sera una linea porque los puntos estan en el m ismo sitio*/
+    /*creamos un poligono que ahora mismo sera una linea porque los puntos estan en el mismo sitio*/
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     /*el forwards mantiene el keyframe, es decir, se queda el clipath del keyframe*/
     animation: show 2s 3.5s ease-out forwards;

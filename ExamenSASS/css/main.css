@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* Lo mismo que lo de arriba pero con variables normales */
+/* colores */
+/* tamaños */
+/* espaciado */
+.cubo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.g--shadow-none {
+  box-shadow: none;
+  border: 1px solid black;
+}
+
+.g--shadow-1 {
+  -webkit-box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  -moz-box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.g--shadow-2 {
+  -webkit-box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.2);
+  -moz-box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.2);
+}
+
+.g--shadow-3 {
+  -webkit-box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+  -moz-box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+}
+
+.g--shadow-4 {
+  -webkit-box-shadow: 0 10px 24px hsla(0, 0%, 0%, 0.2);
+  -moz-box-shadow: 0 10px 24px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 10px 24px hsla(0, 0%, 0%, 0.2);
+}
+
+.g--shadow-5 {
+  -webkit-box-shadow: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+  -moz-box-shadow: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+}
+
+/*# sourceMappingURL=main.css.map */

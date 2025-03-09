@@ -1,0 +1,47 @@
+$theme: (
+    "colors": (
+        "primary": #3498db,
+        "secondary": #2ecc71,
+        "danger": #e74c3c,
+        "warning": #f39c12
+    ),
+    "sizes": (
+        "small": 12px,
+        "medium": 16px,
+        "large": 24px,
+        "xlarge": 32px
+    ),
+    "spacing": (
+        "xs": 4px, 
+        "sm": 8px,
+        "md": 16px,
+        "lg": 24px,
+        "xl": 32px
+    )
+);
+
+/* Lo mismo que lo de arriba pero con variables normales */
+/* colores */
+$color-primary: #3498db;
+$color-secondary: #2ecc71;
+$color-danger: #e74c3c;
+$color-warning: #f39c12;
+
+/* tamaños */
+$size-small: 12px;
+$size-medium: 16px;
+$size-large: 24px;
+$size-xlarge: 32px;
+
+/* espaciado */
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+@mixin box-shadow ($valor1, $valor2){
+    -webkit-box-shadow: 0 $valor1 $valor2 hsla(0, 0%, 0%, 0.2);
+    -moz-box-shadow: 0 $valor1 $valor2 hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0 $valor1 $valor2 hsla(0, 0%, 0%, 0.2);
+}
