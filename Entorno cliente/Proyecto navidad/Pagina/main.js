@@ -243,7 +243,7 @@ function eliminarUnoDelCarrito (array, elemento){
     //limpiar la sección y actualizar la tabla
     limpiarSection(document.querySelector(".cervezas__carrito")); 
 
-    //actualizarelementos del carrito
+    //actualizar elementos del carrito
     contarElementosCarrito(array);
 
     return array;
@@ -289,8 +289,6 @@ function anadirAlCarro (arrCarrito, elemento){
         //si no existe, desestructuramos el elemento, le añadimos la propiedad cantidad con el valor de 1 y lo añadimos al array
         arrCarrito.push({ ...elemento, cantidad: 1 });
     }
-
-    //arrCarrito.push(elemento);
 
     localStorage.setItem('carrito', JSON.stringify(arrCarrito));
 
@@ -364,7 +362,7 @@ aStouts.addEventListener("click", () => {
     .then((datos) => {
         const modData = modApiData(datos);
         creaCartas(modData);
-    });;
+    });
     ohYeah();
 
 });
