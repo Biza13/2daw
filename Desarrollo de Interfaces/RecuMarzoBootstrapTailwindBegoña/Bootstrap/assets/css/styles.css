@@ -1,0 +1,74 @@
+:root{
+    --bg-color-primary: rgb(73, 73, 73);
+}
+
+.bg-color-primary{
+    background-color: var(--bg-color-primary);
+}
+
+.bg-black{
+    background-color: black;
+}
+
+img{
+    max-width: 430px;
+    height: 441px;
+}
+
+.bg-color-blue{
+    background-color: var(--bs-primary) !important;
+}
+
+.btn1:hover{
+    background-color: rgb(108, 215, 250) !important;
+}
+
+.bg-color-green{
+    background-color: var(--bs-success) !important;
+}
+
+.btn2:hover{
+    background-color: rgb(110, 248, 110) !important;
+}
+
+.bg-color-yellow{
+    background-color: var(--bs-warning) !important;
+}
+
+.btn3:hover{
+    background-color: rgb(249, 249, 108) !important;
+}
+
+.bg-color-red{
+    background-color: var(--bs-danger) !important;
+}
+
+.btn4:hover{
+    background-color: rgb(252, 88, 88) !important;
+}
+
+.boton-div{
+    height: 6em;
+}
+
+.btn{
+    color: white;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    background-color: white;
+    color: var(--bg-color-primary);
+}
+
+.bg-light-gray{
+    background-color: rgb(207, 207, 207);
+}
+
+.bg-color-dark-red{
+    background-color: rgb(150, 1, 1);
+}
+
+.menu-width{
+    width: 80px;
+}
