@@ -356,6 +356,12 @@ body main img{
 .galeria img{
     width: 100%;
     height: 100%;
+    transition: all 1s linear;
+}
+
+.celda{
+    box-shadow: 2px 2px 6px 2px black;
+    border-radius: 5px;
 }
 
 .celda1{
@@ -420,6 +426,10 @@ body main img{
 
 .celda:hover .cajaMovible{
     transform: translateX(0) translateY(0) rotate(0);
+}
+
+.celda:hover img{
+    transform: scale(1.2);
 }
 
 @media(max-width: 768px){
