@@ -25,10 +25,10 @@ export default function Items({carr, setCarr}) {
     } */
 
     return (
-    <>
+    <div className='col-md-8 row gap-4 justify-content-center'>
         {productos.map((p) => {
-            return <Item producto={p} key={p.id} carr={carr} setCarr={setCarr}></Item>
+            return <Item producto={p} carr={carr} setCarr={setCarr} key={p.id}></Item>
         })}
-    </>
+    </div>
   )
 }
